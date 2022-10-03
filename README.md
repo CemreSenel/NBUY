@@ -1,2 +1,4 @@
 # NBUY
-Bu depoda eğitimimiz boyunca yapacağımız çalısmalar olacak
+
+Bu ilk değişikliğimiz.
+Bu depoda eğitimimiz boyunca yapacağımız çalısmalar olacak.
