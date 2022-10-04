@@ -1,0 +1,15 @@
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\obj\Debug\net6.0\Proje04_TipDönüstürme.csproj.AssemblyReference.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\obj\Debug\net6.0\Proje04_TipDönüstürme.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\obj\Debug\net6.0\Proje04_TipDönüstürme.AssemblyInfoInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\obj\Debug\net6.0\Proje04_TipDönüstürme.AssemblyInfo.cs
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\obj\Debug\net6.0\Proje04_TipDönüstürme.csproj.CoreCompileInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\bin\Debug\net6.0\Proje04_TipDönüstürme.exe
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\bin\Debug\net6.0\Proje04_TipDönüstürme.deps.json
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\bin\Debug\net6.0\Proje04_TipDönüstürme.runtimeconfig.json
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\bin\Debug\net6.0\Proje04_TipDönüstürme.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\bin\Debug\net6.0\Proje04_TipDönüstürme.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\obj\Debug\net6.0\Proje04_TipDönüstürme.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\obj\Debug\net6.0\refint\Proje04_TipDönüstürme.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\obj\Debug\net6.0\Proje04_TipDönüstürme.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\obj\Debug\net6.0\Proje04_TipDönüstürme.genruntimeconfig.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje04_TipDönüstürme\obj\Debug\net6.0\ref\Proje04_TipDönüstürme.dll
