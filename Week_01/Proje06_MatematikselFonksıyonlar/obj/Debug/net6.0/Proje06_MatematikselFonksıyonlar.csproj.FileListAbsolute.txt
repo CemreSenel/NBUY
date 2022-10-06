@@ -1,0 +1,15 @@
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\bin\Debug\net6.0\Proje06_MatematikselFonksıyonlar.exe
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\bin\Debug\net6.0\Proje06_MatematikselFonksıyonlar.deps.json
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\bin\Debug\net6.0\Proje06_MatematikselFonksıyonlar.runtimeconfig.json
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\bin\Debug\net6.0\Proje06_MatematikselFonksıyonlar.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\bin\Debug\net6.0\Proje06_MatematikselFonksıyonlar.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\obj\Debug\net6.0\Proje06_MatematikselFonksıyonlar.csproj.AssemblyReference.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\obj\Debug\net6.0\Proje06_MatematikselFonksıyonlar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\obj\Debug\net6.0\Proje06_MatematikselFonksıyonlar.AssemblyInfoInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\obj\Debug\net6.0\Proje06_MatematikselFonksıyonlar.AssemblyInfo.cs
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\obj\Debug\net6.0\Proje06_MatematikselFonksıyonlar.csproj.CoreCompileInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\obj\Debug\net6.0\Proje06_MatematikselFonksıyonlar.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\obj\Debug\net6.0\refint\Proje06_MatematikselFonksıyonlar.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\obj\Debug\net6.0\Proje06_MatematikselFonksıyonlar.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\obj\Debug\net6.0\Proje06_MatematikselFonksıyonlar.genruntimeconfig.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_01\Proje06_MatematikselFonksıyonlar\obj\Debug\net6.0\ref\Proje06_MatematikselFonksıyonlar.dll

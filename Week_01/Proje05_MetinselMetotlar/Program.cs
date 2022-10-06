@@ -77,5 +77,19 @@ class Program
         //int siraNo = adres.ToLower().IndexOf(aranacakifade.ToLower());
         //Console.WriteLine($" {aranacakifade}ifadesi {adres}içinde, {siraNo}. sıradadır");
 
+
+        //string metin = "Wissen Akademie";
+        //Console.WriteLine($"Metnin ilk hali: {metin}");
+        //Console.WriteLine($"Akademi ifadesi silindikten sonraki hali: {metin.Remove(7)}");
+        //Console.WriteLine($"Aka ifadesi silindikten sonraki hali: {metin.Remove(7,3)}");
+
+        string urunAd = "IPhone 13 Pro";
+        //iphone-13-pro
+        //string sonuc = (urunAd.Replace(" ","-")).ToLower();
+        string sonuc = urunAd.ToLower().Replace(" ", "-");
+        Console.WriteLine(sonuc);
+        string sonuc2 = urunAd.Replace("IPhone", "Samsung");
+        Console.WriteLine(sonuc2);
+
     }
 }
