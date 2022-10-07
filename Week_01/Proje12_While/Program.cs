@@ -3,130 +3,145 @@ class Program
 {
     static void Main(string[] args)
     {
-        // int sayac=1;
-        // while (sayac<=5)
+        // int sayac = 1;
+        // while (sayac <= 5)
         // {
         //     Console.WriteLine("Hello, World!");
         //     sayac++;
         // }
 
-        // int toplam=0;
-        // string girilendeger="";
-        // int sayac=1;
-
-        // while (girilendeger !="exit")
+        // int toplam = 0;
+        // string girilenDeger = "";
+        // int sayac = 1;
+        // while (girilenDeger != "exit")
         // {
-        //   Console.Write($" {sayac} .sayıyı giriniz(cıkıs için exit): " );
-        //     girilendeger=Console.ReadLine();
-        //     // if(girilendeger!="exit");
-        //    try
-        //    {
-        //      toplam += Convert.ToInt32(girilendeger);
-        //    }
-        //    catch (System.Exception)
-        //    {
-        //     Console.WriteLine(toplam);
-        //     break;
-        //    }
+        //     Console.Write($"{sayac}.sayıyı giriniz(Çıkış için exit): ");
+        //     girilenDeger = Console.ReadLine();
+        //     // if (girilenDeger!="exit") toplam += Convert.ToInt32(girilenDeger);
+        //     try
+        //     {
+        //         toplam += Convert.ToInt32(girilenDeger);
+        //     }
+        //     catch (System.Exception)
+        //     {
+        //         Console.WriteLine(toplam);
+        //         break;
+        //     }
         //     sayac++;
-
         // }
 
-
-        //SORU: klavyeden exıt yazılana kadar isim girilmesini isteyen program
-         //cozum1
-        // string isim="";
-        // while (isim!="exit");
+        //SORU: Klavyeden exit yazılana kadar isim girilmesini isteyen uygulama.
+        //Çözüm-1:
+        // string isim = "";
+        // while (isim!="exit")
         // {
-        //     Console.Write("isim giriniz: ");
-        //     isim =Console.ReadLine();
+        //     Console.Write("İsim giriniz: ");
+        //     isim = Console.ReadLine();
         // }
-        // Console.WriteLine("program sona eri...");
+        // Console.WriteLine("Program sona erdi...");
 
-        //cozum2
 
+        //Çözüm-2:
         // string isim;
         // do
         // {
-        //     Console.Write("isim giriniz: ");
-        //     isim =Console.ReadLine();
+        //     Console.Write("İsim giriniz: ");
+        //     isim=Console.ReadLine();
         // } while (isim!="exit");
-        // Console.WriteLine("program sona erdi..");
+        // Console.WriteLine("Program sona erdi...");
 
+        //Klavyeden exit yazılana kadar sayı almaya devam eden ve bu sayıların toplamını exit yazılınca ekrana yazan prg.
+        //Do-While ile
 
-
-        //Klavyedden exıt yazılana kadar sayı almaya devam eden ve bu sayıların toplamını exıt yazılınca ekrana yazan program
-        // string girilenDeger;
+        // string girilenDeger="0";
         // int sayac=1;
-        // int toplam=0;
+        // int toplam = 0;
+
         // do
         // {
-        //     Console.Write($" {sayac} .sayıyı giriniz(cıkıs için exit): " );
-        //     girilenDeger=Console.ReadLine();
-        //     if(girilenDeger!="exit") toplam +=Convert.ToInt32(girilenDeger);
+        //     Console.WriteLine($"{sayac}.sayıyı giriniz: ");
+        //     girilenDeger = Console.ReadLine();
+        //     if(girilenDeger!="exit") toplam += Convert.ToInt32(girilenDeger);
         // } while (girilenDeger!="exit");
 
         // Random rastgele = new Random();
-        // int rastgeleSayi=rastgele.Next();
+        // int rastgeleSayi = rastgele.Next();
         // Console.WriteLine(rastgeleSayi);
-        // int rastgeleSayı2=rastgele.Next(100);//0-100 arsında rastgele sayı uretir.0 dahıl. 100 harıctır.
-        // Console.WriteLine(rastgeleSayı2);
-        //  int rastgeleSayı3=rastgele.Next(1000,2000);//10000 dahıl 2000 dahıl degıldır.
-        // Console.WriteLine(rastgeleSayı3);
+        // int rastgeleSayi2 = rastgele.Next(100);//0-100 arasında rastgele sayı üretir. 0 dahil, 100 hariçtir.
+        // Console.WriteLine(rastgeleSayi2);
+        // int rastgeleSayi3 = rastgele.Next(1000,2000);//1000-2000 arasında rastgele sayı üretir. 1000 dahil, 2000 hariçtir.
+        // Console.WriteLine(rastgeleSayi3);
 
-        //OYUN: Uygulamanın rastgele uretecegı bır sayıyı kullanıcının tahmın etmesını ısteyecegız.
-        //rastgele uretılecek olan sayı 1-100 arasında olsun.
-        //kullanıcı rastgele sayıdan kucuk ya da buyuk bir sayı gırdıgınde kullanıcı uygun bır sekılde uyarılsın
-        //dogru sayıyı gırene kadar uygulama calıssın.(x)
-        //kullanıcı dogru sayıyıtahmın ettıyse ya da 5 hakkını gırdıyse uygulama sona ersın
 
-        Random rnd=new Random();
-        int uretilenSayi=rnd.Next(1,101);
-        Console.WriteLine($"hıle: {uretilenSayi}");
-        int tahminedilenSayı;
-        int hak=1;//kullanıcının o sırada kacıncı hakkını kullandıgı bılgısı
-        int hakSiniri=5;//kullanıcının toplam kac hakka sahıp oldugu bılgısı
-      //   do
-      //   {
-      //   Console.Write($"{hak}.Tahmınınızı gırınız: ");
-      //    tahminedilenSayı=Convert.ToInt32(Console.ReadLine());
-         
-      //    if (hak==hakSiniri && uretilenSayi!=tahminedilenSayı)
-      //    {
-      //       Console.WriteLine("kaybettınız");
-      //       break;
-      //    }
-         
-      //       if (tahminedilenSayı>uretilenSayi)
-      //    {
-      //       Console.WriteLine("buyuk bır deger girdınız daha kucuk bir deger gırınız");
-      //    }
-      //    else if(tahminedilenSayı<uretilenSayi)
-      //    {
-      //       Console.WriteLine("kucuk bır deger girdınız daha kucuk bir deger gırınız");
-            
-      //    }else
-      //    {
-      //       Console.WriteLine("tebrıkler kazandınız");
-            
-      //    }  
-      //    hak++;
-         
-      //   } 
-      //   while (tahminedilenSayı != uretilenSayi && hak<=hakSiniri);
-            do
+        //OYUN: Uygulamanın rastgele üreteceği bir sayıyı kullanıcının tahmin etmesini isteyeceğiz.
+        //Rastgele üretilecek olan sayı 1-100 arasında olsun.
+        //Kullanıcı rastgele sayıdan küçük ya da büyük bir sayı girdiğinde kullanıcıya uygun bir şekilde mesaj verilsin.
+        //Doğru sayıyı tahmin edene kadar uygulama çalışsın. (X)
+        //Kullanıcı doğru sayıyı tahmin ettiyse ya da 5 hakkını kullandıysa uygulama sona ersin!
+
+        Random rnd = new Random();
+        int uretilenSayi = rnd.Next(1, 101);
+        Console.WriteLine($"HİLE: {uretilenSayi}");
+        Console.WriteLine("****************");
+        int tahminEdilenSayi;
+        int hak = 1;//Kullanıcının o sırada kaçıncı hakkını kullandığı bilgisi
+        int hakSiniri = 5;//Kullanıcının toplam kaç hakka sahip olduğu bilgisi
+        // do
+        // {
+        //     Console.Write($"{hak}.Tahmininizi giriniz(1-100): ");
+        //     tahminEdilenSayi = Convert.ToInt32(Console.ReadLine());
+
+        //     if (hak == hakSiniri && uretilenSayi!=tahminEdilenSayi)
+        //     {
+        //         Console.WriteLine("Kaybettiniz");
+        //         break;
+        //     }
+
+        //     if (tahminEdilenSayi > uretilenSayi)
+        //     {
+        //         Console.WriteLine("Büyük bir değer girdiniz, daha küçük bir değer girerek yeniden deneyiniz!");
+        //     }
+        //     else if (tahminEdilenSayi < uretilenSayi)
+        //     {
+        //         Console.WriteLine("Küçük bir değer girdiniz, daha büyük bir değer girerek yeniden deneyiniz!");
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("Tebrikler!");
+        //     }
+        //     hak++;
+
+        // } while (tahminEdilenSayi != uretilenSayi && hak <= hakSiniri);
+
+        // doğru tahmin - 3.tahmin
+        string mesaj="";
+        do
+        {
+            Console.Write($"{hak}.Tahmininizi giriniz(1-100): ");
+            tahminEdilenSayi = Convert.ToInt32(Console.ReadLine());
+            if (tahminEdilenSayi > uretilenSayi)
             {
-               Console.Write($"{hak}.Tahmınınızı gırınız: ");
-         tahminedilenSayı=Convert.ToInt32(Console.ReadLine());
-               if (tahminedilenSayı>uretilenSayi)
-               {
-                  Console.WriteLine("buyuk gırdın");
-               }else if (tahminedilen)
-               {
-                  
-               }
-            } while (tahminedilenSayı=uretilenSayi && hak<=hakSiniri );
-         //eger program bu satıra gelmıs ise ya dogru tahmınde bulunulmustur ya da hak bıtmıstır.
+               mesaj="buyuk gırdın";
+            }
+            else if (tahminEdilenSayi < uretilenSayi)
+            {
+               mesaj="kucuk gırdın";
+                
+            }
+            if (tahminEdilenSayi != uretilenSayi)
+            {
+                hak++;
+                if(hak<=hakSiniri) Console.WriteLine(mesaj);
+                
+            }
+            
+
+        } while (tahminEdilenSayi != uretilenSayi && hak <= hakSiniri);
+
+        mesaj= tahminEdilenSayi==uretilenSayi ? "kazandınız" :  "kazandınız";
+        Console.WriteLine(mesaj);
+        
+        //Eğer program bu satıra gelmiş ise ya doğru tahminde bulunulmuştur ya da hak sona ermiştir.
 
     }
 }
