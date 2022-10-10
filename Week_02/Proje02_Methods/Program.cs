@@ -1,6 +1,6 @@
 ﻿namespace Proje02_Methods
 {
-    internal class Program
+    public class Program
     {
         //static void Topla(int sayi1,int sayi2)
         //{
@@ -14,7 +14,7 @@
         //    Console.WriteLine();
         //    Console.WriteLine($"Fark: {fark}");
         //}
-        static int Topla(int sayi1,int sayi2)
+        public static int Topla(int sayi1,int sayi2)
         {
             return sayi1 + sayi2;   
         }
@@ -23,10 +23,22 @@
             int fark = sayi1 - sayi2;
             return fark;
         }
-        static string 
+        static int SiraNoBul(string metin,char karakter)
+        {
+            int sonuc = metin.IndexOf(karakter);
+            return sonuc;
+        }
+        static bool VarMi(string metin, char karakter)
+        {
+            bool sonuc=metin.Contains(karakter);    
+            return (sonuc); 
+        }
 
         static void Main(string[] args)//METHOD
         {
+            MethodOverload methodOverload = new MethodOverload();
+            methodOverload.DenemeMetodu();
+
             //Console.Write("Birinci sayı: ");
             //int s1=int.Parse(Console.ReadLine());
             //Console.Write("ikinci sayı: ");
@@ -41,9 +53,12 @@
             //Kendısıne verılen metnın ıcınde aradıgınız karakterın kacıncı sırada oldugunu bulan metodu hazırlayınız.
 
             // Kendısıne verılen metnın ıcınde aradıgımız karakterın olup olmadıgını soyleyen bir metodu hazırlayınız.
+            //Console.WriteLine(SiraNoBul("Wissen Akademie", 'A'));
+            //Console.WriteLine(VarMi("Wissen Akademie", 'A') == true ? "İçinde geçiyor" : "İçinde geçmiyor");
+            Console.WriteLine(methodOverload.Topla(25,42));
+            Console.WriteLine(methodOverload.Islem(25, 42));
 
-            Console.WriteLine("Bir metin giriniz: ");
-            string metin=(Console.ReadLine());
+
         }
     }
 }
