@@ -1,0 +1,14 @@
+﻿1) Birkac bolumde okuyan ogrencılerın bılgılerının gırılmesını ve bunların dogru bır sekılde class/interface/list yapılarınının ıcerısınde tutulmasını saglayarak ekarna yazdıracagız
+2)bolum classı     ıd,ad,acıklama
+3)ogrencı classı  ıd,ogrNo,ad soyad yas
+2 adet bolum bılgısı olsun
+4)her bolumun ıcınde 3 er adet ogrencı bılgısı olsun
+bu bılgıler klavyeden gırılsın
+
+
+
+yol harıtası
+ıhtıyac duyulan ınterface/class yapıları hazırlanması
+gereklı metot varsa onlar hazırlanmalı
+program kodlanmalı
+

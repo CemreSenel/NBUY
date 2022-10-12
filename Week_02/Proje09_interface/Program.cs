@@ -1,5 +1,12 @@
 ﻿namespace Proje09_interface
 {
+    /* Interfaceler icin belirtilmedıgınde default erısım belirleyici publıctır.
+     * Interfaceler protected private ya da statıc olarak ısaretlenemezler.
+     * İnterface ler ıcınde calısabılır kodlar bulunamaz.Yanı methodkların sadece ımzası bulunur.
+     * bır ınterface bır ya da daha cok ınterfaceden mıras alır
+     * bır ınterface bır class tan mıras alamaz
+     * eger bır class bır ınterfaceden mıras alıyorsa mıras aldıgı ınterface tekı tum metotları ımplemente etmek zorundadır(ımplemente: mıras alınan ınterfacede ımzası bulunan tum metotların ıcı dolu hallerı)
+     */
     interface IPersonel
     {
         public string Departman { get; set; }
@@ -13,7 +20,7 @@
                             // ınterface new yapılamaz.
 
     }
-    class Yonetici : IKisi,IPersonel
+    class Yonetici : IKisi, IPersonel
     {
         /// <summary>
         /// Bu method herhangi bir yonetıcı bılgısı gırmeden yonetıcı olusturur.
@@ -36,7 +43,7 @@
             Maas = maas;
             Departman = departman;
         }
-    
+
         public string AdSoyad { get; set; }
         public string Adres { get; set; }
 
@@ -49,7 +56,7 @@
         }
     }
 
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -60,9 +67,33 @@
             // yanı bır nevı hepsı abstruct olsun. Bunu yapmak yerıne mıras alınan classı class degıl ınterface seklınde tanımlarız.
             //IPersonel personel = new IPersonel(); HATALI KULLANIM
             Yonetici yonetici1 = new Yonetici();
-            Yonetici yonetici12 = new Yonetici("Alex de Souza","rio de jenerio","5000","futbol");
-            
+            Yonetici yonetici12 = new Yonetici("Alex de Souza", "rio de jenerio", "5000", "futbol");
+
             Console.WriteLine("");
+
+            Product product1 = new Product
+            {
+                Id = 1,
+                Name = "Iphone 13",
+                Price = 13000,
+                Properties = "8 gb ram",
+                Ratio = 0.5m,
+                CreatedDate = DateTime.Now,
+
+            };
+            Console.WriteLine($"Product Name: {product1.Name}(büyük harf:{product1.NameToUpper(product1.Name)} )Properties: {product1.Properties}");
+
+            Category category1 = new Category()
+            {
+                Id = 1,
+                Name = "Iphone 13",
+                CreatedDate = DateTime.Now,
+                Description = "Bu kategori telefonlar ıcındır.",
+
+            };
+
+
+            Console.ReadLine();
         }
     }
 }
