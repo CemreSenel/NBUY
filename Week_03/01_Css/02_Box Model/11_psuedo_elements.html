@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>psuedo elements</title>
+    <style>
+        
+        p::first-line{
+            font-weight: bold;
+            color: red;
+            word-spacing: 3px;
+            letter-spacing: 2px;
+        }
+        p.myClass::first-letter{
+            color: green;
+        }
+        p.myClass::first-letter{
+            font-size: 40px;
+        }
+        ::selection{
+            background-color: yellow;
+            color: navy;
+            font-weight: bold;/* etkı etmez*/
+            font-size: 30px;/* etkı etmez*/
+        }
+        p::after{
+            content: "Bu yenı eklendi";
+            font-size: 28px;
+        }
+        p::before{
+            content: "Bu da before ıle yapıldı";
+            font-size: 48px;
+        }
+        
+
+     
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, at quibusdam facilis incidunt nulla cumque? Alias mollitia quam ipsum totam quasi quae iste nemo praesentium consequatur repudiandae recusandae, inventore nobis.</p>
+    <p class="myClass">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, earum ratione! Dolores eum quasi optio inventore neque rem soluta, reiciendis quam tenetur voluptate cupiditate sed, voluptates ex officiis praesentium assumenda?</p>
+</body>
+</html>
