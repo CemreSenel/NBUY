@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="buttons.css">
     <title>Movie Application</title>
     <style>
         *{
@@ -19,11 +20,24 @@
             
         }
         .conteiner{
-            height: 100vh;
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+            top: 60px;
+        }
+        .clearfix::after{
+            clear: both;
+            display: block;
+            content: "";
         }
         .main-header{
             background-color: tomato;
             padding: 8px 16px;
+            position: fixed;
+            width: 80%;
+            top: 0;
+            
+            
         }
         .main-header-logo{
             color: #fff;
@@ -74,7 +88,8 @@
             color: aliceblue;
             width: 100%;
             height: 60vh;
-            padding:10px;
+            padding:20px;
+            
             
         }
         #show-case h1{
@@ -84,6 +99,10 @@
             margin-top: 10px;
             color: white;
             border-radius: 5px;
+            position: relative;
+            top: calc(50% - 25px);
+            left: calc(50% - 140px);
+            
         }
         #how-it-works{
             background-color: white;
@@ -98,7 +117,13 @@
         .row{
             margin-bottom: 40px;
         }
-        .col{
+        .col-2{
+            display: inline-block;
+            width: calc(50% - 2px);
+            height: 350px;
+            background-color: brown;
+        }
+        .col-3{
             display: inline-block;
             width: 30%;
             margin: 8px;
@@ -115,13 +140,80 @@
             font-size: 22px;
 
         }
+        .features-left{
+            background:url('00_Images/features.jpeg');
+            background-position: top center; 
+            background-size: cover;   
+        }
+        .features-right{
+            background-color: blue;
+            padding: 40px;
+            vertical-align: top;
+        }
+        .features-right h3{
+            font-size: 30px;
+        }
+        /* .features-right a{
+            background-color: tomato;
+            color: white;
+            text-decoration: none;
+            padding: 7px 15px;
+            font-size: 14px;
+            display: inline-block;
+            margin-top: 15px;
+            border: 1px solid tomato;
+            border-radius: 3px;
+        }
+        .features-right a:hover{
+            background-color: white;
+            color: tomato; */
+            
+        /* } */
+        .section-title{
+            text-align: center;
+            font-size: 30px;
+            margin: 10px 0;    
+        }
+        .plan{
+            text-align: center  ;
+            padding: 16px;
+            width: 33.3%;
+            float: left;
+            color: tomato;
+            
+            
+        }
+        .recomended-plan{
+            background-color: #396EB0 !important;
+            color: white;
+        }
+        .inner-plan{
+            background-color: rgba(101, 92, 110, 0.333);
+            padding: 8px;
+            border-radius: 5px;
 
-
-    </style>
+        }
+        .plan-badge{
+            background-color: white;
+            color: tomato;
+            padding: 8px;
+            border-radius: 5px;
+        }
+        .inner-plan ul{
+            list-style-type: none;
+            padding: 0;
+        }
+        .inner-plan ul li{
+            margin: 6px 0px;
+        }
+        
+       
+        
+        </style>
 </head>
 <body>
     <div class="conteiner">
-        <header class="main-header">
+        <header class="main-header menü">
             <a href="#" class="main-header-logo">Movie Application</a>
             <nav class="main-nav">
                 <ul class="main-nav-items">
@@ -132,10 +224,10 @@
 
                 </ul>
             </nav>
-        </header>
-        <main>
+        </header >
+        <main >
             <section id="show-case"> 
-                <h1>Welcome to Movie Application</h1>
+                <h1 class="position">Welcome to Movie Application</h1>
             </section>
             <section id="how-it-works"> 
                 
@@ -144,23 +236,83 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quod eaque natus libero quibusdam, ducimus aperiam magnam optio cupiditate autem unde delectus ipsa, ab iste debitis corrupti fugiat iusto repudiandae.</p>
                 </div>
                 <div class="row">
-                    <div class="icon-box col">
+                    <div class="icon-box col-3">
                         <i class="fa-solid fa-right-to-bracket"></i>
                         <h3>Registor</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel recusandae, repellat sint in blanditiis, quia autem nam debitis quisquam amet iste natus nisi provident sunt odit sit, aliquam voluptas accusantium.</p>
                     </div>
-                    <div class="icon-box col">
+                    <div class="icon-box col-3">
                         <i class="fa-solid fa-circle-check"></i>
                         <h3>Choose a Plan</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel recusandae, repellat sint in blanditiis, quia autem nam debitis quisquam amet iste natus nisi provident sunt odit sit, aliquam voluptas accusantium.</p>
                     </div>
-                    <div class="icon-box col">
+                    <div class="icon-box col-3">
                         <i class="fa-solid fa-ghost"></i>
                         <h3>Enjoy Movies</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel recusandae, repellat sint in blanditiis, quia autem nam debitis quisquam amet iste natus nisi provident sunt odit sit, aliquam voluptas accusantium.</p>
                     </div>
                 </div>
             </section>
+            <section id="features">
+                <div class="row">
+                     <div class="col-2 features-left" ></div>
+                     <div class="col-2 features-right" ></div>
+                </div>
+             </section>
+             <section id="plans">
+                <h2 class="section-title">Become a Premium Member</h2>
+                <div>
+                    <div class="clearfix plan">
+                       <div class="inner-plan">
+                        <h2>Free</h2>
+                        <h3>0/month</h3>
+                        <ul>
+                            <li>Lorem</li>
+                            <li>Lorem, ipsum dolor.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum dolor.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem</li>
+                        </ul>
+                        <button class="btn btn-outline">Choose Plan</button>
+                       </div>
+                    </div>
+                    <div class="clearfix plan">
+                       <div class="inner-plan recomended-plan">
+                        <h2 class="plan-badge">Recomended</h2>
+                        <h2>Basic</h2>
+                        <h3>$9.99/month</h3>
+                        <ul>
+                            <li>Lorem</li>
+                            <li>Lorem, ipsum dolor.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum dolor.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem</li>
+                        </ul>
+                        <button class="btn btn-primary">Choose Plan</button>
+                       </div>
+
+                    </div>
+                    <div class="clearfix plan">
+                       <div class="inner-plan">
+
+                        <h2>Premium</h2>
+                        <h3>$19.99/month</h3>
+                        <ul>
+                            <li>Lorem</li>
+                            <li>Lorem, ipsum dolor.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum dolor.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem</li>
+                        </ul>
+                        <button class="btn btn-secondary">Choose Plan</button>
+                       </div>
+
+                    </div>
+                </div>
+             </section>
         </main>
     </div>
 </body>

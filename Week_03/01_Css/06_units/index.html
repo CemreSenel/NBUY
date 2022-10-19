@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    // https://github.com/rafrex/spa-github-pages
+    // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+    // ----------------------------------------------------------------------
+    // This script checks to see if a redirect is present in the query string
+    // and converts it back into the correct url and adds it to the
+    // browser's history using window.history.replaceState(...),
+    // which won't cause the browser to attempt to load the new url.
+    // When the single page app is loaded further down in this file,
+    // the correct url will be waiting in the browser's history for
+    // the single page app to route accordingly.
+    (function (l) {
+        if (l.search) {
+            var q = {};
+            l.search.slice(1).split('&').forEach(function (v) {
+                var a = v.split('=');
+                q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+            });
+            if (q.p !== undefined) {
+                window.history.replaceState(null, null,
+                    l.pathname.slice(0, -1) + (q.p || '') +
+                    (q.q ? ('?' + q.q) : '') +
+                    l.hash
+                );
+            }
+        }
+    }(window.location))
+</script>
+<!-- End Single Page Apps for GitHub Pages -->
+<!-- Start Single Page Apps for GitHub Pages -->
+<script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    // https://github.com/rafrex/spa-github-pages
+    // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+    // ----------------------------------------------------------------------
+    // This script checks to see if a redirect is present in the query string
+    // and converts it back into the correct url and adds it to the
+    // browser's history using window.history.replaceState(...),
+    // which won't cause the browser to attempt to load the new url.
+    // When the single page app is loaded further down in this file,
+    // the correct url will be waiting in the browser's history for
+    // the single page app to route accordingly.
+    (function (l) {
+        if (l.search) {
+            var q = {};
+            l.search.slice(1).split('&').forEach(function (v) {
+                var a = v.split('=');
+                q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+            });
+            if (q.p !== undefined) {
+                window.history.replaceState(null, null,
+                    l.pathname.slice(0, -1) + (q.p || '') +
+                    (q.q ? ('?' + q.q) : '') +
+                    l.hash
+                );
+            }
+        }
+    }(window.location))
+</script>
+<!-- End Single Page Apps for GitHub Pages -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Units</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 10px;
+        }
+        .container{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header,.footer{
+            background-color: #06283D;
+            display: flex;
+            align-items: center;
+            height: 120px;
+            padding-left: 20px;
+        }
+        .footer{
+            height: 60px;
+            color: white;
+            font-size: 1.5em;
+        }
+        .header h1{
+            color: #FEC260;
+            padding-left: 20px;
+            font-size: 6em;
+           
+        }
+        .content{
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: 10px;
+            height: calc(100vh - 210px);
+            
+            
+        }
+        .content-left{
+            width: 25%;
+            font-size: 1.5em;
+            
+        }
+        .content-left ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .content-left ul li{
+            padding: 10px 15px;
+            background-color: #256D85;
+            margin-bottom: 8px;
+            color: white;
+            
+        }
+        .content-left ul li:hover{
+            cursor: pointer;
+            background-color: #2B4865;
+        }
+        .content-right{
+            width: 75%;
+            padding-right: 15px;
+            font-size: 1.4em;
+            
+        }
+        .content-right h1{
+            color: #002B5B;
+            margin: 0;
+            font-size: 2.3em;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Frontend Dersleri</h1>
+        </div>
+        <div class="content">
+            <div class="content-left">
+                <ul>
+                    <li>Html</li>
+                    <li>Css</li>
+                    <li>Javascript</li>
+                </ul>
+            </div>
+            <div class="content-right">
+                <h1>Uygulama Geliştirici Eğitim </h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt fuga voluptatum debitis rerum ullam blanditiis autem delectus eaque est voluptate.</p>
+            </div>
+        </div>
+        <div class="footer">
+            Bu sayfa BAÜ Wissen Akademie ögrencılerı tarafından tasarlanmıstır.2022
+        </div>
+    </div>
+</body>
+</html>
