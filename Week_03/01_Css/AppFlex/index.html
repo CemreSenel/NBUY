@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox_01</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header,.footer{
+            background-color: #06283D;
+            display: flex;
+            align-items: center;
+            height: 120px;
+            padding-left: 20px;
+        }
+        .footer{
+            height: 60px;
+            color: white;
+        }
+        .header h1{
+            color: #FEC260;
+            padding-left: 20px;
+            font-size: 60px;
+           
+        }
+        .content{
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: 10px;
+            height: calc(100vh - 210px);
+            
+            
+        }
+        .content-left{
+            width: 25%;
+            
+        }
+        .content-left ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .content-left ul li{
+            padding: 10px 15px;
+            background-color: #256D85;
+            margin-bottom: 8px;
+            color: white;
+            
+        }
+        .content-left ul li:hover{
+            cursor: pointer;
+            background-color: #2B4865;
+        }
+        .content-right{
+            width: 75%;
+            padding-right: 15px;
+            
+        }
+        .content-right h1{
+            color: #002B5B;
+            margin: 0;
+            
+        }
+        @media (max-width: 700px){
+            .header{
+                order: 1;
+                margin-top: 20px;
+                
+            }
+            .header h1{
+                font-size: 35px;
+            }
+            .content-left{
+                width: 100%;
+            }
+            .content-left 
+              
+                
+                  
+                
+            
+            
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Frontend Dersleri</h1>
+        </div>
+        <div class="content">
+            <div class="content-left">
+                <ul>
+                    <li>Html</li>
+                    <li>Css</li>
+                    <li>Javascript</li>
+                </ul>
+            </div>
+            <div class="content-right">
+                <h1>Uygulama Geliştirici Eğitim </h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt fuga voluptatum debitis rerum ullam blanditiis autem delectus eaque est voluptate.</p>
+            </div>
+        </div>
+        <div class="footer">
+            Bu sayfa BAÜ Wissen Akademie ögrencılerı tarafından tasarlanmıstır.
+        </div>
+    </div>
+</body>
+</html>
