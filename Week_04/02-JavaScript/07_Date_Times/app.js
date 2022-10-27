@@ -1,16 +1,16 @@
-let simdi = new Date();
-sonuc = simdi;
-sonuc = simdi.getDate();
-sonuc = simdi.getDay();
-sonuc = simdi.getFullYear();
-sonuc = simdi.getHours();
-sonuc = simdi.getTime();
+// let simdi = new Date();
+// sonuc = simdi;
+// sonuc = simdi.getDate();
+// sonuc = simdi.getDay();
+// sonuc = simdi.getFullYear();
+// sonuc = simdi.getHours();
+// sonuc = simdi.getTime();
 
 
-simdi.setFullYear(2015);
-simdi.setMonth(0);
+// simdi.setFullYear(2015);
+// simdi.setMonth(0);
 
-sonuc = simdi;
+// sonuc = simdi;
 
 
 

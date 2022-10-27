@@ -47,27 +47,57 @@
 // console.log(urun1,typeof urun1);
 // console.log(urunDizi,typeof urunDizi);
 
-let ogrenciler = ['cemre', 'melahat','sema','hasancan']
+// let ogrenciler = ['cemre', 'melahat','sema','hasancan']
 
-let sonuc;
+// let sonuc;
 // sonuc = ogrenciler.length;
 // sonuc = ogrenciler;
 // sonuc = ogrenciler.toString();
 // sonuc = ogrenciler.join('/');
 
-ogrenciler[4] = 'serhat';
-ogrenciler.push('aylin');
-ogrenciler.pop();
+// ogrenciler[4] = 'serhat';
+// ogrenciler.push('aylin');
+// ogrenciler.pop();
 
 
-sonuc = ogrenciler.push('aylin');
-sonuc = ogrenciler.pop();
-sonuc = ogrenciler.unshift('aylin');
+// sonuc = ogrenciler.push('aylin');
+// sonuc = ogrenciler.pop();
+// sonuc = ogrenciler.unshift('aylin');
 
 
 
 
 
-console.log(ogrenciler);
-console.log(sonuc);
+// console.log(ogrenciler);
+// console.log(sonuc);
+
+let sonuc;
+let markalar1= ['mazda','toyota','mercedes']
+let markalar2= ['opel','bmw']
+let markalar3= ['ford']
+
+console.log('Markalar1:' + markalar1);
+console.log('Markalar2:' + markalar2);
+console.log('Markalar3:' + markalar3);
+
+
+sonuc =markalar1.concat(markalar2);
+sonuc =markalar1.concat(markalar2,markalar3);
+console.log('Sonuç: ' + sonuc);
+ikinciDizi=sonuc.slice(0,3);
+
+
+
+// sonuc = markalar1.splice(0,1);
+// console.log('Sonuç: ' + sonuc);
+
+// sonuc.splice(4,2);
+
+
+console.log('Sonuç: ' + sonuc);
+console.log('ikinci Dizi: ' + ikinciDizi);
+// console.log('Markalar1:' + markalar1);
+
+
+
 

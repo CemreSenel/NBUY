@@ -7,7 +7,7 @@
     3-const(sabit)
 
 
-    -ES6 ile birlikte artık moder javascript tabiri kullanılmaya başlanmıştır.
+    -ES6 ile birlikte artık modern javascript tabiri kullanılmaya başlanmıştır.
     Bu süreçte let ve const kullanılır.
 
 
