@@ -30,7 +30,7 @@
 // let urun3 = ['samsung s22',35000,'kırmızı',true]
 
 
-// let urunler = [urun1,urun2,urun3]
+// let urunler = [nuru1,urun2,urun3]
 
 
 

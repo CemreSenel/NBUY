@@ -20,8 +20,8 @@
 
 */  
 
-// let yas=20;
-// console.log(yas);
+let yas=20;
+console.log(yas);
 
 // let ad= 'gec kalan harun';
 // let soyad= 'gec kalan sema';
