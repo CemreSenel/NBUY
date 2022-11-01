@@ -21,7 +21,7 @@ for (const gorev of gorevListesi) {
         <li class="task list-group-item">
             <div class="form-check">
                 <input type="checkbox" id="${gorev.id}" class="form-check-input">
-                <label for="${gorev.id}" class="form-check-label">${.gorevAdi}</label>
+                <label for="${gorev.id}" class="form-check-label">${gorev.gorevAdi}</label>
             </div>
         </li>
     

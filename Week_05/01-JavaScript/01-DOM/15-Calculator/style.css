@@ -1,0 +1,22 @@
+
+
+#hesapMakinesi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+}
+
+
+table{
+    width: 200px;
+    height: 300px;
+    border:1px solid gray;
+    text-align: center;
+    
+}
+
+button{
+    border: 1px solid gray;
+    padding: 4px 14px;
+}
