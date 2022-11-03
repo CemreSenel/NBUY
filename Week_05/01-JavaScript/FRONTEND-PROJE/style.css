@@ -1,0 +1,86 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 610px;
+    background-image: linear-gradient( to bottom right,rgb(70, 112, 224),rgb(210, 210, 226));
+}
+
+.header{
+    color:white;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.note{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+
+#txtName{
+    width: 350px;
+    height: 50px;
+    border: none;
+}
+
+.btn{
+    position: absolute;
+    top:192px;
+    left:825px;
+    color:white;
+    border: none;
+    background-color: rgb(153, 153, 17);
+    font-size: 12px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.note-new{
+    display:flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#txtNameNew{
+    width: 700px;
+    height: 50px;
+    border:none;
+}
+
+#btnCheck{
+    padding: 17px;
+    position: absolute;
+    right: 371px;
+    background-color: orange;
+    color:white;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#btnDelete{
+    padding: 17px ;
+    position: absolute;
+    right: 324px;
+    background-color: rgb(214, 29, 29);
+    color: white;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#note-list{
+    list-style: none;
+}
+
+.note-list-item{
+    margin-top: 6px;
+}
