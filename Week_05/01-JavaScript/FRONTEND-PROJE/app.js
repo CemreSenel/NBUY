@@ -1,4 +1,9 @@
 'use strict';
+let btnAddNew=document.getElementById('btnAddNew');
+let txtName=document.getElementById('txtName');
+btnAddNew.onclick=function name() {
+    
+}
 
 
 let notListesi = [
