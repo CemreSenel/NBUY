@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OtfxFmxZiEEq+mZQsiQYNn+XAG6vrf/+aVWBIRP3OJlsh8fv2QYr5Tlxpsco/oAsyQ9Z5nWAaX5L8IrIjuu0cA==",
+  "dgSpecHash": "gTCVQ88plVmFapIdLJ3pfsmMQYyuhBjgrj0hTnK+VgJEGGfWoNMYeyiKRWwtKNxj3/Zc6i6rSeyj5r0cXirn8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_06\\DotNetCoreVeriTabanıIslemlerı\\Proje02_VerilerinCekilmesi\\Proje02_VerilerinCekilmesi.csproj",
+  "projectFilePath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_06\\DotNetCoreVeriTabanıIslemlerı\\Proje02_VerilerinCekilmesi\\Proje02_VerilerinCekilmesi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SABAH\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\SABAH\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
