@@ -1,16 +1,15 @@
 using System.Data.SqlClient;
 using Proje05_KatmanliMimari.DataAccessLayer.Entities;
-
 namespace Proje05_KatmanliMimari.DataAccessLayer
 {
     public class SqlProductDAL : IProductDAL
     {
-          private SqlConnection GetSqlConnection()
-    {
-        string connectionString = "Server=DESKTOP-OFVK2FD; Database=Northwind; User=sa; Pwd=123";
-        SqlConnection sqlConnection = new SqlConnection(connectionString);
-        return sqlConnection;
-    }
+        private SqlConnection GetSqlConnection()
+        {
+            string connectionString = "Server=DESKTOP-OFVK2FD; Database=Northwind; User=sa; Pwd=123;";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            return sqlConnection;
+        }
         public void CreateProduct(Product product)
         {
             throw new NotImplementedException();
@@ -39,7 +38,7 @@ namespace Proje05_KatmanliMimari.DataAccessLayer
                             Id = int.Parse(sqlDataReader[0].ToString()),
                             Name = sqlDataReader[1].ToString(),
                             Price = decimal.Parse(sqlDataReader[2].ToString()),
-                            Stock = int.Parse(sqlDataReader[3].ToString())
+                            Stock = Convert.ToInt32(sqlDataReader[3])
                         });
                     }
                     sqlDataReader.Close();
@@ -53,8 +52,7 @@ namespace Proje05_KatmanliMimari.DataAccessLayer
                     connection.Close();
                 }
             }
-
-            return products; throw new NotImplementedException();
+            return products;
         }
 
         public Product GetByIdProduct(int id)
@@ -67,7 +65,7 @@ namespace Proje05_KatmanliMimari.DataAccessLayer
             throw new NotImplementedException();
         }
 
-        public List<Product> GetProductsByCategory(string CategoryName)
+        public List<Product> GetProductsByCategory(string categoryName)
         {
             throw new NotImplementedException();
         }

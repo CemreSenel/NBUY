@@ -2,17 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Proje05_KatmanliMimari.DataAccessLayer;
-using Proje05_KatmanliMimari.DataAccessLayer.Entities;
+using Proje.DataAccessLayer;
+using Proje.DataAccessLayer.Entities;
 
-namespace Proje05_KatmanliMimari.BusinessLayer
+namespace Proje.BusinessLayer
 {
     public class ProductManager
     {
         private readonly IProductDAL _productDAL;
         public ProductManager(IProductDAL productDAL)
         {
-            _productDAL = productDAL; //Dependency Injection
+            _productDAL = productDAL;
         }
         public void CreateProduct(Product product)
         {
@@ -26,22 +26,26 @@ namespace Proje05_KatmanliMimari.BusinessLayer
 
         public List<Product> GetAllProducts()
         {
-            return _productDAL.GetAllProducts();
+            return _productDAL.GetAll();
         }
 
         public Product GetByIdProduct(int id)
         {
-            throw new NotImplementedException();
+            return _productDAL.GetById(id);
+        }
+
+        public List<Product> GetProductsByCategory(string categoryName)
+        {
+            return _productDAL.GetProductsByCategory(categoryName);
         }
 
         public void UpdateProduct(Product product)
         {
             throw new NotImplementedException();
         }
-
-        public List<Product> GetProductsByCategory(string categoryName)
+        public List<Product> GetProductsByCategoryId(int id)
         {
-            throw new NotImplementedException();
+            return _productDAL.GetProductsByCategoryId(id);
         }
     }
 }

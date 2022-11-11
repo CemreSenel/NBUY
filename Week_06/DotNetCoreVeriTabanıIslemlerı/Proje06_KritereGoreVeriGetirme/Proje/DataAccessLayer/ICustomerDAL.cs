@@ -1,17 +1,19 @@
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using Proje05_KatmanliMimari.DataAccessLayer.Entities;
+using Microsoft.Data.Sqlite;
+using Proje.DataAccessLayer.Entities;
 
-namespace Proje05_KatmanliMimari.DataAccessLayer
+namespace Proje.DataAccessLayer
 {
     public interface ICustomerDAL
     {
         void Create(Customer customer);
-        List<Customer> GettAll();
-        Customer GetById(int Id);
+        List<Customer> GetAll();
+        Customer GetById(int id);
         void Update(Customer customer);
-        void delete(int id);
+        void Delete(int id);
     }
 }
