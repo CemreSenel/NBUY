@@ -5,13 +5,11 @@
 
 <h1 class="display-6">Kitap Listesi</h1>
 <hr>
-
 <div class="container">
     <div class="row">
         @foreach (var kitap in Model)
         {
             <partial name="_Kitap" model="kitap" />
         }
-
     </div>
 </div>
