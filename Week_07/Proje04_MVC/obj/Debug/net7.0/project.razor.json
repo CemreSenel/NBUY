@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_07\\Proje04_MVC\\Proje04_MVC.csproj",
+  "FilePath": "c:\\Users\\casper\\OneDrive\\Belgeler\\GitHub\\NBUY\\Week_07\\Proje04_MVC\\Proje04_MVC.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -10,6 +10,7 @@
     ]
   },
   "ProjectWorkspaceState": {
+<<<<<<< Updated upstream
     "TagHelpers": [
       {
         "HashCode": -1208168245,
@@ -16550,11 +16551,15 @@
         }
       }
     ],
+=======
+    "TagHelpers": [],
+>>>>>>> Stashed changes
     "CSharpLanguageVersion": 1100
   },
   "RootNamespace": "Proje04_MVC",
   "Documents": [
     {
+<<<<<<< Updated upstream
       "FilePath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_07\\Proje04_MVC\\Views\\Shared\\_Header.cshtml",
       "TargetPath": "Views\\Shared\\_Header.cshtml",
       "FileKind": "mvc"
@@ -16562,14 +16567,19 @@
     {
       "FilePath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_07\\Proje04_MVC\\Views\\Shared\\_Footer.cshtml",
       "TargetPath": "Views\\Shared\\_Footer.cshtml",
+=======
+      "FilePath": "c:\\Users\\casper\\OneDrive\\Belgeler\\GitHub\\NBUY\\Week_07\\Proje04_MVC\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+>>>>>>> Stashed changes
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_07\\Proje04_MVC\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\casper\\OneDrive\\Belgeler\\GitHub\\NBUY\\Week_07\\Proje04_MVC\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
+<<<<<<< Updated upstream
       "FilePath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_07\\Proje04_MVC\\Views\\Shared\\_Navbar.cshtml",
       "TargetPath": "Views\\Shared\\_Navbar.cshtml",
       "FileKind": "mvc"
@@ -16587,10 +16597,19 @@
     {
       "FilePath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_07\\Proje04_MVC\\Views\\Home\\About.cshtml",
       "TargetPath": "Views\\Home\\About.cshtml",
+=======
+      "FilePath": "c:\\Users\\casper\\OneDrive\\Belgeler\\GitHub\\NBUY\\Week_07\\Proje04_MVC\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_07\\Proje04_MVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Users\\casper\\OneDrive\\Belgeler\\GitHub\\NBUY\\Week_07\\Proje04_MVC\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+>>>>>>> Stashed changes
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\casper\\OneDrive\\Belgeler\\GitHub\\NBUY\\Week_07\\Proje04_MVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
