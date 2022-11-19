@@ -1,0 +1,30 @@
+@model List<Yazar>
+
+@{
+    ViewData["Title"] = "Index2";
+}
+
+<h1 class="display-6 text-center" >Yazar Listesi</h1>
+<hr>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>DoğumYılı</th>
+            <th>Cinsiyet</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var y in Model)
+        {
+            <tr>
+                <td>@y.Id</td>
+                <td>@y.Ad</td>
+                <td>@y.DogumYili</td>
+                <td>@y.Cinsiyet</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

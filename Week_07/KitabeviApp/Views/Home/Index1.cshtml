@@ -1,0 +1,31 @@
+@model List<Kategori>
+
+@{
+    ViewData["Title"] = "Index1";
+}
+
+<h1 class="display-6 text-center">Kategori Listesi</h1>
+<hr>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>Açıklama</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var k in Model)
+        {
+            <tr>
+                <td>@k.Id</td>
+                <td>@k.Ad</td>
+                <td>@k.Aciklama</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+
