@@ -1,16 +1,14 @@
-@model Kitap    
-
+@model Kitap
 @{
-    ViewData["Title"] = "YazarEkle";
+    ViewData["Title"] = "Kitap Ekle";
 }
 
-<h1 class="display-6">Yeni Kitap Ekle</h1>
+<h1 class="display-6">Yeni Kitap Oluştur</h1>
 <hr>
-
-<form asp-controller="Home" asp-action="KitapEkle"  method="post">
+<form asp-controller="Home" asp-action="KitapEkle" method="post">
     <div class="row mb-2">
         <div class="col-2">
-            <label for="" class="form-label" asp-for="Ad"></label>
+            <label class="form-label" asp-for="Ad"></label>
         </div>
         <div class="col-4">
             <input class="form-control" type="text" asp-for="Ad">
@@ -18,7 +16,7 @@
     </div>
     <div class="row mb-2">
         <div class="col-2">
-            <label for="" class="form-label" asp-for="BasimYili"></label>
+            <label class="form-label" asp-for="BasimYili"></label>
         </div>
         <div class="col-4">
             <input class="form-control" type="text" asp-for="BasimYili">
@@ -26,23 +24,36 @@
     </div>
     <div class="row mb-2">
         <div class="col-2">
-            <label for="" class="form-label" asp-for="SayfaSayisi"></label>
+            <label class="form-label" asp-for="SayfaSayisi"></label>
         </div>
         <div class="col-4">
             <input class="form-control" type="text" asp-for="SayfaSayisi">
         </div>
     </div>
-     <div class="row mb-2">
+    <div class="row mb-2">
         <div class="col-2">
-            <label for="" class="form-label" asp-for="Ozet"></label>
+            <label class="form-label" asp-for="Ozet"></label>
         </div>
         <div class="col-4">
             <input class="form-control" type="text" asp-for="Ozet">
         </div>
     </div>
-    
     <div class="row mb-2">
- 
+        <div class="col-2">
+            <label class="form-label">Kategori</label>
+        </div>
+        <div class="col-4">
+            <select asp-for="KategoriId" class="form-select" aria-label="Default select example">
+                <option selected>Kategori seçiniz</option>
+                @foreach (var kategori in ViewBag.Kategoriler)
+                {
+                    <option value="@kategori.Id">@kategori.Ad</option>
+                }
+
+            </select>
+        </div>
+    </div>
+    <div class="row mb-2">
         <div class="col-4 offset-2">
             <input class="btn btn-primary" type="submit" value="Kaydet">
         </div>
