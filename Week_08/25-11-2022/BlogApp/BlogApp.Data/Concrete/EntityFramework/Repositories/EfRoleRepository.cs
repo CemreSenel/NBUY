@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace BlogApp.Data.Concrete.EntityFramework.Repositories
 {
-    public class EfRoleRepository : EfEntityRepositoryBase<Role>
+    public class EfRoleRepository:EfEntityRepositoryBase<Role>
     {
-        public EfRoleRepository(DbContext context) : base(context)  
+        public EfRoleRepository(DbContext context) : base(context)
         {
 
         }
