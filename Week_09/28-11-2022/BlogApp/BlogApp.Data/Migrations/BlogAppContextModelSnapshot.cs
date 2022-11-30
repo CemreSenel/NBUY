@@ -116,12 +116,12 @@ namespace BlogApp.Data.Migrations
                             CommentCount = 1,
                             Content = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
                             CreatedByName = "InitialCreated",
-                            CreatedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(1267),
-                            Date = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(1264),
+                            CreatedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(677),
+                            Date = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(674),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreated",
-                            ModifiedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(1268),
+                            ModifiedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(678),
                             Note = "C# 11.0 Yenilikleri",
                             SeoAuthor = "Deniz Gezen",
                             SeoDescription = "C# 11.0 Yenilikleri",
@@ -138,12 +138,12 @@ namespace BlogApp.Data.Migrations
                             CommentCount = 1,
                             Content = "Yinelenen bir sayfa içeriğinin okuyucunun dikkatini dağıttığı bilinen bir gerçektir. Lorem Ipsum kullanmanın amacı, sürekli 'buraya metin gelecek, buraya metin gelecek' yazmaya kıyasla daha dengeli bir harf dağılımı sağlayarak okunurluğu artırmasıdır. Şu anda birçok masaüstü yayıncılık paketi ve web sayfa düzenleyicisi, varsayılan mıgır metinler olarak Lorem Ipsum kullanmaktadır. Ayrıca arama motorlarında 'lorem ipsum' anahtar sözcükleri ile arama yapıldığında henüz tasarım aşamasında olan çok sayıda site listelenir. Yıllar içinde, bazen kazara, bazen bilinçli olarak (örneğin mizah katılarak), çeşitli sürümleri geliştirilmiştir.",
                             CreatedByName = "InitialCreated",
-                            CreatedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(1276),
-                            Date = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(1274),
+                            CreatedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(684),
+                            Date = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(683),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreated",
-                            ModifiedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(1277),
+                            ModifiedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(685),
                             Note = "Modern Javascript",
                             SeoAuthor = "Deniz Gezen",
                             SeoDescription = "Modern Javascript",
@@ -160,18 +160,18 @@ namespace BlogApp.Data.Migrations
                             CommentCount = 1,
                             Content = "Lorem Ipsum pasajlarının birçok çeşitlemesi vardır. Ancak bunların büyük bir çoğunluğu mizah katılarak veya rastgele sözcükler eklenerek değiştirilmişlerdir. Eğer bir Lorem Ipsum pasajı kullanacaksanız, metin aralarına utandırıcı sözcükler gizlenmediğinden emin olmanız gerekir. İnternet'teki tüm Lorem Ipsum üreteçleri önceden belirlenmiş metin bloklarını yineler. Bu da, bu üreteci İnternet üzerindeki gerçek Lorem Ipsum üreteci yapar. Bu üreteç, 200'den fazla Latince sözcük ve onlara ait cümle yapılarını içeren bir sözlük kullanır. Bu nedenle, üretilen Lorem Ipsum metinleri yinelemelerden, mizahtan ve karakteristik olmayan sözcüklerden uzaktır.",
                             CreatedByName = "InitialCreated",
-                            CreatedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(1283),
-                            Date = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(1281),
+                            CreatedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(691),
+                            Date = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(689),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreated",
-                            ModifiedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(1284),
+                            ModifiedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(691),
                             Note = "React Component Yapısı",
                             SeoAuthor = "Yusuf Onan",
                             SeoDescription = "React Component Yapısı",
                             SeoTags = "React, React Js, component, state, class component, function component",
                             Thumbnail = "default.jpg",
-                            Title = "React Component Yapısı ",
+                            Title = "React Component Yapısı",
                             UserId = 2,
                             ViewsCount = 225
                         });
@@ -229,12 +229,12 @@ namespace BlogApp.Data.Migrations
                         {
                             Id = 1,
                             CreatedByName = "InitialCreated",
-                            CreatedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(3493),
-                            Description = "C# programlama dili ilgili makaleler",
+                            CreatedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(2877),
+                            Description = "C# programlama dili ile ilgili makaleler.",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreated",
-                            ModifiedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(3495),
+                            ModifiedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(2878),
                             Name = "C#",
                             Note = "C# Blog kategorisi"
                         },
@@ -242,12 +242,12 @@ namespace BlogApp.Data.Migrations
                         {
                             Id = 2,
                             CreatedByName = "InitialCreated",
-                            CreatedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(3500),
-                            Description = "Javascript dili ile ilgili makaleler",
+                            CreatedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(2882),
+                            Description = "Javascript dili ile ilgili makaleler.",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreated",
-                            ModifiedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(3501),
+                            ModifiedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(2883),
                             Name = "Javascript",
                             Note = "Javascript Blog kategorisi"
                         },
@@ -255,12 +255,12 @@ namespace BlogApp.Data.Migrations
                         {
                             Id = 3,
                             CreatedByName = "InitialCreated",
-                            CreatedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(3504),
-                            Description = "React Js ile ilgili makaleler",
+                            CreatedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(2886),
+                            Description = "React Js ile ilgili makaleler.",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreated",
-                            ModifiedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(3505),
+                            ModifiedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(2887),
                             Name = "React Js",
                             Note = "React Js Blog kategorisi"
                         });
@@ -320,12 +320,12 @@ namespace BlogApp.Data.Migrations
                             Id = 1,
                             ArticleId = 1,
                             CreatedByName = "InitialCreated",
-                            CreatedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(6829),
+                            CreatedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(5798),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreated",
-                            ModifiedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(6831),
-                            Note = "C# 11.0 Yenilikleri ile ilgili yorum",
+                            ModifiedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(5799),
+                            Note = "C# 11.0 yenilikleri ile ilgili yorum",
                             Text = "1500'lerden beri kullanılmakta olan standard Lorem Ipsum metinleri ilgilenenler için yeniden üretilmiştir. Çiçero tarafından yazılan 1.10.32 ve 1.10.33 bölümleri de 1914 H. Rackham çevirisinden alınan İngilizce sürümleri eşliğinde özgün biçiminden yeniden üretilmiştir."
                         },
                         new
@@ -333,12 +333,12 @@ namespace BlogApp.Data.Migrations
                             Id = 2,
                             ArticleId = 2,
                             CreatedByName = "InitialCreated",
-                            CreatedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(6836),
+                            CreatedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(5803),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreated",
-                            ModifiedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(6837),
-                            Note = "Modern Javascript  ile ilgili yorum",
+                            ModifiedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(5803),
+                            Note = "Modern Javascript ile ilgili yorum",
                             Text = "1500'lerden beri kullanılmakta olan standard Lorem Ipsum metinleri ilgilenenler için yeniden üretilmiştir. Çiçero tarafından yazılan 1.10.32 ve 1.10.33 bölümleri de 1914 H. Rackham çevirisinden alınan İngilizce sürümleri eşliğinde özgün biçiminden yeniden üretilmiştir."
                         },
                         new
@@ -346,11 +346,11 @@ namespace BlogApp.Data.Migrations
                             Id = 3,
                             ArticleId = 3,
                             CreatedByName = "InitialCreated",
-                            CreatedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(6840),
+                            CreatedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(5806),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreated",
-                            ModifiedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(6841),
+                            ModifiedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(5807),
                             Note = "React Js componentler ile ilgili yorum",
                             Text = "1500'lerden beri kullanılmakta olan standard Lorem Ipsum metinleri ilgilenenler için yeniden üretilmiştir. Çiçero tarafından yazılan 1.10.32 ve 1.10.33 bölümleri de 1914 H. Rackham çevirisinden alınan İngilizce sürümleri eşliğinde özgün biçiminden yeniden üretilmiştir."
                         });
@@ -409,27 +409,27 @@ namespace BlogApp.Data.Migrations
                         {
                             Id = 1,
                             CreatedByName = "InitialCreated",
-                            CreatedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(8949),
-                            Description = "Admin rolü,tüm haklara sahiptir.",
+                            CreatedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(7473),
+                            Description = "Admin rolü, tüm haklara sahiptir.",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreated",
-                            ModifiedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(8950),
+                            ModifiedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(7474),
                             Name = "Admin",
-                            Note = "Bu,admin rolüdür."
+                            Note = "Bu, admin rolüdür."
                         },
                         new
                         {
                             Id = 2,
                             CreatedByName = "InitialCreated",
-                            CreatedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(8955),
-                            Description = "User rolü,kısıtlı haklara sahiptir.",
+                            CreatedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(7478),
+                            Description = "User rolü, kısıtlı haklara sahiptir.",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreated",
-                            ModifiedDate = new DateTime(2022, 11, 28, 17, 55, 2, 293, DateTimeKind.Local).AddTicks(8956),
+                            ModifiedDate = new DateTime(2022, 11, 29, 11, 36, 36, 33, DateTimeKind.Local).AddTicks(7479),
                             Name = "User",
-                            Note = "Bu,user rolüdür."
+                            Note = "Bu, user rolüdür."
                         });
                 });
 
@@ -510,6 +510,9 @@ namespace BlogApp.Data.Migrations
 
                     b.HasIndex("RoleId");
 
+                    b.HasIndex("UserName")
+                        .IsUnique();
+
                     b.ToTable("Users", (string)null);
 
                     b.HasData(
@@ -517,7 +520,7 @@ namespace BlogApp.Data.Migrations
                         {
                             Id = 1,
                             CreatedByName = "InitialCreated",
-                            CreatedDate = new DateTime(2022, 11, 28, 17, 55, 2, 294, DateTimeKind.Local).AddTicks(4304),
+                            CreatedDate = new DateTime(2022, 11, 29, 11, 36, 36, 34, DateTimeKind.Local).AddTicks(2545),
                             Description = "İlk admin kullanıcısı",
                             Email = "denizgezen@gmail.com",
                             FirstName = "Deniz",
@@ -525,18 +528,18 @@ namespace BlogApp.Data.Migrations
                             IsDeleted = false,
                             LastName = "Gezen",
                             ModifiedByName = "InitialCreated",
-                            ModifiedDate = new DateTime(2022, 11, 28, 17, 55, 2, 294, DateTimeKind.Local).AddTicks(4305),
-                            Note = "Admin kullanıcısı",
+                            ModifiedDate = new DateTime(2022, 11, 29, 11, 36, 36, 34, DateTimeKind.Local).AddTicks(2546),
+                            Note = "Admin kullanıcısı.",
                             PasswordHash = new byte[] { 50, 48, 48, 56, 50, 48, 101, 51, 50, 50, 55, 56, 49, 53, 101, 100, 49, 55, 53, 54, 97, 54, 98, 53, 51, 49, 101, 55, 101, 48, 100, 50 },
                             Picture = "https://www.teknozum.com/wp-content/uploads/2019/12/whatsapp-profil-foto%C4%9Fraflar%C4%B1-17-1024x1024.jpg",
-                            RoleId = 0,
+                            RoleId = 1,
                             UserName = "denizgezen"
                         },
                         new
                         {
                             Id = 2,
                             CreatedByName = "InitialCreated",
-                            CreatedDate = new DateTime(2022, 11, 28, 17, 55, 2, 294, DateTimeKind.Local).AddTicks(4328),
+                            CreatedDate = new DateTime(2022, 11, 29, 11, 36, 36, 34, DateTimeKind.Local).AddTicks(2566),
                             Description = "İlk user kullanıcısı",
                             Email = "yusufonan@gmail.com",
                             FirstName = "Yusuf",
@@ -544,8 +547,8 @@ namespace BlogApp.Data.Migrations
                             IsDeleted = false,
                             LastName = "Onan",
                             ModifiedByName = "InitialCreated",
-                            ModifiedDate = new DateTime(2022, 11, 28, 17, 55, 2, 294, DateTimeKind.Local).AddTicks(4329),
-                            Note = "User kullanıcısı",
+                            ModifiedDate = new DateTime(2022, 11, 29, 11, 36, 36, 34, DateTimeKind.Local).AddTicks(2566),
+                            Note = "User kullanıcısı.",
                             PasswordHash = new byte[] { 52, 54, 102, 57, 52, 99, 56, 100, 101, 49, 52, 102, 98, 51, 54, 54, 56, 48, 56, 53, 48, 55, 54, 56, 102, 102, 49, 98, 55, 102, 50, 97 },
                             Picture = "https://tasarimfikir.com/wp-content/uploads/profil-fotografi-tasarimi-min.jpg",
                             RoleId = 2,
