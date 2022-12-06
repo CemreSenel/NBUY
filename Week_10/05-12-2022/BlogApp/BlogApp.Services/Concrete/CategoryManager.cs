@@ -47,7 +47,7 @@ namespace BlogApp.Services.Concrete
                 return new DataResult<CategoryListDto>(ResultStatus.Success, new CategoryListDto
                 {
                     Categories = categories,
-                    ResultStatus = ResultStatus.Success
+                    ResultStatus = ResultStatus.Success,
                 });
             }
             return new DataResult<CategoryListDto>(ResultStatus.Error, "Hiç kategori bulunamadı", null);

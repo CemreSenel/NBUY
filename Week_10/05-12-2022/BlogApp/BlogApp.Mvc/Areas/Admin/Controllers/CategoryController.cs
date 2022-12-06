@@ -5,7 +5,6 @@ using BlogApp.Shared.Utilities.Extensions;
 using BlogApp.Shared.Utilities.Result.ComplexTypes;
 using BlogApp.Shared.Utilities.Result.Concrete;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography.Xml;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -28,7 +27,7 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
             {
                 return View(result.Data);
             }
-            return View();   
+            return View();
         }
         public IActionResult Add()
         {
@@ -37,14 +36,11 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(CategoryAddDto categoryAddDto)
         {
-            // ModelState'in içinde veri var ise 
             if (ModelState.IsValid)
             {
-                var result = await _categoryService.Add(categoryAddDto,"Harun Özer");
-                // Başarılıysa:
+                var result = await _categoryService.Add(categoryAddDto,"Engin Niyazi");
                 if (result.ResultStatus==ResultStatus.Success)
                 {
-                    //İçindeki verileri CategoryAddAjaxViewModel tipinde json a dönüştürüyoruz.
                     var categoryAddAjaxModel = JsonSerializer.Serialize(new CategoryAddAjaxViewModel
                     {
                         CategoryDto = result.Data,
@@ -59,22 +55,23 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
             });
             return Json(categoryAddAjaxErrorModel);
         }
-
+        
         public async Task<JsonResult> GetAllCategories()
         {
             var result = await _categoryService.GetAllByNonDeleted();
-            var resultJson = JsonSerializer.Serialize(result.Data, new JsonSerializerOptions
+            var resultJson =  JsonSerializer.Serialize(result.Data, new JsonSerializerOptions
             {
                 ReferenceHandler = ReferenceHandler.Preserve
             });
             return Json(resultJson);
         }
+
         [HttpPost]
         public async Task<JsonResult> Delete(int categoryId)
         {
-            var result = await _categoryService.Delete(categoryId, "Cemre Şenel");
+            var result = await _categoryService.Delete(categoryId, "Engin Niyazi");
             var resultJson = JsonSerializer.Serialize(result);
-            return Json(resultJson);
+            return Json(resultJson); 
         }
     }
 }

@@ -11,7 +11,6 @@
             </div>
 
             <div class="modal-body">
-                @*Burada inputlara ilgili bağlantıları vererek hata mesajları aktarıyoruz.*@
                 <form asp-area="Admin" asp-controller="Category" asp-action="Add" id="form-category-add" method="post">
                     <input name="IsValid" type="hidden" value="@ViewData.ModelState.IsValid.ToString()" />
                     <div class="text-danger" asp-validation-summary="All" id="validation-summary"></div>
