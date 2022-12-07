@@ -1,0 +1,44 @@
+﻿@using ShoppingApp.Web.Models.Dtos
+@model List<ProductDto>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Ürünler</h1>
+</div>
+<div class="card">
+    <div class="col-4">
+
+    </div>
+    <div class="col-4">
+
+    </div>
+    <div class="col-4">
+
+    </div>
+
+</div>
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="bg-danger text-white">
+                <th>Id</th>
+                <th>Ürün Adı</th>
+                <th>Ürün Fiyatı</th>
+                <th>Eklenme Tarihi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var productDto in Model)
+            {
+                <tr>@productDto.Id</tr>
+                <tr>@productDto.Name</tr>
+                <tr>@productDto.Price</tr>
+                <tr>@productDto.DateAdded</tr>
+            }
+        </tbody>
+    </table>
+ 
+    
+</div>
