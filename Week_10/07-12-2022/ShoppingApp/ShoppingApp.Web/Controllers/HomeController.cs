@@ -17,12 +17,11 @@ public class HomeController : Controller
 
     public async Task<IActionResult> Index()
     {
-        List<Product> products = await _productManager.GetAllAsync();
-        List<ProductDto> productDtos= new List<ProductDto>();   
+        List<Product> products = await _productManager.GetHomePageProductsAsync();
+        List<ProductDto> productDtos= new List<ProductDto>();
         foreach (var product in products)
-        
         {
-            productDto.Add(new ProductDto
+            productDtos.Add(new ProductDto
             {
                 Id = product.Id,
                 Name = product.Name,
@@ -30,8 +29,6 @@ public class HomeController : Controller
                 DateAdded = product.DateAdded,
             });
         }
-        return View(products);
+        return View(productDtos);
     }
-
-    
 }

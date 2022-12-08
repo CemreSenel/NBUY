@@ -9,8 +9,8 @@ namespace ShoppingApp.Data.Abstract
 {
     public interface IProductRepository : IRepository<Product>
     {
-        //Product a özgü memberlar burada olacak(property,field,method....)
-        //Örnegın asagıdakıler gıbı
+        //Producta özgü memberlar burada olacak.(property, field, method...)ü
+        //Örneğin aşağıdakiler gibi:
         List<Product> GetProductsByCategory();
         Task<List<Product>> GetHomePageProductsAsync();
     }

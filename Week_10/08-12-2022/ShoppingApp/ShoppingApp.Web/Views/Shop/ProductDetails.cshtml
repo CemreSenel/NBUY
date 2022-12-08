@@ -1,0 +1,31 @@
+﻿@using ShoppingApp.Web.Models.Dtos
+@model ProductDetailsDto
+
+
+
+
+<div class="border">
+    <div class="mt-4 row">
+        <div class="col-4 text-center mb-4">
+            <img src="/images/@Model.ImageUrl" width="150" />
+        </div>
+        <div class="col-8">
+
+
+                <div style="font-size:30px" class="fw-bold ">@Model.Name</div>
+                <div>@Model.Price</div>
+                <div>@Model.Description</div>
+                <a href="#">Kredi kartı taksit seçeneklerini görmek için tıklayın</a>
+
+                <a class="btn btn-primary">Sepete Ekle</a>
+            
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

@@ -3,7 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ShoppingApp.Data.Concrete.EfCore.Context;
+using ShoppingApp.Data.Concrete.EfCore.Contexts;
 
 #nullable disable
 
@@ -53,7 +53,7 @@ namespace ShoppingApp.Data.Migrations
                         new
                         {
                             Id = 2,
-                            Description = "Elektronik ürünler kategoride bulunmaktadır.",
+                            Description = "Elektronik ürünler bu kategoride bulunmaktadır.",
                             Name = "Elektronik",
                             Url = "elektronik"
                         },
@@ -115,14 +115,14 @@ namespace ShoppingApp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
 
                     b.HasData(
                         new
                         {
                             Id = 1,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Kamerası son teknoloji",
+                            Description = "Kamerası son teknoloji!",
                             ImageUrl = "1.png",
                             IsApproved = true,
                             IsHome = true,
@@ -134,7 +134,7 @@ namespace ShoppingApp.Data.Migrations
                         {
                             Id = 2,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Kamerası son teknoloji,5G",
+                            Description = "Kamerası son teknoloji, 5G!",
                             ImageUrl = "2.png",
                             IsApproved = true,
                             IsHome = false,
@@ -158,7 +158,7 @@ namespace ShoppingApp.Data.Migrations
                         {
                             Id = 4,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Kamerası son teknoloji",
+                            Description = "Kamerası son teknoloji!",
                             ImageUrl = "4.png",
                             IsApproved = true,
                             IsHome = false,
@@ -170,7 +170,7 @@ namespace ShoppingApp.Data.Migrations
                         {
                             Id = 5,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Kamerası son teknoloji",
+                            Description = "Kamerası son teknoloji!",
                             ImageUrl = "5.png",
                             IsApproved = false,
                             IsHome = true,
@@ -247,7 +247,7 @@ namespace ShoppingApp.Data.Migrations
                             IsApproved = true,
                             IsHome = false,
                             Name = "Lenovo K234",
-                            Price = 19500m,
+                            Price = 19000m,
                             Url = "lenovo-k234"
                         },
                         new

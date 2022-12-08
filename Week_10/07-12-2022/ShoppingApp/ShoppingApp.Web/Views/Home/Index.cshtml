@@ -5,40 +5,15 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Ürünler</h1>
+    <h1 class="display-4">Welcome ShoppingApp</h1>
 </div>
-<div class="card">
-    <div class="col-4">
-
+<div class="mt-4">
+    <div class="row">
+        @foreach (var productDto in Model)
+        {
+            <div class="col-md-4">
+                @await Html.PartialAsync("_ProductPartial", productDto);
+            </div>
+        }
     </div>
-    <div class="col-4">
-
-    </div>
-    <div class="col-4">
-
-    </div>
-
-</div>
-<div>
-    <table class="table table-bordered">
-        <thead>
-            <tr class="bg-danger text-white">
-                <th>Id</th>
-                <th>Ürün Adı</th>
-                <th>Ürün Fiyatı</th>
-                <th>Eklenme Tarihi</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var productDto in Model)
-            {
-                <tr>@productDto.Id</tr>
-                <tr>@productDto.Name</tr>
-                <tr>@productDto.Price</tr>
-                <tr>@productDto.DateAdded</tr>
-            }
-        </tbody>
-    </table>
- 
-    
 </div>

@@ -22,20 +22,24 @@ namespace ShoppingApp.Business.Concrete
         {
             return await _unitOfWork.Products.GetByIdAsync(id);
         }
+
         public async Task<List<Product>> GetAllAsync()
         {
             return await _unitOfWork.Products.GetAllAsync();
         }
+
         public async Task CreateAsync(Product product)
         {
             await _unitOfWork.Products.CreateAsync(product);
             await _unitOfWork.SaveAsync();
         }
+
         public void Update(Product product)
         {
             _unitOfWork.Products.Update(product);
             _unitOfWork.Save();
         }
+
         public void Delete(Product product)
         {
             _unitOfWork.Products.Delete(product);
@@ -44,8 +48,7 @@ namespace ShoppingApp.Business.Concrete
         #endregion
 
         #region Products
-
-        public async Task<List<Product>> GetHomePageProducts()
+        public async Task<List<Product>> GetHomePageProductsAsync()
         {
             return await _unitOfWork.Products.GetHomePageProductsAsync();
         }
@@ -55,6 +58,5 @@ namespace ShoppingApp.Business.Concrete
             throw new NotImplementedException();
         }
         #endregion
-
     }
 }

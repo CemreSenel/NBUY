@@ -2,7 +2,7 @@ using ShoppingApp.Business.Abstract;
 using ShoppingApp.Business.Concrete;
 using ShoppingApp.Data.Abstract;
 using ShoppingApp.Data.Concrete;
-using ShoppingApp.Data.Concrete.EfCore.Context;
+using ShoppingApp.Data.Concrete.EfCore.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,14 +10,13 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ShopAppContext>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
-builder.Services.AddScoped<IProductService, ProductManager>();  
+builder.Services.AddScoped<IProductService, ProductManager>();
 
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-
     app.UseHsts();
 }
 
@@ -31,5 +30,5 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-    //wwwenginniyazi.com/Home/Index
+    //www.enginniyazi.com/home/index
 app.Run();
