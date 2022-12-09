@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CYbR03XUWp3qM49ehRRTJoQjQ7g7lvH6pamPW8oLlhcLPCZ/nQRa+pGltSuMJQjOqDNIyONA+cIwlIQrMb5LLg==",
+  "dgSpecHash": "kKWy0YLwJYJsqPHDVTCOoeaq2TWNWowAloqwtonFAqqdGPyRiVxdi74UcKOrkqHFRskDxl/xM3+rrOJgj0X6dA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Web\\KitabeviApp.Web.csproj",
+  "projectFilePath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Web\\KitabeviApp.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SABAH\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.0\\microsoft.data.sqlite.core.7.0.0.nupkg.sha512",
     "C:\\Users\\SABAH\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",

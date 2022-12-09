@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Data\\KitabeviApp.Data.csproj": {}
+    "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Data\\KitabeviApp.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Data\\KitabeviApp.Data.csproj": {
+    "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Data\\KitabeviApp.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Data\\KitabeviApp.Data.csproj",
+        "projectUniqueName": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Data\\KitabeviApp.Data.csproj",
         "projectName": "KitabeviApp.Data",
-        "projectPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Data\\KitabeviApp.Data.csproj",
+        "projectPath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Data\\KitabeviApp.Data.csproj",
         "packagesPath": "C:\\Users\\SABAH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Data\\obj\\",
+        "outputPath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Entity\\KitabeviApp.Entity.csproj": {
-                "projectPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Entity\\KitabeviApp.Entity.csproj"
+              "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Entity\\KitabeviApp.Entity.csproj": {
+                "projectPath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Entity\\KitabeviApp.Entity.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Entity\\KitabeviApp.Entity.csproj": {
+    "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Entity\\KitabeviApp.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Entity\\KitabeviApp.Entity.csproj",
+        "projectUniqueName": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Entity\\KitabeviApp.Entity.csproj",
         "projectName": "KitabeviApp.Entity",
-        "projectPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Entity\\KitabeviApp.Entity.csproj",
+        "projectPath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Entity\\KitabeviApp.Entity.csproj",
         "packagesPath": "C:\\Users\\SABAH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Entity\\obj\\",
+        "outputPath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_08\\Proje06_GenericRepositoryDesignPattern\\KitabeviApp\\KitabeviApp.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
