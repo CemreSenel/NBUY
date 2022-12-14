@@ -1,38 +1,32 @@
 ﻿@model ProductAddDto
-
 <h1>Yeni Ürün Ekleme</h1>
-
-
+<hr />
 <form asp-area="Admin"
       asp-controller="Product"
       asp-action="Create"
-      method="post"
->
-      
+      method="post">
     <div class="row">
         <div class="col-8">
-            <hr />
             <div class="mb-3">
-                <label asp-for="Name" class="form-label"> </label>
+                <label asp-for="Name" class="form-label"></label>
                 <input class="form-control" asp-for="Name">
-                <span class="text-danger" asp-validation-for="Name"></span>
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="Price" class="form-label"> </label>
+                <label asp-for="Price" class="form-label"></label>
                 <input class="form-control" asp-for="Price">
-                <span class="text-danger" asp-validation-for="Price"></span>
-            </div> 
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
             <div class="mb-3">
-                <label asp-for="ImageFile" class="form-label"> </label>
+                <label asp-for="ImageFile" class="form-label"></label>
                 <input type="file" asp-for="ImageFile" accept="image/" />
-                <span class="text-danger" asp-validation-for="ImageFile"></span>
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="Description" class="form-label"> </label>
+                <label asp-for="Description" class="form-label"></label>
                 <input class="form-control" asp-for="Description">
-                <span class="text-danger" asp-validation-for="Description"></span>
+                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-
             <button type="submit" class="btn btn-primary">Kaydet</button>
         </div>
         <div class="col-4">
@@ -42,10 +36,14 @@
             @foreach (var category in Model.Categories)
             {
                 <div>
-                    <input type="checkbox" class="form-check-input" />
+                    <input 
+                        type="checkbox"
+                        class="form-check-input"
+                        />
                     <label>@category.Name</label>
                 </div>
             }
+
         </div>
     </div>
 </form>

@@ -65,7 +65,7 @@ namespace ShoppingApp.Business.Concrete
 
         public async Task<List<Product>> GetProductsWithCategories()
         {
-            return await _unitOfWork.Products.GetProductsWithCategories();  
+            return await _unitOfWork.Products.GetProductsWithCategories();
         }
         #endregion
     }

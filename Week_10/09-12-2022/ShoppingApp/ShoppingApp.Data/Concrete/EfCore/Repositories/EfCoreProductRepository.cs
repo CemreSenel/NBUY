@@ -58,10 +58,10 @@ namespace ShoppingApp.Data.Concrete.EfCore.Repositories
         public async Task<List<Product>> GetProductsWithCategories()
         {
             return await ShopAppContext
-                    .Products
-                    .Include(p=>p.ProductCategories)
-                    .ThenInclude(pc => pc.Category)
-                    .ToListAsync() ;    
+                .Products
+                .Include(p => p.ProductCategories)
+                .ThenInclude(pc => pc.Category)
+                .ToListAsync();
         }
     }
 }

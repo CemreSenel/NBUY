@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShoppingApp.Business.Abstract;
+using ShoppingApp.Entity.Concrete;
 using ShoppingApp.Web.Areas.Admin.Models.Dtos;
 
 namespace ShoppingApp.Web.Areas.Admin.Controllers
@@ -22,17 +23,17 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
             var productListDto = products
                 .Select(p => new ProductListDto
                 {
-                    Product=p,
-      
+                    Product = p
                 }).ToList();
- 
+     
             return View(productListDto);
         }
+
         [HttpGet]
         public async Task<IActionResult> Create()
         {
             var categories = await _categoryService.GetAllAsync();
-            var productAddDto =  new ProductAddDto
+            var productAddDto = new ProductAddDto
             {
                 Categories = categories
             };
