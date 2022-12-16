@@ -8,7 +8,6 @@ using ShoppingApp.Web.Areas.Admin.Models.Dtos;
 namespace ShoppingApp.Web.Areas.Admin.Controllers
 {
     [Authorize]
-
     [Area("Admin")]
     public class ProductController : Controller
     {
@@ -115,27 +114,24 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
             
             return View(productUpdateDto);
         }
-
-        public async Task<IActionResult> UpdateIsHomeAsync(int id)
+        public async Task<IActionResult> UpdateIsHome(int id)
         {
             var product = await _productService.GetByIdAsync(id);
             if (product==null) { return NotFound();}
             await _productService.UpdateIsHomeAsync(product);
             return RedirectToAction("Index");
         }
-
-        public async Task<IActionResult> UpdateIsApprovedAsync(int id)
+        public async Task<IActionResult> UpdateIsApproved(int id)
         {
             var product = await _productService.GetByIdAsync(id);
             if (product == null) { return NotFound(); }
             await _productService.UpdateIsApprovedAsync(product);
             return RedirectToAction("Index");
         }
-     
         public async Task<IActionResult> Delete(int id)
         {
             var product = await _productService.GetByIdAsync(id);
-            if (product==null) { return NotFound(); }
+            if (product==null) { return NotFound();}
             _productService.Delete(product);
             return RedirectToAction("Index");
         }

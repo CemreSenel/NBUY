@@ -1,5 +1,4 @@
 ﻿@model List<ProductListDto>
-
 <hr />
 <a class="btn btn-outline-primary"
    asp-area="Admin"
@@ -26,18 +25,15 @@
                 <td>
                     <img src="/images/@item.Product.ImageUrl" width="20" />
                 </td>
-
                 <td>@item.Product.Name</td>
                 <td>@($"{item.Product.Price:C2}")</td>
                 <td>
-                    <form 
-                      id="isHomeForm_@item.Product.Id"
+                    <form id="isHomeForm_@item.Product.Id"
                       asp-area="Admin"
                       asp-controller="Product"
-                      asp-action="UpdateIsHome"  
+                      asp-action="UpdateIsHome"
                       asp-route-id="@item.Product.Id">
-                        <input 
-                           onchange="document.getElementById('isHomeForm_@item.Product.Id').submit();"
+                        <input onchange="document.getElementById('isHomeForm_@item.Product.Id').submit();"
                            type="checkbox"
                            class="form-check-input"
                            value="@item.Product.IsHome"
@@ -57,8 +53,6 @@
                            @(item.Product.IsApproved ? "checked" : "") />
                     </form>
                 </td>
-
-
                 <td>
 
                     <a class="btn btn-warning btn-sm"
@@ -67,7 +61,7 @@
                    asp-action="Edit"
                    asp-route-id=@item.Product.Id>Düzenle</a>
 
-                 @await Html.PartialAsync("_ProductDeletePartial",item.Product)
+                    @await Html.PartialAsync("_ProductDeletePartial", item.Product)
 
                 </td>
             </tr>

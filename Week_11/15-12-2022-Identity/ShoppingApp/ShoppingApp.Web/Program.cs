@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ShoppingApp.Business.Abstract;
@@ -14,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<IdentityContext>(options=>options.UseSqlite("Data Source=ShoppingApp.db"));   
+builder.Services.AddDbContext<IdentityContext>(options=>options.UseSqlite("Data Source=ShoppingApp.db"));
 builder.Services.AddDbContext<ShopAppContext>();
 
 builder.Services.AddIdentity<User, IdentityRole>()
@@ -24,47 +23,35 @@ builder.Services.AddIdentity<User, IdentityRole>()
 builder.Services.Configure<IdentityOptions>(options =>
 {
     #region PasswordSettings
-    options.Password.RequireDigit= true;//Þifre içinde mutlaka rakam bulunsun.
-    options.Password.RequireLowercase= true; //Þifre içinde mutlaka kucuk harf bulunsun.
-    options.Password.RequireUppercase= true;   //Þifre içinde mutlaka buyuk harf bulunsun. 
-    options.Password.RequiredLength= 6;    //Þifre en az 6 karakter olsun
-    options.Password.RequireNonAlphanumeric= true;  //Þifre içinde en az bir alfanumerýk karakterler (.,/)bulunmasý
-                                                    //zorunlu olsun
+    options.Password.RequireDigit= true;//Þifre içinde mutlaka rakam bulunsun
+    options.Password.RequireLowercase= true;//Þifre içinde mutlaka küçük harf bulunsun
+    options.Password.RequireUppercase = true;//Þifre içinde mutlaka büyük harf bulunsun
+    options.Password.RequiredLength= 6; //Þifre en az 6 karakter olsun
+    options.Password.RequireNonAlphanumeric= true; //Þifre içinde en az bir alfanümerik karakter(.,/*)& gibi) bulunmasý zorunlu olsun.
     #endregion
-
     #region LoginSettings
-    options.Lockout.MaxFailedAccessAttempts= 3;//Basarýsýz gýrýs deneme sayýsý en fazla 5 olsun.
-    //eger 5 kez hatalý gýrýs denemesý yaparsa hesap kýlýtlensýn.
-    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromSeconds(10); //Kilitlenmýs hesabýn tekrar
-    // gýrýs yapabýlmesý ýcýn 5 dk beklemesý gerekýr.
+    options.Lockout.MaxFailedAccessAttempts = 3; //Baþarýsýz giriþ deneme sayýsý en fazla 5 olsun. Eðer 5 kez hatalý giriþ denemesi yaparsa, hesap kilitlensin.
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromSeconds(15); //Kilitlenmiþ hesabýn, tekrar giriþ deneme yapmasý için 5 dakika beklemesi gerekir.
     #endregion
-
     #region UserSettings
-    options.User.RequireUniqueEmail= true;//Benzersiz e-mail adresi ile kayýt olunabýlýr.Yaný 
-                                          //daha onceden kayýt olunmus býr mail adresi ile kayýt olunamaz.
+    options.User.RequireUniqueEmail = true;//Benzersiz email adresi ile kayýt olunabilir. Yani daha önceden kayýt olunmuþ bir mail adresi ile yeniden kayýt olunamaz.
     #endregion
-
-    #region SignSettings
+    #region SignInSettings
     options.SignIn.RequireConfirmedEmail = false;//true ise email onayý aktiftir.
-    options.SignIn.RequireConfirmedPhoneNumber = false; //true ise telefon numarasý onayý aktiftir.
+    options.SignIn.RequireConfirmedPhoneNumber= false;//true ise telefon numarasý onayý aktiftir.
     #endregion
-
-
 });
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
-    options.LoginPath = "/account/login";//Eðer acýlabýlmesý ýcýn logýn olmanýn zorunlu oldugu
-    //býr istekte bulunulursa kullanýcýnýn yonlendýrýlecegý sayfa burasý olacak.
-    //account controllerdaký logýn actýon metodu
-    options.LogoutPath= "/account/logout"; //Kullanýcý cýkýs yaptýgýnda yonlendýrýlecek sayfa
-    options.AccessDeniedPath = "/account/accessdenied"; //Yetkýsýz gýrýs sýrasýnda yonlendýrýlecek sayfa
-    options.SlidingExpiration = true; //Varsayýlan cookie yasam suresýnýn (20 dk) ya da ayarlanan
-    //yasam suresýnýn her yený istek sýrasýnda sýfýrlanarak yenýden baslamasýný saglar.
-    options.ExpireTimeSpan= TimeSpan.FromMinutes(5);//Yasam suresýný ayarlar.
+    options.LoginPath = "/account/login";//Eðer açýlabilmesi için login olmanýn zorunlu olduðu bir istekte bulunulursa, kullanýcýnýn yönlendirileceði sayfa burasý olacak. (account controllerindaki login action methodu)
+    options.LogoutPath = "/account/logout";//Kullanýcý çýkýþ yaptýðýnda yönlendirilecek sayfa
+    options.AccessDeniedPath = "/account/accessdenied";//Yetkisiz giriþ sýrasýnda yönlendirilecek sayfa
+    options.SlidingExpiration = true;//Varsayýlan cookie yaþam süresinin(20dk) ya da ayarlanan yaþam süresinin her yeni istek sýrasýnda sýfýrlanarak yeniden baþlamasýný saðlar.
+    options.ExpireTimeSpan= TimeSpan.FromMinutes(5);//Yaþam süresini ayarlar.
     options.Cookie = new CookieBuilder
     {
-        HttpOnly = true,
+        HttpOnly=true,
         Name=".ShoppingApp.Security.Cookie",
         SameSite=SameSiteMode.Strict
     };
@@ -75,9 +62,9 @@ builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<IProductService, ProductManager>();
 
 builder.Services.AddScoped<IEmailSender, SmtpEmailSender>(x => new SmtpEmailSender(
-
-    "smtp.office365.com",587,true,"wissen_core@hotmail.com","Wissen123."
+    "smtp.office365.com",587, true, "wissen_core@hotmail.com","Wissen123."
     ));
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -88,6 +75,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
 app.UseAuthentication();
 app.UseRouting();
 

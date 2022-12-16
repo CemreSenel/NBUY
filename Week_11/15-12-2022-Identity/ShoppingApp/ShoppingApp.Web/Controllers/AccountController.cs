@@ -1,16 +1,15 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ShoppingApp.Entity.Concrete.Identity;
 using ShoppingApp.Web.EmailServices.Abstract;
 using ShoppingApp.Web.Models.Dtos;
 
 namespace ShoppingApp.Web.Controllers
 {
-    [AutoValidateAntiforgeryToken] //Httppost ların saldırılardan korunmasını saglar.
+    [AutoValidateAntiforgeryToken]
     public class AccountController : Controller
     {
-        private readonly UserManager<User> _userManager; 
+        private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IEmailSender _emailSender;
 
@@ -22,8 +21,9 @@ namespace ShoppingApp.Web.Controllers
 
         public IActionResult Login(string returnUrl=null)
         {
-            return View(new LoginDto { ReturnUrl = returnUrl});
+            return View(new LoginDto { ReturnUrl=returnUrl});
         }
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
@@ -35,8 +35,8 @@ namespace ShoppingApp.Web.Controllers
                     ModelState.AddModelError("", "Böyle bir kullanıcı bulunamadı!");
                     return View(loginDto);
                 }
-                //Bu noktada email onayı yapılıp yapılmadıgını kontrol edecegız.
-                //Eger email onaylı ise logın yaptıracagız,degıl ıse hatırlatacagız.
+                //Bu noktada email onayı yapılıp yapılmadığını kontrol edeceğiz.
+                //Eğer email onaylı ise login yaptıracağız, değil ise hatırlatacağız.
                 var result = await _signInManager.PasswordSignInAsync(user, loginDto.Password, true, true);
                 if (result.Succeeded)
                 {
@@ -51,10 +51,9 @@ namespace ShoppingApp.Web.Controllers
         {
             return View();
         }
-
+       
         [HttpPost]
-        /*[ValidateAntiForgeryToken]*///İlgili cookie nın sadece ait oldugu tarayıcı tarafından gonderılmesi
-        //halınde gecerlı olmasını saglar.
+        //[ValidateAntiForgeryToken]//İlgili cookienin sadece ait olduğu tarayıcı tarafından gönderilmesi halinde geçerli olmasını sağlar.
         public async Task<IActionResult> Register(RegisterDto registerDto)
         {
             if (ModelState.IsValid)
@@ -62,50 +61,47 @@ namespace ShoppingApp.Web.Controllers
                 var user = new User
                 {
                     FirstName = registerDto.FirstName,
-                    LastName= registerDto.LastName, 
-                    UserName =registerDto.UserName,
-                    Email = registerDto.Email,
+                    LastName = registerDto.LastName,
+                    UserName = registerDto.UserName,
+                    Email = registerDto.Email
                 };
-                var result = await _userManager.CreateAsync(user,registerDto.Password);   
+                var result = await _userManager.CreateAsync(user, registerDto.Password);
                 if (result.Succeeded)
                 {
                     //Generate token(mail onayı için)
                     var tokenCode = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    var url = Url.Action("ConfirmEmail", "Account",new
+                    var url = Url.Action("ConfirmEmail", "Account", new
                     {
-                        userId=user.Id,
-                        token=tokenCode
+                        userId = user.Id,
+                        token = tokenCode
                     });
-                    //Mailin gonderılme,onaylanma vs
+
+                    //Mailin gönderilme, onaylanma vs
                     await _emailSender.SendEmailAsync(user.Email, "ShoppingApp Hesap Onaylama", $"<h1>Merhaba</h1>" +
                         $"<br>" +
-                        $"<p>Lütfen hesabınızı onaylamak için aşagıdakı linke tıklayınız.</p>" +
+                        $"<p>Lütfen hesabınızı onaylamak için aşağıdaki linke tıklayınız.</p>" +
                         $"<a href='https://localhost:5178{url}'></a>");
-                    ViewBag.Message("Kayıt işlemını")
-
-                        );
+                    ViewBag.Message = "Kayıt işleminizi tamamlamak için mailinize gönderilen onaylama linkine tıklayınız.";
                     return RedirectToAction("Login","Account");
-                        
                 }
             }
-            ModelState.AddModelError("","Bilinmeyen bir hata oluştu,lütfen tekrar deneyiniz");
+            ModelState.AddModelError("", "Bilinmeyen bir hata oluştu, lütfen tekrar deneyiniz");
             return View(registerDto);
         }
-
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
 
-        public async Task<IActionResult> ConfirmEmail(string userId,string token)
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
-            if (userId==null || token==null)
+            if (userId==null || token == null)
             {
                 ViewBag.Message("Geçersiz token ya da user bilgisi!");
                 return View();
             }
-            var user = await _userManager.FindByIdAsync(user);
+            var user = await _userManager.FindByIdAsync(userId);
             if (user != null)
             {
                 var result = await _userManager.ConfirmEmailAsync(user, token);
@@ -115,9 +111,8 @@ namespace ShoppingApp.Web.Controllers
                     return View();
                 }
             }
-            ViewBag.Message("Bir sorun oluştu ve hesabınız onaylanmadı.Tekrar deneyiniz.");
+            ViewBag.Message("Bir sorun oluştu ve hesabınız onaylanmadı. Tekrar deneyiniz.");
             return View();
         }
-
     }
 }
