@@ -1,0 +1,19 @@
+﻿<h1>Hesap Onaylama</h1>
+<hr />
+<form asp-controller="Account"
+      asp-action="Confirm"
+      method="post">
+
+    <div class="row">
+        <div class="col-4">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="mb-3">
+                <label class="form-label">Kayıtlı email adresinizi giriniz:</label>
+                <input class="form-control" name="email" type="email" >
+
+            </div>
+            <button type="submit" class="btn btn-primary">Mail Onayı</button>
+
+        </div>
+    </div>
+</form>

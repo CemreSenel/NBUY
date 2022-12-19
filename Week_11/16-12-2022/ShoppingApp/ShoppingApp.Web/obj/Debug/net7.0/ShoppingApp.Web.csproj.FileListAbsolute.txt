@@ -20,6 +20,7 @@ C:\Users\SABAH\Documents\GitHub\NBUY\Week_11\16-12-2022\ShoppingApp\ShoppingApp.
 C:\Users\SABAH\Documents\GitHub\NBUY\Week_11\16-12-2022\ShoppingApp\ShoppingApp.Web\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\SABAH\Documents\GitHub\NBUY\Week_11\16-12-2022\ShoppingApp\ShoppingApp.Web\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\SABAH\Documents\GitHub\NBUY\Week_11\16-12-2022\ShoppingApp\ShoppingApp.Web\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_11\16-12-2022\ShoppingApp\ShoppingApp.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\SABAH\Documents\GitHub\NBUY\Week_11\16-12-2022\ShoppingApp\ShoppingApp.Web\bin\Debug\net7.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\SABAH\Documents\GitHub\NBUY\Week_11\16-12-2022\ShoppingApp\ShoppingApp.Web\bin\Debug\net7.0\SQLitePCLRaw.core.dll
 C:\Users\SABAH\Documents\GitHub\NBUY\Week_11\16-12-2022\ShoppingApp\ShoppingApp.Web\bin\Debug\net7.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -78,4 +79,3 @@ C:\Users\SABAH\Documents\GitHub\NBUY\Week_11\16-12-2022\ShoppingApp\ShoppingApp.
 C:\Users\SABAH\Documents\GitHub\NBUY\Week_11\16-12-2022\ShoppingApp\ShoppingApp.Web\obj\Debug\net7.0\ShoppingApp.Web.pdb
 C:\Users\SABAH\Documents\GitHub\NBUY\Week_11\16-12-2022\ShoppingApp\ShoppingApp.Web\obj\Debug\net7.0\ShoppingApp.Web.genruntimeconfig.cache
 C:\Users\SABAH\Documents\GitHub\NBUY\Week_11\16-12-2022\ShoppingApp\ShoppingApp.Web\obj\Debug\net7.0\ref\ShoppingApp.Web.dll
-C:\Users\SABAH\Documents\GitHub\NBUY\Week_11\16-12-2022\ShoppingApp\ShoppingApp.Web\bin\Debug\net7.0\Newtonsoft.Json.dll

@@ -20,12 +20,10 @@ namespace ShoppingApp.Web.Controllers
             _signInManager = signInManager;
             _emailSender = emailSender;
         }
-
         public IActionResult Login(string returnUrl=null)
         {
             return View(new LoginDto { ReturnUrl=returnUrl});
         }
-
         [HttpPost]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
@@ -37,13 +35,13 @@ namespace ShoppingApp.Web.Controllers
                     ModelState.AddModelError("", "Böyle bir kullanıcı bulunamadı!");
                     return View(loginDto);
                 }
+
                 if (!await _userManager.IsEmailConfirmedAsync(user))
                 {
-                   
-                    TempData["Message"] = Jobs.CreateMessage("Bilgi", "Hesabınız onaylanmamış.Mailinize gelen onay linkine tıklayarak hesabınızı onaylayınız", "warning");
+                    TempData["Message"] = Jobs.CreateMessage("Bilgi", "Hesabınız onaylanmamış. Lütfen mailinize gelen onay linkine tıklayarak, hesabınızı onaylayınz.", "warning");
                     return View(loginDto);
-                    //Ödev: Eger hesap onaylı degılse burada kullanıcıya "Onay linki gonder" seklınde bır buton gozuksun.Ve bu butona basıldıgında tekrar onay maili yollansın.
-                }
+                    //ÖDEV: Eğer hesap onaylı değilse burada kullanıcıya "Onay linki gönder" şeklinde bir buton gözüksün. Ve bu butona basıldığında tekrar onay maili yollansın.
+                } 
 
                 var result = await _signInManager.PasswordSignInAsync(user, loginDto.Password, true, true);
                 if (result.Succeeded)
@@ -54,12 +52,10 @@ namespace ShoppingApp.Web.Controllers
             }
             return View(loginDto);
         }
-
         public IActionResult Register()
         {
             return View();
         }
-       
         [HttpPost]
         //[ValidateAntiForgeryToken]//İlgili cookienin sadece ait olduğu tarayıcı tarafından gönderilmesi halinde geçerli olmasını sağlar.
         public async Task<IActionResult> Register(RegisterDto registerDto)
@@ -84,14 +80,11 @@ namespace ShoppingApp.Web.Controllers
                         token = tokenCode
                     });
                     Console.WriteLine(url);
-
                     //Mailin gönderilme, onaylanma vs
-                    await _emailSender.SendEmailAsync(user.Email, "ShoppingApp Hesap Onaylama", $"<h1>Merhaba</h1><p>Lütfen hesabınızı onaylamak için aşağıdaki linke tıklayınız.</p> <a href='https://localhost:7215{url}'>Onay Linki.</a>");
-
-                    TempData["Message"] = Jobs.CreateMessage("Bilgi", "Lütfen mail hesabınızı kontrol edin.Gelen linki tıklayarak hesabınızı onaylayın.", "warning");
-                    return RedirectToAction("Login", "Account");
+                    await _emailSender.SendEmailAsync(user.Email, "ShoppingApp Hesap Onaylama", $"<h1>Merhaba</h1><br><p>Lütfen hesabınızı onaylamak için aşağıdaki linke tıklayınız.</p><a href='https://localhost:7215{url}'>Onay linki</a>");
+                    TempData["Message"] = Jobs.CreateMessage("Bilgi", "Lütfen mail hesabınızı kontrol edin. Gelen linki tıklayarak, hesabınızı onaylayın.", "warning");
+                    return RedirectToAction("Login","Account");
                 }
-
             }
             ModelState.AddModelError("", "Bilinmeyen bir hata oluştu, lütfen tekrar deneyiniz");
             return View(registerDto);
@@ -101,13 +94,11 @@ namespace ShoppingApp.Web.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
             if (userId==null || token == null)
             {
-                TempData["Message"] = Jobs.CreateMessage("Hata", "Geçersiz token ya da user bilgisi", "danger");
-
+                TempData["Message"] = Jobs.CreateMessage("Hata", "Geçersiz token ya da user bilgisi.", "danger");
                 return View();
             }
             var user = await _userManager.FindByIdAsync(userId);
@@ -116,57 +107,51 @@ namespace ShoppingApp.Web.Controllers
                 var result = await _userManager.ConfirmEmailAsync(user, token);
                 if (result.Succeeded)
                 {
-                    TempData["Message"] = Jobs.CreateMessage("Başarılı", "Hesabınız başarıyla onaylandı.", "success");
-                    return RedirectToAction("Login", "Account");
+                    TempData["Message"] = Jobs.CreateMessage("Başarılı", "Hesabınız başarıyla onaylandı. Giriş yapabilirsiniz.", "success");
+                    return RedirectToAction("Login","Account");
                 }
-                return View();
-
+                
             }
-            TempData["Message"] = Jobs.CreateMessage("Hata", "Bir sorun oluştu ve hesabınız onaylanmadı.Lütfen admin ile iletişime geçiniz.", "danger");
-
+            TempData["Message"] = Jobs.CreateMessage("Hata", "Bir sorun oluştu ve hesabınız onaylanmadı. Lütfen admin ile iletişime geçiniz.", "danger");
             return View();
         }
-
         public IActionResult ForgotPassword()
         {
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> ForgotPassword(string email)
         {
             if (String.IsNullOrEmpty(email))
             {
-                TempData["Message"] = Jobs.CreateMessage("Hata", "Lütfen mail adresinizi eksiksiz bir şekilde giriniz.", "danger");
+                TempData["Message"] = Jobs.CreateMessage("Hata", "Lütfen mail adresinizi eksiksiz bir şekild giriniz.", "danger");
                 return View();
             }
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null)
             {
-                TempData["Message"] = Jobs.CreateMessage("Hata", "Böyle kayıtlı bir mail adresi bulunamadı.Lütfen kontrol ederek yeniden deneyiniz.", "danger");
+                TempData["Message"] = Jobs.CreateMessage("Hata", "Böyle kayıtlı bir mail adresi bulunamadı. Lütfen kontrol ederek, yeniden deneyiniz.", "danger");
                 return View();
             }
             var tokenCode = await _userManager.GeneratePasswordResetTokenAsync(user);
             var url = Url.Action("ResetPassword", "Account", new
             {
-                userId= user.Id,    
-                tokenCode=tokenCode
+                userId = user.Id,
+                token=tokenCode
             });
             await _emailSender.SendEmailAsync(
                 email,
                 "ShoppingApp Şifre Sıfırlama Linki",
-                $"Lütfen parolanızı yenilemek için <a href='https://localhost:7215{url}'>Tıklayınız</a>"
+                $"Lütfen parolanızı yenilemek için <a href='https://localhost:7215{url}'>tıklayınız.</a>"
                 );
-            TempData["Message"] = Jobs.CreateMessage("Bilgi", "Şifre sıfırlama linkiniz mail adresinize gönderilmiştir.Lütfen mail adresinizi kontrol ediniz.", "info");
+            TempData["Message"] = Jobs.CreateMessage("Bilgi", "Şifre sıfırlama linkiniz, mail adresinize gönderilmiştir. Lütfen mail adresinizi kontrol ediniz.", "info");
             return RedirectToAction("Login","Account");
-            
         }
-
-        public IActionResult ResetPassword(string userId,string token)
+        public IActionResult ResetPassword(string userId, string token)
         {
             if (userId==null || token==null)
             {
-                TempData["Message"] = Jobs.CreateMessage("Hata", "Bir sorun oluştu,lütfen daha sonra tekrar deneyin.", "danger");
+                TempData["Message"] = Jobs.CreateMessage("Hata", "Bir sorun oluştu, lütfen daha sonra yeniden deneyiniz.", "danger");
                 return RedirectToAction("Index", "Home");
             }
             var resetPasswordDto = new ResetPasswordDto
@@ -174,30 +159,28 @@ namespace ShoppingApp.Web.Controllers
                 Token = token
             };
             return View();
-        }  
-
+        }
+        [HttpPost]
         public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPasswordDto)
         {
-            if (ModelState.IsValid) 
+            if(!ModelState.IsValid)
             {
                 return View(resetPasswordDto);
             }
             var user = await _userManager.FindByEmailAsync(resetPasswordDto.Email);
-            if (user==null)
+            if (user == null)
             {
-                TempData["Message"] = Jobs.CreateMessage("Hata", " Böyle bir kullanıcı bulunamadı.", "danger");
+                TempData["Message"] = Jobs.CreateMessage("Hata", "Böyle bir kullanıcı bulunamadı. Tekrar deneyiniz", "danger");
                 return View(resetPasswordDto);
             }
-            var result = await _userManager.ResetPasswordAsync(user, resetPasswordDto.Token,resetPasswordDto.Password);
+            var result = await _userManager.ResetPasswordAsync(user,resetPasswordDto.Token,resetPasswordDto.Password);
             if (result.Succeeded)
             {
-
-                TempData["Message"] = Jobs.CreateMessage("Başarılı", "Parolanız başarıyla değiştirilmiştir.Giriş yapmayı deneyebilirsiniz.", "success");
+                TempData["Message"] = Jobs.CreateMessage("Başarılı", "Parolanız başarıyla değiştirilmiştir. Giriş yapmayı deneyebilirsiniz.", "success");
                 return RedirectToAction("Login", "Account");
             }
-            TempData["Message"] = Jobs.CreateMessage("Hata", "Bir hata oluştu.Lütfen admin ile iletişime geçiniz.", "danger");
-            return RedirectToAction("~/");
+            TempData["Message"] = Jobs.CreateMessage("Hata", "Bir hata oluştu. Lütfen admin ile iletişime geçiniz.", "danger");
+            return Redirect("~/");
         }
-
     }
 }
