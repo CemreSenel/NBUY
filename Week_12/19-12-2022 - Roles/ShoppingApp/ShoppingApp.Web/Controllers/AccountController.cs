@@ -1,12 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ShoppingApp.Core;
 using ShoppingApp.Entity.Concrete.Identity;
 using ShoppingApp.Web.EmailServices.Abstract;
 using ShoppingApp.Web.Models.Dtos;
-using System.Data;
 
 namespace ShoppingApp.Web.Controllers
 {
@@ -185,8 +183,6 @@ namespace ShoppingApp.Web.Controllers
             TempData["Message"] = Jobs.CreateMessage("Hata", "Bir hata oluştu. Lütfen admin ile iletişime geçiniz.", "danger");
             return Redirect("~/");
         }
-        [Authorize(Roles = "Admin")]
-
         public async Task<IActionResult> Manage(string id)
         {
             var name = id;
@@ -223,8 +219,6 @@ namespace ShoppingApp.Web.Controllers
 
             return View(userManageDto);
         }
-        [Authorize(Roles = "Admin")]
-
         [HttpPost]
         public async Task <IActionResult> Manage(UserManageDto userManageDto)
         {

@@ -24,33 +24,32 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
         {
             List<RoleDto> roles = _roleManager.Roles.Select(r => new RoleDto
             {
-                Id= r.Id,   
-                Name= r.Name,   
-                Description= r.Description
-
+                Id=r.Id,
+                Name=r.Name,
+                Description=r.Description
             }).ToList();
+            
             return View(roles);
-
         }
-
+    
         public IActionResult Create()
         {
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> Create(RoleDto roleDto)
         {
             if (ModelState.IsValid)
             {
+
                 var result = await _roleManager.CreateAsync(new Role
                 {
-                    Name= roleDto.Name, 
-                    Description= roleDto.Description
+                    Name = roleDto.Name,
+                    Description = roleDto.Description
                 });
                 if (result.Succeeded)
                 {
-                    TempData["Message"] = Jobs.CreateMessage("Başarılı", roleDto.Name + " rolü, başarıyla eklenmiştir.", "success");
+                    TempData["Message"] = Jobs.CreateMessage("Başarılı!", roleDto.Name + " rolü, başarıyla eklenmiştir.", "success");
                     return RedirectToAction("Index", "Role");
                 }
                 foreach (var error in result.Errors)
@@ -60,17 +59,13 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
             }
             return View(roleDto);
         }
-
         public async Task<IActionResult> Edit(string id)
         {
             var role = await _roleManager.FindByIdAsync(id);
-            if (role==null)
-            {
-                return NotFound();
-            }
+            if (role==null) { return NotFound(); }
             var users = _userManager.Users;
             var members = new List<User>();//İlgili role ait olan kullanıcılar için
-            var nonmembers = new List<User>();//İlgili role ait olmayan kullanıcılar için
+            var nonMembers = new List<User>();//İlgili role ait olmayan kullanıcılar için
             foreach (var user in users)
             {
                 #region UzunYol
@@ -78,29 +73,30 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
                 //if (isInRole)
                 //{
                 //    members.Add(user);
-                //}else
+                //}
+                //else
                 //{
-                //    nonmembers.Add(user);
+                //    nonMembers.Add(user);
                 //}
                 #endregion
-
                 #region KısaYol
-                var list = await _userManager.IsInRoleAsync(user, role.Name) ? members : nonmembers;
+                var list = await _userManager.IsInRoleAsync(user, role.Name) ? members : nonMembers;
                 list.Add(user);
                 #endregion
             }
+            
+            
+
             RoleDetailsDto roleDetailsDto = new RoleDetailsDto
             {
                 Role = role,
                 Members = members,
-                NonMembers = nonmembers
+                NonMembers = nonMembers
             };
             return View(roleDetailsDto);
         }
-
-
         [HttpPost]
-        public async Task<IActionResult> Edit(RoleEditDetailsDto roleEditDetailsDto)
+        public  async Task<IActionResult> Edit(RoleEditDetailsDto roleEditDetailsDto)
         {
             if (ModelState.IsValid)
             {
@@ -108,7 +104,7 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
                 {
                     var user = await _userManager.FindByIdAsync(userId);
                     if (user==null) { return NotFound(); }
-                    var result = await _userManager.AddToRoleAsync(user,roleEditDetailsDto.RoleName);
+                    var result = await _userManager.AddToRoleAsync(user, roleEditDetailsDto.RoleName);
                     if (!result.Succeeded)
                     {
                         foreach (var error in result.Errors)
@@ -117,6 +113,7 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
                         }
                     }
                 }
+
                 foreach (var userId in roleEditDetailsDto.IdsToRemove ?? new string[] { })
                 {
                     var user = await _userManager.FindByIdAsync(userId);
@@ -130,7 +127,7 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
                         }
                     }
                 }
-            
+                
             }
             return Redirect("/Admin/Role/Edit/" + roleEditDetailsDto.RoleId);
         }

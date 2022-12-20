@@ -29,14 +29,15 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
             ViewBag.Title = "Kategoriler";
             return View(categoryListDto);
         }
+
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
-        [Authorize(Roles = "Admin")]
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Create(CategoryAddDto categoryAddDto)
         {
@@ -55,7 +56,6 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
             return View();
         }
         [Authorize(Roles = "Admin")]
-
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
@@ -74,7 +74,6 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
             return View(categoryUpdateDto);
         }
         [Authorize(Roles = "Admin")]
-
         [HttpPost]
         public async Task<IActionResult> Edit(CategoryUpdateDto categoryUpdateDto)
         {
@@ -96,7 +95,6 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
             return View(categoryUpdateDto);
         }
         [Authorize(Roles = "Admin")]
-
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
