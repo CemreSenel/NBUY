@@ -1,29 +1,23 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using ShoppingApp.Business.Abstract;
 using ShoppingApp.Core;
 using ShoppingApp.Entity.Concrete.Identity;
 using ShoppingApp.Web.Areas.Admin.Models.Dtos;
-using ShoppingApp.Web.EmailServices.Abstract;
-using System.Net.Http.Headers;
 
 namespace ShoppingApp.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles ="Admin")]
     public class UserController : Controller
     {
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<Role> _roleManager;
-        private readonly IEmailSender _emailSender;
 
-
-        public UserController(UserManager<User> userManager, RoleManager<Role> roleManager, IEmailSender emailSender)
+        public UserController(UserManager<User> userManager, RoleManager<Role> roleManager)
         {
             _userManager = userManager;
             _roleManager = roleManager;
-            _emailSender = emailSender;
         }
 
         public IActionResult Index()
@@ -35,8 +29,7 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
                 LastName = u.LastName,
                 UserName = u.UserName,
                 Email = u.Email,
-                Emailconfirmed = u.EmailConfirmed
-
+                EmailConfirmed = u.EmailConfirmed
             }).ToList();
             ViewBag.SelectedMenu = "User";
             ViewBag.Title = "Kullanıcılar";
@@ -53,9 +46,10 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
                     Name = r.Name,
                     Description = r.Description
                 }).ToList(),
-                SelectedRoles = new List<string>()
+                SelectedRoles= new List<string>()
+                //Aslında buraya selectedRoles de konulabilir, hatta konursa işimiz çok rahatlatacak. Daha sonra buraya döneceğiz.
             };
-            ViewBag.Title = "Kulanıcı Yarat";
+            ViewBag.Title = "Kullanıcı Oluştur";
             return View(userAddDto);
         }
 
@@ -70,9 +64,9 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
                     LastName = userAddDto.UserDto.LastName,
                     UserName = userAddDto.UserDto.UserName,
                     Email = userAddDto.UserDto.Email,
-                    EmailConfirmed = userAddDto.UserDto.Emailconfirmed
+                    EmailConfirmed = userAddDto.UserDto.EmailConfirmed
                 };
-                var result = await _userManager.CreateAsync(user, "Qwe123.");
+                var result = await _userManager.CreateAsync(user,"Qwe123.");
                 if (result.Succeeded)
                 {
                     await _userManager.AddToRolesAsync(user, userAddDto.SelectedRoles);
@@ -93,14 +87,10 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
             userAddDto.SelectedRoles = userAddDto.SelectedRoles ?? new List<string>();
             return View(userAddDto);
         }
-
-        public async  Task<IActionResult> Edit(string Id)
+        public async Task<IActionResult> Edit(string id)
         {
-            var user = _userManager.FindByIdAsync(id);
-            if (user==null)
-            {
-                return NotFound();
-            }
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null) { return NotFound(); }
             UserAddDto userUpdateDto = new UserAddDto
             {
                 UserDto = new UserDto
@@ -109,7 +99,7 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
                     FirstName = user.FirstName,
                     LastName = user.LastName,
                     Email = user.Email,
-                    Emailconfirmed = user.Emailconfirmed,
+                    EmailConfirmed = user.EmailConfirmed,
                     UserName = user.UserName
                 },
                 SelectedRoles = await _userManager.GetRolesAsync(user),

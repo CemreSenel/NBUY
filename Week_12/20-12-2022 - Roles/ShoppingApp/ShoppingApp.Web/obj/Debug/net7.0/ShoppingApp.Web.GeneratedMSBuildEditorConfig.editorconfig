@@ -20,10 +20,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SABAH/Documents/GitHub/NBUY/Week_12/20-12-2022 - Roles/ShoppingApp/ShoppingApp.Web/Areas/Admin/Views/Category/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/SABAH/Documents/GitHub/NBUY/Week_12/20-12-2022 - Roles/ShoppingApp/ShoppingApp.Web/Areas/Admin/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -132,8 +128,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0ZWdvcmllc1xEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/SABAH/Documents/GitHub/NBUY/Week_12/20-12-2022 - Roles/ShoppingApp/ShoppingApp.Web/Views/Shared/_NavBar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZCYXIuY3NodG1s
+[C:/Users/SABAH/Documents/GitHub/NBUY/Week_12/20-12-2022 - Roles/ShoppingApp/ShoppingApp.Web/Views/Shared/_Navbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/SABAH/Documents/GitHub/NBUY/Week_12/20-12-2022 - Roles/ShoppingApp/ShoppingApp.Web/Views/Shared/_ProductPartial.cshtml]
