@@ -62,7 +62,7 @@ namespace ShoppingApp.Data.Extensions
                     Email="user@gmail.com",
                     NormalizedEmail="USER@GMAIL.COM",
                     EmailConfirmed=true,
-                      PhoneNumber="4444444444",
+                    PhoneNumber="4444444444",
                     Address="Akasya cd. Orkide sk. Gül ap.",
                     City="İzmir"
                 }

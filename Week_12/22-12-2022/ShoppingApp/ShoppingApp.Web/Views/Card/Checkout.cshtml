@@ -1,8 +1,9 @@
 ﻿@model OrderDto
-
 <h6 class="display-6">Ödeme</h6>
-
-<form asp-controller="Card" asp-action="Checkout" method="post">
+<form asp-controller="Card"
+      asp-action="Checkout"
+      method="post"
+    >
     <div class="row">
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="col-8">
@@ -17,7 +18,6 @@
                     <label class="form-label" asp-for="LastName"></label>
                     <input class="form-control" asp-for="LastName" />
                     <span asp-validation-for="LastName" class="text-danger"></span>
-
                 </div>
             </div>
             <div class="row mb-3">
@@ -37,46 +37,41 @@
                     <label class="form-label" asp-for="Phone"></label>
                     <input class="form-control" asp-for="Phone" />
                     <span asp-validation-for="Phone" class="text-danger"></span>
-
                 </div>
                 <div class="col-4">
                     <label class="form-label" asp-for="Email"></label>
                     <input class="form-control" asp-for="Email" />
                     <span asp-validation-for="Email" class="text-danger"></span>
-
                 </div>
-                <h6 class="display-6">Kart Bilgileri</h6>
-                <div class="row mb-3">
-                    <div class="col-6">
-                        <label class="form-label" asp-for="CardName"></label>
-                        <input class="form-control" asp-for="CardName" />
-                        <span asp-validation-for="CardName" class="text-danger"></span>
-                    </div>
-                    <div class="col-6">
-                        <label class="form-label" asp-for="CardNumber"></label>
-                        <input class="form-control" asp-for="CardNumber" />
-                        <span asp-validation-for="CardNumber" class="text-danger"></span>
-
-                    </div>
+            </div>
+            <h6 class="display-6">Kart Bilgileri</h6>
+            <div class="row mb-3">
+                <div class="col-6">
+                    <label class="form-label" asp-for="CardName"></label>
+                    <input class="form-control" asp-for="CardName" />
+                    <span asp-validation-for="CardName" class="text-danger"></span>
                 </div>
-                <div class="row mb-3">
-                    <div class="col-3">
-                        <label class="form-label" asp-for="ExpirationMonth"></label>
-                        <input class="form-control" asp-for="ExpirationMonth" />
-                        <span asp-validation-for="ExpirationMonth" class="text-danger"></span>
-                    </div>
-                    <div class="col-3">
-                        <label class="form-label" asp-for="ExpirationYear"></label>
-                        <input class="form-control" asp-for="ExpirationYear" />
-                        <span asp-validation-for="ExpirationYear" class="text-danger"></span>
-
-                    </div>
-                    <div class="col-6">
-                        <label class="form-label" asp-for="Cvc"></label>
-                        <input class="form-control" asp-for="Cvc" />
-                        <span asp-validation-for="Cvc" class="text-danger"></span>
-
-                    </div>
+                <div class="col-6">
+                    <label class="form-label" asp-for="CardNumber"></label>
+                    <input class="form-control" asp-for="CardNumber" />
+                    <span asp-validation-for="CardNumber" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-3">
+                    <label class="form-label" asp-for="ExpirationMonth"></label>
+                    <input class="form-control" asp-for="ExpirationMonth" />
+                    <span asp-validation-for="ExpirationMonth" class="text-danger"></span>
+                </div>
+                <div class="col-3">
+                    <label class="form-label" asp-for="ExpirationYear"></label>
+                    <input class="form-control" asp-for="ExpirationYear" />
+                    <span asp-validation-for="ExpirationYear" class="text-danger"></span>
+                </div>
+                <div class="col-6">
+                    <label class="form-label" asp-for="Cvc"></label>
+                    <input class="form-control" asp-for="Cvc" />
+                    <span asp-validation-for="Cvc" class="text-danger"></span>
                 </div>
             </div>
         </div>
@@ -91,7 +86,6 @@
                         <span>Fiyat: @($"{cardItem.ItemPrice:C0}")</span>
                         @{
                             decimal? total = cardItem.ItemPrice * cardItem.Quantity;
-
                         }
                         <span>Toplam: @($"{total:C0}")</span>
                     </li>
@@ -104,7 +98,7 @@
             <div class="text-end">
                 <button class="btn btn-success">Ödemeyi Yap</button>
             </div>
-
+            
         </div>
     </div>
 </form>

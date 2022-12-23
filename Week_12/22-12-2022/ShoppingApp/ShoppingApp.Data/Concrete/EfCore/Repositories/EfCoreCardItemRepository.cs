@@ -11,19 +11,18 @@ namespace ShoppingApp.Data.Concrete.EfCore.Repositories
 {
     public class EfCoreCardItemRepository : EfCoreGenericRepository<CardItem>, ICardItemRepository
     {
-        public EfCoreCardItemRepository(ShopAppContext context) : base(context)
+        public EfCoreCardItemRepository(ShopAppContext context):base(context)
         {
 
         }
         private ShopAppContext ShopAppContext
         {
-            get { return _context as ShopAppContext;}
+            get { return _context as ShopAppContext; }
         }
         public async Task ChangeQuantity(CardItem cardItem, int quantity)
         {
             cardItem.Quantity = quantity;
             ShopAppContext.CardItems.Update(cardItem);
-            
         }
     }
 }

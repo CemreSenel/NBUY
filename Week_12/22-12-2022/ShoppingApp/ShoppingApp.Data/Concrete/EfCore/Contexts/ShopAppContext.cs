@@ -19,9 +19,8 @@ namespace ShoppingApp.Data.Concrete.EfCore.Contexts
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Card> Cards { get; set; }
         public DbSet<CardItem> CardItems { get; set; }
-        public DbSet<Order> Orders { get; set; }    
-        public DbSet<OrderItem> OrderItems { get; set; }    
-
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
         public ShopAppContext(DbContextOptions<ShopAppContext> options):base(options)
         {
 

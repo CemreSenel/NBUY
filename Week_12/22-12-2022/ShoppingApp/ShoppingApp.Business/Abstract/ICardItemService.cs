@@ -9,7 +9,7 @@ namespace ShoppingApp.Business.Abstract
 {
     public interface ICardItemService
     {
-        Task ChangeQuantity(int cardItemId,int quantity);
+        Task ChangeQuantity(int cardItemId, int quantity);
         Task<CardItem> GetByIdAsync(int id);
         void Delete(CardItem cardItem);
     }

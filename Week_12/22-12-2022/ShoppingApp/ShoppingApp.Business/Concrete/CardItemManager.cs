@@ -21,13 +21,13 @@ namespace ShoppingApp.Business.Concrete
         public async Task ChangeQuantity(int cardItemId, int quantity)
         {
             var cardItem = await _unitOfWork.CardItems.GetByIdAsync(cardItemId);
-            await _unitOfWork.CardItems.ChangeQuantity(cardItem, quantity); 
-            await _unitOfWork.SaveAsync();  
+            await _unitOfWork.CardItems.ChangeQuantity(cardItem, quantity);
+            await _unitOfWork.SaveAsync();
         }
 
         public void Delete(CardItem cardItem)
         {
-           _unitOfWork.CardItems.Delete(cardItem);
+            _unitOfWork.CardItems.Delete(cardItem);
             _unitOfWork.Save();
         }
 

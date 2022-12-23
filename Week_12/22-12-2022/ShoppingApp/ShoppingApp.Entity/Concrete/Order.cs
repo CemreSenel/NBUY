@@ -24,7 +24,6 @@ namespace ShoppingApp.Entity.Concrete
         public EnumOrderState OrderState { get; set; }
         public EnumOrderType OrderType { get; set; }
         public List<OrderItem> OrderItems { get; set; }
-
     }
 
     public enum EnumOrderState
@@ -33,7 +32,6 @@ namespace ShoppingApp.Entity.Concrete
         Unpaid=1,
         Completed=2
     }
-
     public enum EnumOrderType
     {
         CreditCard=0,

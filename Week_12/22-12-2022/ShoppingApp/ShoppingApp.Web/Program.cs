@@ -60,9 +60,8 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<ICardService, CardManager>();
-builder.Services.AddScoped<ICardItemService, CardItemManager>(); 
+builder.Services.AddScoped<ICardItemService, CardItemManager>();
 builder.Services.AddScoped<IOrderService, OrderManager>();
-
 
 builder.Services.AddScoped<IEmailSender, SmtpEmailSender>(x => new SmtpEmailSender(
     builder.Configuration["EmailSender:Host"],

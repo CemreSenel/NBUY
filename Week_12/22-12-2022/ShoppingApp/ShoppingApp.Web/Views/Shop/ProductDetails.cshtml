@@ -16,7 +16,7 @@
                     <a href="#" class="btn btn-link p-0 mb-3">@category.Name</a>
                 }
                 <p class="card-text">@Model.Description</p>
-                <p class="card-text">@Model.Price</p>
+                <p class="card-text">@($"{Model.Price:C0}")</p>
                 <form asp-controller="Card"
                       asp-action="AddToCard"
                       method="post">

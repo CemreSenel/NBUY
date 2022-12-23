@@ -102,13 +102,13 @@ namespace ShoppingApp.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "b450d790-7138-4e51-8c69-475a6a2dc61a",
-                            RoleId = "e52989e6-a719-4907-b881-119608472bb3"
+                            UserId = "d5b9aa9b-e235-4200-aa6e-3cd60a3af917",
+                            RoleId = "c911d2fe-4734-46b4-b70c-dee28a93e405"
                         },
                         new
                         {
-                            UserId = "f09ce7ed-0af0-466f-8b68-04410e51b9b0",
-                            RoleId = "8f5f2e65-9fb4-4351-826d-61afa7d7c516"
+                            UserId = "9469c54f-7d1b-41d6-84a2-ece731b77754",
+                            RoleId = "929ce818-1bf5-489b-9ec3-be70b4333f5f"
                         });
                 });
 
@@ -150,12 +150,12 @@ namespace ShoppingApp.Data.Migrations
                         new
                         {
                             Id = 1,
-                            UserId = "b450d790-7138-4e51-8c69-475a6a2dc61a"
+                            UserId = "d5b9aa9b-e235-4200-aa6e-3cd60a3af917"
                         },
                         new
                         {
                             Id = 2,
-                            UserId = "f09ce7ed-0af0-466f-8b68-04410e51b9b0"
+                            UserId = "9469c54f-7d1b-41d6-84a2-ece731b77754"
                         });
                 });
 
@@ -270,14 +270,14 @@ namespace ShoppingApp.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e52989e6-a719-4907-b881-119608472bb3",
+                            Id = "c911d2fe-4734-46b4-b70c-dee28a93e405",
                             Description = "Admin rolü",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "8f5f2e65-9fb4-4351-826d-61afa7d7c516",
+                            Id = "929ce818-1bf5-489b-9ec3-be70b4333f5f",
                             Description = "User rolü",
                             Name = "User",
                             NormalizedName = "USER"
@@ -368,11 +368,11 @@ namespace ShoppingApp.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b450d790-7138-4e51-8c69-475a6a2dc61a",
+                            Id = "d5b9aa9b-e235-4200-aa6e-3cd60a3af917",
                             AccessFailedCount = 0,
                             Address = "Çek cd. Senet sk. Fatura ap.",
                             City = "İstanbul",
-                            ConcurrencyStamp = "161e1804-1c71-4c5f-b809-067abe65f495",
+                            ConcurrencyStamp = "d0c4331a-2482-484f-b5f2-146961057cfa",
                             DateOfBirth = new DateTime(1998, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
@@ -382,20 +382,20 @@ namespace ShoppingApp.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBGq2gan/Pd0VLxRnsSUdisxnPsIIlepsx+o0EEl4ubXyKe9GZgqPgzjmxbb1OCWnA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELUMaq+DWPt5Y+5Fdgk1Wh2AV99fepnM7WYw2R80b7vzFpeeI5ch6QS7FU8pNLfQkg==",
                             PhoneNumber = "5555555555",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1d582c80-2ced-4d70-b670-04dc29c87c4f",
+                            SecurityStamp = "42cb228e-a7ca-4830-8589-432067ecab57",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
                         new
                         {
-                            Id = "f09ce7ed-0af0-466f-8b68-04410e51b9b0",
+                            Id = "9469c54f-7d1b-41d6-84a2-ece731b77754",
                             AccessFailedCount = 0,
                             Address = "Akasya cd. Orkide sk. Gül ap.",
                             City = "İzmir",
-                            ConcurrencyStamp = "65847511-781e-455b-bed3-6c63b9fa6e1f",
+                            ConcurrencyStamp = "4f6fb11a-befb-450d-8c2a-01dd4169dc02",
                             DateOfBirth = new DateTime(1985, 10, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "user@gmail.com",
                             EmailConfirmed = true,
@@ -405,10 +405,10 @@ namespace ShoppingApp.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@GMAIL.COM",
                             NormalizedUserName = "USER",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDOHsd09l6WLyfHeZVcEShbaHWBSzcbb0zpm/uBbb/C4J+dkH15fSglfWoFwqEDxMQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEM9obnw7TLWuSkicrEWxJ/5qED8KJVlOXz7m0vC+SAvRBKsUfEGU8gpKk6oDrCE1xg==",
                             PhoneNumber = "4444444444",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c517c9a8-834e-440e-956e-4d08b0267405",
+                            SecurityStamp = "aca9930d-b4da-44ea-8447-e854c8994c20",
                             TwoFactorEnabled = false,
                             UserName = "user"
                         });

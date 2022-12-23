@@ -18,19 +18,19 @@ namespace ShoppingApp.Data.Concrete.EfCore.Repositories
         }
         private ShopAppContext ShopAppContext
         {
-            get { return _context as ShopAppContext;}
+            get { return _context as ShopAppContext; }
         }
         public async Task<List<Order>> GetOrders(string userId)
         {
             #region UserIdNullKontrolüYapılmadan
             //var orders = ShopAppContext.Orders
             //    .Where(o => o.UserId == userId)
-            //    .Include(o => o.OrderItems)
-            //    .ThenInclude(od => od.Product)
+            //    .Include(o=>o.OrderItems)
+            //    .ThenInclude(od=>od.Product)
             //    .ToList();
             //return orders;
             #endregion
-
+            
             #region UserIdNullKontrolüYaparak
             var orders = ShopAppContext.Orders
                 .Include(o => o.OrderItems)
@@ -38,12 +38,10 @@ namespace ShoppingApp.Data.Concrete.EfCore.Repositories
                 .AsQueryable();
             if (!String.IsNullOrEmpty(userId))
             {
-               orders = orders.Where(o => o.UserId == userId);
+                orders = orders.Where(o => o.UserId == userId);
             }
-            return orders.ToList(); 
-
+            return orders.ToList();
             #endregion
-
         }
     }
 }
