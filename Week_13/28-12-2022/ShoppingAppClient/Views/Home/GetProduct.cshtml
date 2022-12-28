@@ -1,0 +1,13 @@
+﻿@model ProductViewModel
+<input type="hidden" asp-for="@Model.Id" />
+<div class="row">
+    <div class="col-4">
+        <img src="http://localhost:5200/images/@Model.ImageUrl" width="100" />
+    </div>
+    <div class="col-8">
+        <h1 class="display-6">@Model.Name</h1>
+        <h6>@($"{Model.Price:C0}")</h6>
+        <h6>@Model.Description</h6>
+
+    </div>
+</div>
