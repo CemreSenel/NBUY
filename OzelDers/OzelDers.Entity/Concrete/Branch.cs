@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OzelDers.Entity.Concrete
 {
-    public class Branch : IEntityBase
+    public class Branch : IEntityBase 
     {
         public int Id { get; set; }
         public string Name { get; set; }
