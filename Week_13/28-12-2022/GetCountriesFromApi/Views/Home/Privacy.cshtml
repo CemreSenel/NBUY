@@ -1,0 +1,36 @@
+﻿
+@model List<Person>
+
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Email</th>
+            <th>Resim</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td>@person.id</td>
+                <td>@person.first_name</td>
+                <td>@person.last_name</td>
+                <td>@person.email</td>
+                <td>
+                    <img src="@person.avatar" width="200" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
