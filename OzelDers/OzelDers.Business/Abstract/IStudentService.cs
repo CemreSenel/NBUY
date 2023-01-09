@@ -13,6 +13,6 @@ namespace OzelDers.Business.Abstract
         Task<List<Student>> GetAllAsync();
         Task CreateAsync(Student student);
         void Delete(Student student);
-        void Update(Student student);   
+        void Update(Student student);
     }
 }

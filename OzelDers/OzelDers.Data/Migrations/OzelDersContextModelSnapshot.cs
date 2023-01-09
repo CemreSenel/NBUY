@@ -17,6 +17,160 @@ namespace OzelDers.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.1");
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "79e4050c-f177-4290-84b5-2282d02fe34f",
+                            RoleId = "81c801d9-79d9-49e1-adcf-89dd9a61ed5f"
+                        },
+                        new
+                        {
+                            UserId = "8db235b9-9112-4357-8023-95ced89f4b2d",
+                            RoleId = "df2fd075-b997-42c3-8434-9a5c8c96ebba"
+                        },
+                        new
+                        {
+                            UserId = "67414ee1-1440-4ed2-8c15-da82f0812396",
+                            RoleId = "df2fd075-b997-42c3-8434-9a5c8c96ebba"
+                        },
+                        new
+                        {
+                            UserId = "a560e21f-ef22-450a-8005-80af4c388459",
+                            RoleId = "df2fd075-b997-42c3-8434-9a5c8c96ebba"
+                        },
+                        new
+                        {
+                            UserId = "1eb3f91e-38f0-4bc2-bf73-eb5697630df5",
+                            RoleId = "df2fd075-b997-42c3-8434-9a5c8c96ebba"
+                        },
+                        new
+                        {
+                            UserId = "209eafa6-f4f2-47fe-a0ee-236f99f5991b",
+                            RoleId = "8b3671a2-c360-4e7b-9a1f-bd12ba0675a8"
+                        },
+                        new
+                        {
+                            UserId = "10a3f450-ad89-4dd4-b0a6-a272fd3a0e30",
+                            RoleId = "8b3671a2-c360-4e7b-9a1f-bd12ba0675a8"
+                        },
+                        new
+                        {
+                            UserId = "7d05c2e8-331c-4015-ae13-9f7a70d1f01b",
+                            RoleId = "8b3671a2-c360-4e7b-9a1f-bd12ba0675a8"
+                        },
+                        new
+                        {
+                            UserId = "1b05e331-b168-4339-ac5e-a54d4a34d915",
+                            RoleId = "8b3671a2-c360-4e7b-9a1f-bd12ba0675a8"
+                        },
+                        new
+                        {
+                            UserId = "5a7cc18d-d8ca-4fda-8735-df944a36d812",
+                            RoleId = "8b3671a2-c360-4e7b-9a1f-bd12ba0675a8"
+                        });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
+
             modelBuilder.Entity("OzelDers.Entity.Concrete.Branch", b =>
                 {
                     b.Property<int>("Id")
@@ -25,7 +179,7 @@ namespace OzelDers.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(100)
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Url")
@@ -100,15 +254,423 @@ namespace OzelDers.Data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("OzelDers.Entity.Concrete.Identity.Role", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex");
+
+                    b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "81c801d9-79d9-49e1-adcf-89dd9a61ed5f",
+                            Description = "Admin rolü",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "8b3671a2-c360-4e7b-9a1f-bd12ba0675a8",
+                            Description = "Student rolü",
+                            Name = "Student",
+                            NormalizedName = "STUDENT"
+                        },
+                        new
+                        {
+                            Id = "df2fd075-b997-42c3-8434-9a5c8c96ebba",
+                            Description = "Teacher rolü",
+                            Name = "Teacher",
+                            NormalizedName = "TEACHER"
+                        });
+                });
+
+            modelBuilder.Entity("OzelDers.Entity.Concrete.Identity.User", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("About")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Age")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("BranchId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Experience")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal?>("PricePerHour")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BranchId");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex");
+
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "79e4050c-f177-4290-84b5-2282d02fe34f",
+                            AccessFailedCount = 0,
+                            Age = "24",
+                            BranchId = 1,
+                            ConcurrencyStamp = "3eeb1e8f-d0f0-45d5-a9ba-42cbb76b276a",
+                            Email = "admin@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Mert",
+                            Gender = "Erkek",
+                            LastName = "Muslu",
+                            Location = "Yalova",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@GMAIL.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEs8IH0jqFkZTyHjKTNldOAo8QlbbUbSTgksMFeRWyhGS0p8QGAKnEL18/gzR3+42A==",
+                            PhoneNumber = "9999999999",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "df20acc8-47e7-437a-80fb-aa770a1ae445",
+                            TwoFactorEnabled = false,
+                            Url = "mert-muslu",
+                            UserName = "admin"
+                        },
+                        new
+                        {
+                            Id = "8db235b9-9112-4357-8023-95ced89f4b2d",
+                            About = "Fizik Öğretmeni",
+                            AccessFailedCount = 0,
+                            Age = "25",
+                            BranchId = 1,
+                            ConcurrencyStamp = "2aed369d-34ae-464f-a61f-86d0d6d338e6",
+                            Email = "harun@gmail.com",
+                            EmailConfirmed = true,
+                            Experience = "4",
+                            FirstName = "Harun",
+                            Gender = "Erkek",
+                            ImageUrl = "2.png",
+                            LastName = "Öztürk",
+                            Location = "İstabul",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "HARUN@GMAIL.COM",
+                            NormalizedUserName = "HARUN",
+                            PasswordHash = "AQAAAAIAAYagAAAAECrPcMFNNvv+CbK8MKwkViSvoS2cvxLdjHZuQkIBOfJbiHRFApLMvvrVrRDiZM2aUg==",
+                            PhoneNumber = "8888888888",
+                            PhoneNumberConfirmed = false,
+                            PricePerHour = 200m,
+                            SecurityStamp = "34d62c5a-7e62-4254-9ac5-e0c5a29e1ab3",
+                            TwoFactorEnabled = false,
+                            Url = "harun-ozturk",
+                            UserName = "harun"
+                        },
+                        new
+                        {
+                            Id = "67414ee1-1440-4ed2-8c15-da82f0812396",
+                            About = "Kimya Öğretmeni",
+                            AccessFailedCount = 0,
+                            Age = "26",
+                            BranchId = 2,
+                            ConcurrencyStamp = "28792856-5850-4638-a1c4-726122389d3e",
+                            Email = "selin@gmail.com",
+                            EmailConfirmed = true,
+                            Experience = "4",
+                            FirstName = "Selin",
+                            Gender = "Kadın",
+                            ImageUrl = "3.png",
+                            LastName = "Biçici",
+                            Location = "İstanbul",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "SELIN@GMAIL.COM",
+                            NormalizedUserName = "SELİN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJ4RiBjz5K631gfmNyEhlyIlJge33p1vN83XzSg3nF5EALl2ov+JfLwv7dpbB8qEGw==",
+                            PhoneNumber = "7777777777",
+                            PhoneNumberConfirmed = false,
+                            PricePerHour = 200m,
+                            SecurityStamp = "7e83556b-a5df-4f2a-a08e-e758e09c0cee",
+                            TwoFactorEnabled = false,
+                            Url = "selin-bicici",
+                            UserName = "selin"
+                        },
+                        new
+                        {
+                            Id = "a560e21f-ef22-450a-8005-80af4c388459",
+                            About = "Biyoloji Öğretmeni",
+                            AccessFailedCount = 0,
+                            Age = "27",
+                            BranchId = 3,
+                            ConcurrencyStamp = "d3da5a89-2383-460a-9663-753868e004ff",
+                            Email = "gizem@gmail.com",
+                            EmailConfirmed = true,
+                            Experience = "3",
+                            FirstName = "Gizem",
+                            Gender = "Kadın",
+                            ImageUrl = "4.png",
+                            LastName = "Deniz",
+                            Location = "Ankara",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "GIZEM@GMAIL.COM",
+                            NormalizedUserName = "GIZEM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDKscQdBy662lY8+VaIXV1r0U6cfuwRdnuZd6W/W8Z7QIWEVLIaqW47zbOt6vQs9ZQ==",
+                            PhoneNumber = "6666666666",
+                            PhoneNumberConfirmed = false,
+                            PricePerHour = 250m,
+                            SecurityStamp = "de029745-97b1-4e9f-9874-1737e587d03b",
+                            TwoFactorEnabled = false,
+                            Url = "gizem-deniz",
+                            UserName = "gizem"
+                        },
+                        new
+                        {
+                            Id = "1eb3f91e-38f0-4bc2-bf73-eb5697630df5",
+                            About = "Matematik Öğretmeni",
+                            AccessFailedCount = 0,
+                            Age = "27",
+                            BranchId = 4,
+                            ConcurrencyStamp = "fdeb27d2-a851-4093-b39d-f002ebf089da",
+                            Email = "deniz@gmail.com",
+                            EmailConfirmed = true,
+                            Experience = "3",
+                            FirstName = "Deniz",
+                            Gender = "Erkek",
+                            ImageUrl = "5.png",
+                            LastName = "Demir",
+                            Location = "Ankara",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "DENIZ@GMAIL.COM",
+                            NormalizedUserName = "DENIZ",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFG0fmaak5kXtY+5BXQg20Rgt77fldYkY8lDBCXRECr0dv/WJ3BIBe+RDKwN/SA/Yw==",
+                            PhoneNumber = "5555555555",
+                            PhoneNumberConfirmed = false,
+                            PricePerHour = 175m,
+                            SecurityStamp = "44eb4026-14b7-4f88-8f44-980e22e1e09a",
+                            TwoFactorEnabled = false,
+                            Url = "deniz-demir",
+                            UserName = "deniz"
+                        },
+                        new
+                        {
+                            Id = "209eafa6-f4f2-47fe-a0ee-236f99f5991b",
+                            AccessFailedCount = 0,
+                            BranchId = 1,
+                            ConcurrencyStamp = "992c8081-b37c-4b8c-9289-a199b91a8e32",
+                            Email = "ali@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Ali",
+                            Gender = "Erkek",
+                            ImageUrl = "6.png",
+                            LastName = "Kazancı",
+                            Location = "İstanbul",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ALI@GMAIL.COM",
+                            NormalizedUserName = "ALI",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIfQ81DvviyWq+wBjcUmNKwNAiYRUhrAOl9OQL1gWMoUN6bgG8m2gSSPxI0w/69XSA==",
+                            PhoneNumber = "4444444444",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "ad92e257-df94-4c7f-b6da-4adf70a5caf1",
+                            TwoFactorEnabled = false,
+                            Url = "ali-kazanci",
+                            UserName = "ali"
+                        },
+                        new
+                        {
+                            Id = "10a3f450-ad89-4dd4-b0a6-a272fd3a0e30",
+                            AccessFailedCount = 0,
+                            BranchId = 1,
+                            ConcurrencyStamp = "1d020701-ecf7-4422-9c1e-6850432d8c3d",
+                            Email = "kübra@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Kübra",
+                            Gender = "Kadın",
+                            ImageUrl = "7.png",
+                            LastName = "Doğan",
+                            Location = "İstanbul",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "KUBRA@GMAIL.COM",
+                            NormalizedUserName = "KUBRA",
+                            PasswordHash = "AQAAAAIAAYagAAAAELujTWhHbZ/FIuuSjE2d9Oqw59zB0kdAyNhhSiWKA/ZuuqaL0IvhI6kYOxAWjnYygw==",
+                            PhoneNumber = "3333333333",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "98656c04-3182-4ea3-8d19-8f0c33e3d300",
+                            TwoFactorEnabled = false,
+                            Url = "kübra-dogan",
+                            UserName = "kübra"
+                        },
+                        new
+                        {
+                            Id = "7d05c2e8-331c-4015-ae13-9f7a70d1f01b",
+                            AccessFailedCount = 0,
+                            BranchId = 1,
+                            ConcurrencyStamp = "6b958cf4-63f7-4ea3-a347-59d658d4146d",
+                            Email = "ismet@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "İsmet",
+                            Gender = "Erkek",
+                            ImageUrl = "8.png",
+                            LastName = "Demirci",
+                            Location = "İzmir",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ISMET@GMAIL.COM",
+                            NormalizedUserName = "ISMET",
+                            PasswordHash = "AQAAAAIAAYagAAAAEB9VZbbA70DKkD4WtvroKZTkj0vW5GSyy3Y22dMHhtQ/l3Lsr30AwVY/h4ie9YLauw==",
+                            PhoneNumber = "2222222222",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "098961f2-caa8-4415-9969-f25b57b80228",
+                            TwoFactorEnabled = false,
+                            Url = "ismet-demirci",
+                            UserName = "ismet"
+                        },
+                        new
+                        {
+                            Id = "1b05e331-b168-4339-ac5e-a54d4a34d915",
+                            AccessFailedCount = 0,
+                            BranchId = 1,
+                            ConcurrencyStamp = "3f3ccf95-3d2d-48de-98b2-38d3d31de66c",
+                            Email = "melike@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Melike",
+                            Gender = "Kadın",
+                            ImageUrl = "9.png",
+                            LastName = "Kızar",
+                            Location = "Ankara",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "MELIKE@GMAIL.COM",
+                            NormalizedUserName = "MELIKE",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPIwyd00eeO36U9R/5FeIA+OyYZ+Q1iUAlpm64IYCrpPYqKBnaAEpW0VylR4+RJ1TQ==",
+                            PhoneNumber = "1111111111",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "a0e1a135-7860-4f3b-be81-c6c74ca72f87",
+                            TwoFactorEnabled = false,
+                            Url = "melike-demirci",
+                            UserName = "melike"
+                        },
+                        new
+                        {
+                            Id = "5a7cc18d-d8ca-4fda-8735-df944a36d812",
+                            AccessFailedCount = 0,
+                            BranchId = 1,
+                            ConcurrencyStamp = "fef68802-7450-48a1-8434-d0a73db4a715",
+                            Email = "osman@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Osman",
+                            Gender = "Erkek",
+                            ImageUrl = "10.png",
+                            LastName = "Kurtar",
+                            Location = "Ankara",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "OSMAN@GMAIL.COM",
+                            NormalizedUserName = "OSMAN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMA43yunVG9+5weXU4TnGJ+b8k5erKWAK4b/F1nEXSyIN79ruLR0fVdAosms9zYvRg==",
+                            PhoneNumber = "9876543210",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "82a0edd1-3bc6-4f2e-9233-a085be61f1af",
+                            TwoFactorEnabled = false,
+                            Url = "osman-kurtar",
+                            UserName = "osman"
+                        });
+                });
+
             modelBuilder.Entity("OzelDers.Entity.Concrete.Student", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("Age")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -129,12 +691,22 @@ namespace OzelDers.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Url")
                         .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Students", (string)null);
 
@@ -142,144 +714,52 @@ namespace OzelDers.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Age = "15",
                             FirstName = "Ali",
                             Gender = "Erkek",
                             ImageUrl = "1.png",
                             LastName = "Kazancı",
+                            Location = "İstanbul",
                             Url = "ali-kazanci"
                         },
                         new
                         {
                             Id = 2,
-                            Age = "17",
                             FirstName = "Kübra",
                             Gender = "Kadın",
                             ImageUrl = "2.png",
                             LastName = "Doğan",
+                            Location = "İstanbul",
                             Url = "kübra-dogan"
                         },
                         new
                         {
                             Id = 3,
-                            Age = "16",
                             FirstName = "İsmet",
                             Gender = "Erkek",
                             ImageUrl = "3.png",
                             LastName = "Demirci",
+                            Location = "İzmir",
                             Url = "ismet-demirci"
                         },
                         new
                         {
                             Id = 4,
-                            Age = "18",
                             FirstName = "Melike",
                             Gender = "Kadın",
                             ImageUrl = "4.png",
                             LastName = "Kızar",
+                            Location = "Ankara",
                             Url = "melike-demirci"
                         },
                         new
                         {
                             Id = 5,
-                            Age = "19",
                             FirstName = "Osman",
                             Gender = "Erkek",
                             ImageUrl = "5.png",
                             LastName = "Kurtar",
+                            Location = "Ankara",
                             Url = "osman-kurtar"
-                        });
-                });
-
-            modelBuilder.Entity("OzelDers.Entity.Concrete.StudentTeacher", b =>
-                {
-                    b.Property<int>("StudentId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("TeacherId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("StudentId", "TeacherId");
-
-                    b.HasIndex("TeacherId");
-
-                    b.ToTable("StudentTeachers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            StudentId = 1,
-                            TeacherId = 1
-                        },
-                        new
-                        {
-                            StudentId = 1,
-                            TeacherId = 2
-                        },
-                        new
-                        {
-                            StudentId = 1,
-                            TeacherId = 3
-                        },
-                        new
-                        {
-                            StudentId = 2,
-                            TeacherId = 2
-                        },
-                        new
-                        {
-                            StudentId = 2,
-                            TeacherId = 4
-                        },
-                        new
-                        {
-                            StudentId = 2,
-                            TeacherId = 6
-                        },
-                        new
-                        {
-                            StudentId = 3,
-                            TeacherId = 5
-                        },
-                        new
-                        {
-                            StudentId = 3,
-                            TeacherId = 7
-                        },
-                        new
-                        {
-                            StudentId = 3,
-                            TeacherId = 8
-                        },
-                        new
-                        {
-                            StudentId = 4,
-                            TeacherId = 5
-                        },
-                        new
-                        {
-                            StudentId = 4,
-                            TeacherId = 9
-                        },
-                        new
-                        {
-                            StudentId = 4,
-                            TeacherId = 10
-                        },
-                        new
-                        {
-                            StudentId = 5,
-                            TeacherId = 4
-                        },
-                        new
-                        {
-                            StudentId = 5,
-                            TeacherId = 7
-                        },
-                        new
-                        {
-                            StudentId = 5,
-                            TeacherId = 9
                         });
                 });
 
@@ -294,17 +774,8 @@ namespace OzelDers.Data.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Age")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("BranchId")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("Experience")
-                        .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -333,19 +804,19 @@ namespace OzelDers.Data.Migrations
                     b.Property<decimal?>("PricePerHour")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UniversityId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Url")
                         .IsRequired()
                         .HasMaxLength(250)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
                     b.HasIndex("BranchId");
 
-                    b.HasIndex("UniversityId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Teachers", (string)null);
 
@@ -354,252 +825,186 @@ namespace OzelDers.Data.Migrations
                         {
                             Id = 1,
                             About = "Matematik Öğretmeni",
-                            Age = "24",
                             BranchId = 1,
-                            Experience = "5",
                             FirstName = "Mert",
                             Gender = "Erkek",
                             ImageUrl = "1.png",
                             LastName = "Muslu",
-                            Location = "Yalova",
+                            Location = "İstanbul",
                             PricePerHour = 400m,
-                            UniversityId = 1,
                             Url = "mert-muslu"
                         },
                         new
                         {
                             Id = 2,
                             About = "Fizik Öğretmeni",
-                            Age = "25",
-                            BranchId = 3,
-                            Experience = "4",
+                            BranchId = 1,
                             FirstName = "Harun",
                             Gender = "Erkek",
                             ImageUrl = "2.png",
                             LastName = "Öztürk",
-                            Location = "İstabul",
+                            Location = "İstanbul",
                             PricePerHour = 200m,
-                            UniversityId = 2,
                             Url = "harun-ozturk"
                         },
                         new
                         {
                             Id = 3,
                             About = "Kimya Öğretmeni",
-                            Age = "26",
-                            BranchId = 2,
-                            Experience = "4",
+                            BranchId = 1,
                             FirstName = "Selin",
                             Gender = "Kadın",
                             ImageUrl = "3.png",
                             LastName = "Biçici",
-                            Location = "İstanbul",
+                            Location = "Ankara",
                             PricePerHour = 200m,
-                            UniversityId = 3,
                             Url = "selin-bicici"
                         },
                         new
                         {
                             Id = 4,
                             About = "Biyoloji Öğretmeni",
-                            Age = "27",
-                            BranchId = 4,
-                            Experience = "3",
+                            BranchId = 1,
                             FirstName = "Gizem",
                             Gender = "Kadın",
                             ImageUrl = "4.png",
                             LastName = "Deniz",
-                            Location = "Ankara",
+                            Location = "İzmir",
                             PricePerHour = 250m,
-                            UniversityId = 4,
                             Url = "gizem-deniz"
                         },
                         new
                         {
                             Id = 5,
                             About = "Matematik Öğretmeni",
-                            Age = "28",
                             BranchId = 1,
-                            Experience = "2",
                             FirstName = "Deniz",
                             Gender = "Erkek",
                             ImageUrl = "5.png",
                             LastName = "Demir",
                             Location = "İstanbul",
                             PricePerHour = 175m,
-                            UniversityId = 5,
                             Url = "deniz-demir"
                         },
                         new
                         {
                             Id = 6,
                             About = "Tarih Öğretmeni",
-                            Age = "29",
-                            BranchId = 5,
-                            Experience = "7",
+                            BranchId = 1,
                             FirstName = "Yusuf",
                             Gender = "Erkek",
                             ImageUrl = "6.png",
                             LastName = "Demirci",
                             Location = "İstanbul",
                             PricePerHour = 300m,
-                            UniversityId = 6,
                             Url = "yusuf-demirci"
                         },
                         new
                         {
                             Id = 7,
                             About = "Almanca Öğretmeni",
-                            Age = "28",
-                            BranchId = 7,
-                            Experience = "3",
+                            BranchId = 1,
                             FirstName = "Ahmet",
                             Gender = "Erkek",
                             ImageUrl = "7.png",
                             LastName = "Çetin",
-                            Location = "İstanbul",
+                            Location = "Ankara",
                             PricePerHour = 300m,
-                            UniversityId = 7,
                             Url = "ahmet-cetin"
                         },
                         new
                         {
                             Id = 8,
                             About = "Almanca Öğretmeni",
-                            Age = "27",
-                            BranchId = 7,
-                            Experience = "2",
+                            BranchId = 1,
                             FirstName = "Okan",
                             Gender = "Erkek",
                             ImageUrl = "8.png",
                             LastName = "Alan",
-                            Location = "Kocaeli",
+                            Location = "İzmir",
                             PricePerHour = 200m,
-                            UniversityId = 8,
                             Url = "okan-alan"
                         },
                         new
                         {
                             Id = 9,
                             About = "Coğrafya Öğretmeni",
-                            Age = "26",
-                            BranchId = 9,
-                            Experience = "5",
+                            BranchId = 1,
                             FirstName = "Hakan",
                             Gender = "Erkek",
                             ImageUrl = "9.png",
                             LastName = "Kara",
-                            Location = "Kocaeli",
+                            Location = "İzmir",
                             PricePerHour = 250m,
-                            UniversityId = 9,
                             Url = "hakan-kara"
                         },
                         new
                         {
                             Id = 10,
                             About = "Edebiyat Öğretmeni",
-                            Age = "25",
-                            BranchId = 6,
-                            Experience = "4",
+                            BranchId = 1,
                             FirstName = "Hande",
                             Gender = "Kadın",
                             ImageUrl = "10.png",
                             LastName = "Karakaya",
-                            Location = "Kocaeli",
+                            Location = "İstanbul",
                             PricePerHour = 350m,
-                            UniversityId = 10,
                             Url = "hande-karakaya"
                         });
                 });
 
-            modelBuilder.Entity("OzelDers.Entity.Concrete.University", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Universities", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Boğaziçi Üniversitesi"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "İstanbul Teknik Üniversitesi"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Yıldız Teknik Üniversitesi"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Anadolu Üniversitesi"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Marmara Üniversitesi"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "İstanbul Üniversitesi"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "Kocaeli Üniversitesi"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Name = "Sakarya Üniversitesi"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name = "Bahçeşehir Üniversitesi"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Name = "Bilkent Üniversitesi"
-                        });
+                    b.HasOne("OzelDers.Entity.Concrete.Identity.Role", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("OzelDers.Entity.Concrete.StudentTeacher", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("OzelDers.Entity.Concrete.Student", "Student")
-                        .WithMany("StudentTeachers")
-                        .HasForeignKey("StudentId")
+                    b.HasOne("OzelDers.Entity.Concrete.Identity.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("OzelDers.Entity.Concrete.Identity.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("OzelDers.Entity.Concrete.Identity.Role", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("OzelDers.Entity.Concrete.Teacher", "Teacher")
-                        .WithMany("StudentTeachers")
-                        .HasForeignKey("TeacherId")
+                    b.HasOne("OzelDers.Entity.Concrete.Identity.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Student");
-
-                    b.Navigation("Teacher");
                 });
 
-            modelBuilder.Entity("OzelDers.Entity.Concrete.Teacher", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("OzelDers.Entity.Concrete.Identity.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("OzelDers.Entity.Concrete.Identity.User", b =>
                 {
                     b.HasOne("OzelDers.Entity.Concrete.Branch", "Branch")
                         .WithMany()
@@ -607,25 +1012,45 @@ namespace OzelDers.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("OzelDers.Entity.Concrete.University", "University")
-                        .WithMany()
-                        .HasForeignKey("UniversityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Branch");
-
-                    b.Navigation("University");
                 });
 
             modelBuilder.Entity("OzelDers.Entity.Concrete.Student", b =>
                 {
-                    b.Navigation("StudentTeachers");
+                    b.HasOne("OzelDers.Entity.Concrete.Identity.User", "User")
+                        .WithMany("Students")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("OzelDers.Entity.Concrete.Teacher", b =>
                 {
-                    b.Navigation("StudentTeachers");
+                    b.HasOne("OzelDers.Entity.Concrete.Branch", "Branch")
+                        .WithMany("Teachers")
+                        .HasForeignKey("BranchId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OzelDers.Entity.Concrete.Identity.User", "User")
+                        .WithMany("Teachers")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Branch");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("OzelDers.Entity.Concrete.Branch", b =>
+                {
+                    b.Navigation("Teachers");
+                });
+
+            modelBuilder.Entity("OzelDers.Entity.Concrete.Identity.User", b =>
+                {
+                    b.Navigation("Students");
+
+                    b.Navigation("Teachers");
                 });
 #pragma warning restore 612, 618
         }

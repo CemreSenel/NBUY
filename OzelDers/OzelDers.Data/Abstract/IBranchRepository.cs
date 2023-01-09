@@ -9,6 +9,5 @@ namespace OzelDers.Data.Abstract
 {
     public interface IBranchRepository : IRepository<Branch>
     {
-
     }
 }

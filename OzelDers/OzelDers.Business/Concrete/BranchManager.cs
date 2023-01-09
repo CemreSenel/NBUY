@@ -17,17 +17,6 @@ namespace OzelDers.Business.Concrete
         {
             _unitOfWork = unitOfWork;
         }
-
-        public async Task<Branch> GetByIdAsync(int id)
-        {
-            return await _unitOfWork.Branches.GetByIdAsync(id); 
-        }
-
-        public async Task<List<Branch>> GetAllAsync()
-        {
-            return await _unitOfWork.Branches.GetAllAsync();
-        }
-
         public async Task CreateAsync(Branch branch)
         {
             await _unitOfWork.Branches.CreateAsync(branch);
@@ -39,10 +28,22 @@ namespace OzelDers.Business.Concrete
             _unitOfWork.Branches.Delete(branch);
             _unitOfWork.Save();
         }
-        
+
+        public async Task<List<Branch>> GetAllAsync()
+        {
+            return await _unitOfWork.Branches.GetAllAsync();
+
+        }
+
+        public async Task<Branch> GetByIdAsync(int id)
+        {
+            return await _unitOfWork.Branches.GetByIdAsync(id);
+
+        }
+
         public void Update(Branch branch)
         {
-            _unitOfWork.Branches.Update(branch);    
+            _unitOfWork.Branches.Update(branch);
             _unitOfWork.Save();
         }
     }

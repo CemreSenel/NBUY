@@ -17,29 +17,32 @@ namespace OzelDers.Data.Concrete
         {
             _context = context;
         }
+
         private EfCoreTeacherRepository _teacherRepository;
         private EfCoreStudentRepository _studentRepository;
         private EfCoreBranchRepository _branchRepository;
-
         public ITeacherRepository Teachers => _teacherRepository = _teacherRepository ?? new EfCoreTeacherRepository(_context);
 
-        public IStudentRepository Students => _studentRepository = _studentRepository ?? new EfCoreStudentRepository(_context);
+        public IStudentRepository Students => _studentRepository = _studentRepository?? new EfCoreStudentRepository(_context);
 
-        public IBranchRepository Branches => _branchRepository = _branchRepository ?? new EfCoreBranchRepository(_context);
+        public IBranchRepository Branches => _branchRepository = _branchRepository?? new EfCoreBranchRepository(_context);
 
-        public async Task SaveAsync()
+        public void Dispose()
         {
-            await _context.SaveChangesAsync();
+            _context.Dispose();
+
         }
 
         public void Save()
         {
             _context.SaveChanges();
+
         }
 
-        public void Dispose()
+        public async Task SaveAsync()
         {
-            _context.Dispose();
+            await _context.SaveChangesAsync();
+
         }
     }
 }

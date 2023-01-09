@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace OzelDers.Data.Abstract
 {
     public interface ITeacherRepository : IRepository<Teacher>
-    { 
-        
+    {
     }
 }

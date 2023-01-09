@@ -18,9 +18,9 @@ namespace OzelDers.Data.Config
 
             builder.Property(b => b.Name)
                 .IsRequired()
-                .HasMaxLength(100);
+                .HasMaxLength(50);
 
-            builder.Property(b => b.Url)
+            builder.Property(t => t.Url)
                 .IsRequired()
                 .HasMaxLength(250);
 
@@ -28,7 +28,7 @@ namespace OzelDers.Data.Config
 
             builder.HasData(
 
-                new Branch { Id = 1, Name = "Matematik",Url="matematik" },
+                new Branch { Id = 1, Name = "Matematik", Url = "matematik" },
                 new Branch { Id = 2, Name = "Kimya", Url = "kimya" },
                 new Branch { Id = 3, Name = "Fizik", Url = "fizik" },
                 new Branch { Id = 4, Name = "Biyoloji", Url = "biyoloji" },
@@ -40,6 +40,7 @@ namespace OzelDers.Data.Config
                 new Branch { Id = 10, Name = "Bilgisayar", Url = "bilgisayar" }
 
             );
+
         }
     }
 }

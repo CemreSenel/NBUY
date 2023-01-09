@@ -16,19 +16,9 @@ namespace OzelDers.Business.Concrete
         {
             _unitOfWork = unitOfWork;
         }
-
-        public async Task<Teacher> GetByIdAsync(int id)
-        {
-            return await _unitOfWork.Teachers.GetByIdAsync(id);
-        }
-
-        public async Task<List<Teacher>> GetAllAsync()
-        {
-            return await _unitOfWork.Teachers.GetAllAsync();
-        }
-
         public async Task CreateAsync(Teacher teacher)
         {
+
             await _unitOfWork.Teachers.CreateAsync(teacher);
             await _unitOfWork.SaveAsync();
         }
@@ -39,15 +29,22 @@ namespace OzelDers.Business.Concrete
             _unitOfWork.Save();
         }
 
+        public async Task<List<Teacher>> GetAllAsync()
+        {
+            return await _unitOfWork.Teachers.GetAllAsync();
+
+        }
+
+        public async Task<Teacher> GetByIdAsync(int id)
+        {
+            return await _unitOfWork.Teachers.GetByIdAsync(id);
+
+        }
+
         public void Update(Teacher teacher)
         {
             _unitOfWork.Teachers.Update(teacher);
             _unitOfWork.Save();
-        }
-
-        public async Task<List<Teacher>> GetHomePageTeachersAsync()
-        {
-            return await _unitOfWork.GetHomePageTeachersAsync();
         }
     }
 }

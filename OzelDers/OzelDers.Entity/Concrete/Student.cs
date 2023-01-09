@@ -1,4 +1,6 @@
-﻿using OzelDers.Entity.Abstract;
+﻿using Microsoft.AspNetCore.Identity;
+using OzelDers.Entity.Abstract;
+using OzelDers.Entity.Concrete.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +14,11 @@ namespace OzelDers.Entity.Concrete
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Age { get; set; }
-        public string Gender { get; set; }
-        public string Url { get; set; }
         public string ImageUrl { get; set; }
-        public List<StudentTeacher> StudentTeachers { get; set; }
-
+        public string Url { get; set; }
+        public string Gender { get; set; }
+        public string UserId { get; set; }
+        public User User { get; set; }
+        public string Location { get; set ; }
     }
 }

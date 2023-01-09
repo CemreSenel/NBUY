@@ -9,5 +9,6 @@ namespace OzelDers.Data.Abstract
 {
     public interface IStudentRepository : IRepository<Student>
     {
+
     }
 }

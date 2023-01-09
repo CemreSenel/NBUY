@@ -17,21 +17,10 @@ namespace OzelDers.Business.Concrete
         {
             _unitOfWork = unitOfWork;
         }
-
-        public async Task<Student> GetByIdAsync(int id)
-        {
-            return await _unitOfWork.Students.GetByIdAsync(id);
-        }
-
-        public async Task<List<Student>> GetAllAsync()
-        {
-            return await _unitOfWork.Students.GetAllAsync();
-        }
-
         public async Task CreateAsync(Student student)
         {
-           await _unitOfWork.Students.CreateAsync(student);
-           await _unitOfWork.SaveAsync();
+            await _unitOfWork.Students.CreateAsync(student);
+            await _unitOfWork.SaveAsync();
         }
 
         public void Delete(Student student)
@@ -39,7 +28,19 @@ namespace OzelDers.Business.Concrete
             _unitOfWork.Students.Delete(student);
             _unitOfWork.Save();
         }
-       
+
+        public  async Task<List<Student>> GetAllAsync()
+        {
+            return await _unitOfWork.Students.GetAllAsync();
+
+        }
+
+        public async Task<Student> GetByIdAsync(int id)
+        {
+            return await _unitOfWork.Students.GetByIdAsync(id);
+
+        }
+
         public void Update(Student student)
         {
             _unitOfWork.Students.Delete(student);

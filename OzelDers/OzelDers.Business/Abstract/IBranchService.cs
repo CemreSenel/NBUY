@@ -14,6 +14,5 @@ namespace OzelDers.Business.Abstract
         Task CreateAsync(Branch branch);
         void Delete(Branch branch);
         void Update(Branch branch);
-
     }
 }

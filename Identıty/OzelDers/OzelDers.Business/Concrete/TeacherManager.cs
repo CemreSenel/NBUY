@@ -11,11 +11,11 @@ namespace OzelDers.Business.Concrete
 {
     public class TeacherManager : ITeacherService
     {
-        private readonly IUnitOfWork _unitOfWork;
-        public TeacherManager(IUnitOfWork unitOfWork)
-        {
-            _unitOfWork = unitOfWork;
-        }
+            private readonly IUnitOfWork _unitOfWork;
+            public TeacherManager(IUnitOfWork unitOfWork)
+            {
+                _unitOfWork = unitOfWork;
+            }
 
         public async Task<Teacher> GetByIdAsync(int id)
         {

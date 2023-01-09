@@ -1,10 +1,19 @@
+
+
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using OzelDers.Business.Abstract;
 using OzelDers.Business.Concrete;
 using OzelDers.Data.Abstract;
 using OzelDers.Data.Concrete;
 using OzelDers.Data.Concrete.EfCore.Context;
+using OzelDers.Entity.Concrete.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddDbContext<OzelDersContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("SqliteConnection")));
+builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<OzelDersContext>().AddDefaultTokenProviders();
 
 
 builder.Services.AddControllersWithViews();
@@ -21,7 +30,7 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-        
+
     app.UseHsts();
 }
 

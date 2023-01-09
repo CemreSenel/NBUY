@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using OzelDers.Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace OzelDers.Data.Config
 {
-    public class StudentConfig : IEntityTypeConfiguration<Student>
+    internal class StudentConfig : IEntityTypeConfiguration<Student>
     {
         public void Configure(EntityTypeBuilder<Student> builder)
         {
@@ -24,9 +25,9 @@ namespace OzelDers.Data.Config
                 .IsRequired()
                 .HasMaxLength(50);
 
-
-            builder.Property(s => s.Age)
-                .IsRequired();
+            builder.Property(s => s.Location)
+                .IsRequired()
+                .HasMaxLength(50);
 
             builder.Property(t => t.Gender)
                .IsRequired();
@@ -45,19 +46,19 @@ namespace OzelDers.Data.Config
                 new Student
                 {
                     Id = 1,
-                    FirstName="Ali",
-                    LastName="Kazancı",
-                    Age="15",
-                    Gender="Erkek",
-                    Url="ali-kazanci",
-                    ImageUrl="1.png"
+                    FirstName = "Ali",
+                    LastName = "Kazancı",
+                    Location = "İstanbul",
+                    Gender = "Erkek",
+                    Url = "ali-kazanci",
+                    ImageUrl = "1.png"
                 },
                  new Student
                  {
                      Id = 2,
                      FirstName = "Kübra",
                      LastName = "Doğan",
-                     Age = "17",
+                     Location = "İstanbul",
                      Gender = "Kadın",
                      Url = "kübra-dogan",
                      ImageUrl = "2.png"
@@ -66,7 +67,7 @@ namespace OzelDers.Data.Config
                      Id = 3,
                      FirstName = "İsmet",
                      LastName = "Demirci",
-                     Age = "16",
+                     Location = "İzmir",
                      Gender = "Erkek",
                      Url = "ismet-demirci",
                      ImageUrl = "3.png"
@@ -75,7 +76,7 @@ namespace OzelDers.Data.Config
                      Id = 4,
                      FirstName = "Melike",
                      LastName = "Kızar",
-                     Age = "18",
+                     Location = "Ankara",
                      Gender = "Kadın",
                      Url = "melike-demirci",
                      ImageUrl = "4.png"
@@ -84,7 +85,7 @@ namespace OzelDers.Data.Config
                      Id = 5,
                      FirstName = "Osman",
                      LastName = "Kurtar",
-                     Age = "19",
+                     Location = "Ankara",
                      Gender = "Erkek",
                      Url = "osman-kurtar",
                      ImageUrl = "5.png"
@@ -93,7 +94,6 @@ namespace OzelDers.Data.Config
 
 
                 );
-
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OzelDers.Data.Abstract;
 using OzelDers.Data.Concrete.EfCore.Context;
+using OzelDers.Data.Config;
 using OzelDers.Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -14,18 +15,6 @@ namespace OzelDers.Data.Concrete.EfCore.Repositories
     {
         public EfCoreTeacherRepository(OzelDersContext context) : base(context)
         {
-        }
-
-        private OzelDersContext OzelDersContext
-        {
-            get { return _context as OzelDersContext; }
-        }
-
-        public async Task<List<Teacher>> GetHomePageTeachersAsync()
-        {
-            return await OzelDersContext
-                .Teachers
-                .ToListAsync();
         }
     }
 }
