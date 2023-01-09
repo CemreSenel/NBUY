@@ -51,46 +51,10 @@ namespace OzelDers.Data.Config
                     Location = "İstanbul",
                     Gender = "Erkek",
                     Url = "ali-kazanci",
-                    ImageUrl = "1.png"
-                },
-                 new Student
-                 {
-                     Id = 2,
-                     FirstName = "Kübra",
-                     LastName = "Doğan",
-                     Location = "İstanbul",
-                     Gender = "Kadın",
-                     Url = "kübra-dogan",
-                     ImageUrl = "2.png"
-                 }, new Student
-                 {
-                     Id = 3,
-                     FirstName = "İsmet",
-                     LastName = "Demirci",
-                     Location = "İzmir",
-                     Gender = "Erkek",
-                     Url = "ismet-demirci",
-                     ImageUrl = "3.png"
-                 }, new Student
-                 {
-                     Id = 4,
-                     FirstName = "Melike",
-                     LastName = "Kızar",
-                     Location = "Ankara",
-                     Gender = "Kadın",
-                     Url = "melike-demirci",
-                     ImageUrl = "4.png"
-                 }, new Student
-                 {
-                     Id = 5,
-                     FirstName = "Osman",
-                     LastName = "Kurtar",
-                     Location = "Ankara",
-                     Gender = "Erkek",
-                     Url = "osman-kurtar",
-                     ImageUrl = "5.png"
-                 }
-
+                    ImageUrl = "1.png",
+                    UserId="student"
+                }
+                
 
 
                 );

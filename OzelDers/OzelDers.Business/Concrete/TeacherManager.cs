@@ -41,6 +41,11 @@ namespace OzelDers.Business.Concrete
 
         }
 
+        public async Task<List<Teacher>> GetHomePageTeachersAsync()
+        {
+            return await _unitOfWork.Teachers.GetHomePageTeachersAsync();
+        }
+
         public void Update(Teacher teacher)
         {
             _unitOfWork.Teachers.Update(teacher);

@@ -3936,23 +3936,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\casper\\.nuget\\packages\\": {},
+    "C:\\Users\\SABAH\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\casper\\OneDrive\\Belgeler\\GitHub\\NBUY\\Week_13\\26-12-2022\\ShoppingApp.Data\\ShoppingApp.Data.csproj",
+      "projectUniqueName": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_13\\26-12-2022\\ShoppingApp.Data\\ShoppingApp.Data.csproj",
       "projectName": "ShoppingApp.Data",
-      "projectPath": "c:\\Users\\casper\\OneDrive\\Belgeler\\GitHub\\NBUY\\Week_13\\26-12-2022\\ShoppingApp.Data\\ShoppingApp.Data.csproj",
-      "packagesPath": "C:\\Users\\casper\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\casper\\OneDrive\\Belgeler\\GitHub\\NBUY\\Week_13\\26-12-2022\\ShoppingApp.Data\\obj\\",
+      "projectPath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_13\\26-12-2022\\ShoppingApp.Data\\ShoppingApp.Data.csproj",
+      "packagesPath": "C:\\Users\\SABAH\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_13\\26-12-2022\\ShoppingApp.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\casper\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\SABAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3968,8 +3968,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "c:\\Users\\casper\\OneDrive\\Belgeler\\GitHub\\NBUY\\Week_13\\26-12-2022\\ShoppingApp.Entity\\ShoppingApp.Entity.csproj": {
-              "projectPath": "c:\\Users\\casper\\OneDrive\\Belgeler\\GitHub\\NBUY\\Week_13\\26-12-2022\\ShoppingApp.Entity\\ShoppingApp.Entity.csproj"
+            "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_13\\26-12-2022\\ShoppingApp.Entity\\ShoppingApp.Entity.csproj": {
+              "projectPath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_13\\26-12-2022\\ShoppingApp.Entity\\ShoppingApp.Entity.csproj"
             }
           }
         }

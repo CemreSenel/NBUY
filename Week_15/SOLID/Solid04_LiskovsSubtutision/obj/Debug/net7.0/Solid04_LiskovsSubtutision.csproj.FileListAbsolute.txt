@@ -1,0 +1,15 @@
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\bin\Debug\net7.0\Solid04_LiskovsSubtutision.exe
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\bin\Debug\net7.0\Solid04_LiskovsSubtutision.deps.json
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\bin\Debug\net7.0\Solid04_LiskovsSubtutision.runtimeconfig.json
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\bin\Debug\net7.0\Solid04_LiskovsSubtutision.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\bin\Debug\net7.0\Solid04_LiskovsSubtutision.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\obj\Debug\net7.0\Solid04_LiskovsSubtutision.csproj.AssemblyReference.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\obj\Debug\net7.0\Solid04_LiskovsSubtutision.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\obj\Debug\net7.0\Solid04_LiskovsSubtutision.AssemblyInfoInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\obj\Debug\net7.0\Solid04_LiskovsSubtutision.AssemblyInfo.cs
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\obj\Debug\net7.0\Solid04_LiskovsSubtutision.csproj.CoreCompileInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\obj\Debug\net7.0\Solid04_LiskovsSubtutision.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\obj\Debug\net7.0\refint\Solid04_LiskovsSubtutision.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\obj\Debug\net7.0\Solid04_LiskovsSubtutision.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\obj\Debug\net7.0\Solid04_LiskovsSubtutision.genruntimeconfig.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid04_LiskovsSubtutision\obj\Debug\net7.0\ref\Solid04_LiskovsSubtutision.dll

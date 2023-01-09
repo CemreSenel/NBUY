@@ -9,5 +9,6 @@ namespace OzelDers.Data.Abstract
 {
     public interface ITeacherRepository : IRepository<Teacher>
     {
+        Task<List<Teacher>> GetHomePageTeachersAsync(); 
     }
 }

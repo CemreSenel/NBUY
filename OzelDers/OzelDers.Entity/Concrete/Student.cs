@@ -17,8 +17,9 @@ namespace OzelDers.Entity.Concrete
         public string ImageUrl { get; set; }
         public string Url { get; set; }
         public string Gender { get; set; }
+        public string Location { get; set; }
         public string UserId { get; set; }
         public User User { get; set; }
-        public string Location { get; set ; }
+      
     }
 }
