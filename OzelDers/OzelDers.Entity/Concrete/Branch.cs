@@ -13,5 +13,7 @@ namespace OzelDers.Entity.Concrete
         public string Url { get; set; }
 
         public List<Teacher> Teachers { get; set; }
+        public List<TeacherBranch> TeacherBranches { get; set; }
+
     }
 }

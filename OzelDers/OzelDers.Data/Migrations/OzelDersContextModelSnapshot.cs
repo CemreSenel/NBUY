@@ -103,12 +103,12 @@ namespace OzelDers.Data.Migrations
                         new
                         {
                             UserId = "student",
-                            RoleId = "b9b97afd-a2c5-4403-98a2-25eed28e2e5f"
+                            RoleId = "469151cb-18f8-4dcc-ab47-1879daf6adca"
                         },
                         new
                         {
-                            UserId = "teacher",
-                            RoleId = "fedb437c-7c08-4fc4-90a2-8bebbeb09a85"
+                            UserId = "teacher1",
+                            RoleId = "e77e799a-d4c5-4917-b408-dc8a01fdda98"
                         });
                 });
 
@@ -245,21 +245,21 @@ namespace OzelDers.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "60642cf2-2377-42af-8104-e5efec3f8c91",
+                            Id = "52ed3a85-fdfe-49e3-b01c-49ea8da1f4e0",
                             Description = "Admin rolü",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "b9b97afd-a2c5-4403-98a2-25eed28e2e5f",
+                            Id = "469151cb-18f8-4dcc-ab47-1879daf6adca",
                             Description = "Student rolü",
                             Name = "Student",
                             NormalizedName = "STUDENT"
                         },
                         new
                         {
-                            Id = "fedb437c-7c08-4fc4-90a2-8bebbeb09a85",
+                            Id = "e77e799a-d4c5-4917-b408-dc8a01fdda98",
                             Description = "Teacher rolü",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
@@ -334,24 +334,48 @@ namespace OzelDers.Data.Migrations
                         {
                             Id = "student",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e03586dc-291e-4c9e-b787-1e0e06d2b0c8",
+                            ConcurrencyStamp = "8abc2a29-984e-469e-9658-082379e4d838",
                             Email = "student@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2e242364-391a-4e85-95ea-06dbb4326304",
+                            SecurityStamp = "d2d00aa2-3619-4cb0-878e-d8c4abd78efd",
                             TwoFactorEnabled = false
                         },
                         new
                         {
-                            Id = "teacher",
+                            Id = "teacher1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "af5019ed-1426-4e87-90cd-f288b6270e8d",
+                            ConcurrencyStamp = "818f6da9-490c-44a0-a98b-2df174634857",
                             Email = "teacher@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "83746226-e538-46b3-aee9-3811e71515c6",
+                            SecurityStamp = "2e3f3514-3f2b-4939-b8fc-a8f3dbb5713c",
+                            TwoFactorEnabled = false
+                        },
+                        new
+                        {
+                            Id = "teacher2",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "6c0bfcae-f5b8-4148-bcf5-34b00365f44a",
+                            Email = "teacher1@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "f871aab7-72f4-411c-a25d-368ebc0d42b1",
+                            TwoFactorEnabled = false
+                        },
+                        new
+                        {
+                            Id = "teacher3",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "68cc6452-1531-4aac-9987-04537ed07e8c",
+                            Email = "teacher2@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "f3ed813e-8ace-4a27-819f-86773fd0ef41",
                             TwoFactorEnabled = false
                         });
                 });
@@ -483,12 +507,104 @@ namespace OzelDers.Data.Migrations
                             FirstName = "Mert",
                             Gender = "Erkek",
                             ImageUrl = "1.png",
-                            IsHome = false,
+                            IsHome = true,
                             LastName = "Muslu",
                             Location = "İstanbul",
                             PricePerHour = 400m,
                             Url = "mert-muslu",
-                            UserId = "teacher"
+                            UserId = "teacher1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            About = "Edebiyat Öğretmeni",
+                            BranchId = 6,
+                            FirstName = "Hande",
+                            Gender = "Kadın",
+                            ImageUrl = "2.png",
+                            IsHome = true,
+                            LastName = "Karakaya",
+                            Location = "İstanbul",
+                            PricePerHour = 300m,
+                            Url = "hande-karakaya",
+                            UserId = "teacher2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            About = "Almanca Öğretmeni",
+                            BranchId = 7,
+                            FirstName = "Harun",
+                            Gender = "Erkek",
+                            ImageUrl = "3.png",
+                            IsHome = true,
+                            LastName = "Kara",
+                            Location = "İstanbul",
+                            PricePerHour = 300m,
+                            Url = "harun-kara",
+                            UserId = "teacher3"
+                        });
+                });
+
+            modelBuilder.Entity("OzelDers.Entity.Concrete.TeacherBranch", b =>
+                {
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("BranchId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("TeacherId", "BranchId");
+
+                    b.HasIndex("BranchId");
+
+                    b.ToTable("TeacherBranches", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            TeacherId = 1,
+                            BranchId = 1
+                        },
+                        new
+                        {
+                            TeacherId = 1,
+                            BranchId = 2
+                        },
+                        new
+                        {
+                            TeacherId = 1,
+                            BranchId = 3
+                        },
+                        new
+                        {
+                            TeacherId = 2,
+                            BranchId = 4
+                        },
+                        new
+                        {
+                            TeacherId = 2,
+                            BranchId = 5
+                        },
+                        new
+                        {
+                            TeacherId = 2,
+                            BranchId = 6
+                        },
+                        new
+                        {
+                            TeacherId = 3,
+                            BranchId = 7
+                        },
+                        new
+                        {
+                            TeacherId = 3,
+                            BranchId = 8
+                        },
+                        new
+                        {
+                            TeacherId = 3,
+                            BranchId = 9
                         });
                 });
 
@@ -567,6 +683,25 @@ namespace OzelDers.Data.Migrations
                     b.Navigation("Branch");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("OzelDers.Entity.Concrete.TeacherBranch", b =>
+                {
+                    b.HasOne("OzelDers.Entity.Concrete.Branch", "Branch")
+                        .WithMany()
+                        .HasForeignKey("BranchId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OzelDers.Entity.Concrete.Teacher", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Branch");
+
+                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("OzelDers.Entity.Concrete.Branch", b =>

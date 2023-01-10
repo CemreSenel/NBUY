@@ -23,17 +23,21 @@ public class HomeController : Controller
         {
             teacherDtos.Add(new TeacherDto
             {
-                Id= teacher.Id, 
-                FirstName= teacher.FirstName,   
-                LastName= teacher.LastName, 
-                Location= teacher.Location, 
-                Url= teacher.Url,   
-                PricePerHour= teacher.PricePerHour
+                Id = teacher.Id,
+                FirstName = teacher.FirstName,
+                LastName = teacher.LastName,
+                ImageUrl = teacher.ImageUrl,
+                Location = teacher.Location,
+                Url = teacher.Url,
+                PricePerHour = teacher.PricePerHour
             });
         }
-        return View(teacherDtos);  
+        return View(teacherDtos);
     }
- 
 
-    
+
 }
+
+
+
+

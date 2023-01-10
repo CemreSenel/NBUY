@@ -1,0 +1,5 @@
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid05_InterfaceSegregation\obj\Debug\net7.0\Solid05_InterfaceSegregation.csproj.AssemblyReference.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid05_InterfaceSegregation\obj\Debug\net7.0\Solid05_InterfaceSegregation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid05_InterfaceSegregation\obj\Debug\net7.0\Solid05_InterfaceSegregation.AssemblyInfoInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid05_InterfaceSegregation\obj\Debug\net7.0\Solid05_InterfaceSegregation.AssemblyInfo.cs
+C:\Users\SABAH\Documents\GitHub\NBUY\Week_15\SOLID\Solid05_InterfaceSegregation\obj\Debug\net7.0\Solid05_InterfaceSegregation.csproj.CoreCompileInputs.cache

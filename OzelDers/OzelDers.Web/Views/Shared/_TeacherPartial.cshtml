@@ -1,13 +1,16 @@
 ﻿@using OzelDers.Web.Models.Dtos
 @model TeacherDto
-<div class="card mb-2" style="height:300px;">
-
+<div class="card mb-2" style="height:280px;">
+    <div class="card-img p-2 text-center">
+        <img class=" card-img-top" src="~/images/@Model.ImageUrl" style="width:125px; height:125px;" />
+    </div>
     <div class="card-body">
-        <h5 class="card-title text-center">@Model.FirstName</h5>
-        <div class="text-muted text-center">@Model.LastName</div>
+        <h5 class="card-title text-center">@Model.FirstName @Model.LastName</h5>
         <div class="text-muted text-center">@Model.Location</div>
         <div class="text-muted text-center">@Model.PricePerHour</div>
-
+     
     </div>
 
 </div>
+
+

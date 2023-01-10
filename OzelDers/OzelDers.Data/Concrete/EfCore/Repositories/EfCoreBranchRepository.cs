@@ -15,5 +15,12 @@ namespace OzelDers.Data.Concrete.EfCore.Repositories
         public EfCoreBranchRepository(OzelDersContext context) : base(context)
         {
         }
+
+        private OzelDersContext OzelDersContext
+        {
+            get { return _context as OzelDersContext; }
+        }
+
+
     }
 }

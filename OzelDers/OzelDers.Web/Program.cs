@@ -42,6 +42,12 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "teachers",
+    pattern: "branþ/{branchurl?}",
+    defaults: new { controller = "Branch", action = "BranchList" }
+    );
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 

@@ -27,9 +27,28 @@ namespace OzelDers.Data.Concrete.EfCore.Repositories
         {
             return await OzelDersContext
                 .Teachers
-                .Where(t=>t.IsHome)
+                .Where(t => t.IsHome)
                 .ToListAsync();
-                
+
+        }
+
+        public async Task<List<Teacher>> GetTeachersByBranchAsync(string branch)
+        {
+
+
+            var teachers = OzelDersContext
+                .Teachers
+                  .AsQueryable();
+            if (branch != null)
+            {
+                teachers = teachers
+                    .Include(t => t.TeacherBranches)
+                    .ThenInclude(tb => tb.Branch)
+                    .Where(t => t.TeacherBranches.Any(tb=>tb.Branch.Url == branch));
+
+            }
+            return await teachers.ToListAsync();    
+          
         }
     }
 }

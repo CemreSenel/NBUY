@@ -53,10 +53,20 @@ namespace OzelDers.Data.Extensions
 
                   new User
                   {
-                           Id="teacher",
+                           Id="teacher1",
                      Email="teacher@gmail.com"
-                  }
-         
+                  },
+                   new User
+                  {
+                           Id="teacher2",
+                     Email="teacher1@gmail.com"
+                  },
+                      new User
+                  {
+                           Id="teacher3",
+                     Email="teacher2@gmail.com"
+                  },
+
 
 
 

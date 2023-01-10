@@ -15,6 +15,7 @@ namespace OzelDers.Business.Abstract
         void Delete(Teacher teacher);
         void Update(Teacher teacher);
 
-        Task<List<Teacher>> GetHomePageTeachersAsync(); 
+        Task<List<Teacher>> GetHomePageTeachersAsync();
+        Task<List<Teacher>> GetTeachersByBranchAsync(string branch);
     }
 }

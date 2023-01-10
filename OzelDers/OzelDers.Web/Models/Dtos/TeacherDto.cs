@@ -1,4 +1,6 @@
-﻿namespace OzelDers.Web.Models.Dtos
+﻿using OzelDers.Entity.Concrete;
+
+namespace OzelDers.Web.Models.Dtos
 {
     public class TeacherDto
     {
@@ -7,7 +9,9 @@
         public string LastName { get; set; }
         public string Location { get; set; }
         public string Url { get; set; }
+        public string ImageUrl { get; set; }
         public decimal? PricePerHour { get; set; }
+
 
 
     }

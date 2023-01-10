@@ -16,8 +16,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/SABAH/Documents/GitHub/NBUY/OzelDers/OzelDers.Web/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SABAH/Documents/GitHub/NBUY/OzelDers/OzelDers.Web/Views/Branch/BranchList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXEJyYW5jaExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/SABAH/Documents/GitHub/NBUY/OzelDers/OzelDers.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SABAH/Documents/GitHub/NBUY/OzelDers/OzelDers.Web/Views/Shared/Components/Branches/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQnJhbmNoZXNcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/SABAH/Documents/GitHub/NBUY/OzelDers/OzelDers.Web/Views/Shared/_TeacherPartial.cshtml]
