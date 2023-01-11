@@ -25,22 +25,15 @@ namespace OzelDers.Data.Config
                 .HasMaxLength(50);
 
             builder.Property(t => t.Location)
-                .IsRequired()
                 .HasMaxLength(50);
 
-            builder.Property(t => t.Gender)
-                .IsRequired();
-
             builder.Property(t => t.About)
-                .IsRequired()
                 .HasMaxLength(500);
 
             builder.Property(t => t.Url)
-                .IsRequired()
                 .HasMaxLength(250);
 
             builder.Property(t => t.ImageUrl)
-                .IsRequired()
                 .HasMaxLength(250);
 
 
@@ -58,7 +51,6 @@ namespace OzelDers.Data.Config
                     Url = "mert-muslu",
                     ImageUrl = "1.png",
                     PricePerHour = 400,
-                    BranchId = 1,
                     UserId = "teacher1",
                     IsHome = true
 
@@ -74,7 +66,6 @@ namespace OzelDers.Data.Config
                          Url = "hande-karakaya",
                          ImageUrl = "2.png",
                          PricePerHour = 300,
-                         BranchId = 6,
                          UserId = "teacher2",
                          IsHome = true
 
@@ -90,7 +81,6 @@ namespace OzelDers.Data.Config
                                 Url = "harun-kara",
                                 ImageUrl = "3.png",
                                 PricePerHour = 300,
-                                BranchId = 7,
                                 UserId = "teacher3",
                                 IsHome = true
 

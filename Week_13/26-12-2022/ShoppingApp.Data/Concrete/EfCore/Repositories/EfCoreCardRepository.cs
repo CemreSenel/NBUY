@@ -52,7 +52,7 @@ namespace ShoppingApp.Data.Concrete.EfCore.Repositories
                 .Include(c => c.CardItems)
                 .ThenInclude(ci => ci.Product)
                 .FirstOrDefault(c => c.UserId == userId);
-            return card;
+            return  card;
         }
     }
 }

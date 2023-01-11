@@ -26,18 +26,13 @@ namespace OzelDers.Data.Config
                 .HasMaxLength(50);
 
             builder.Property(s => s.Location)
-                .IsRequired()
                 .HasMaxLength(50);
 
-            builder.Property(t => t.Gender)
-               .IsRequired();
 
             builder.Property(t => t.Url)
-                .IsRequired()
                 .HasMaxLength(250);
 
             builder.Property(t => t.ImageUrl)
-                .IsRequired()
                 .HasMaxLength(250);
 
             builder.ToTable("Students");
