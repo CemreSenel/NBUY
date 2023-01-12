@@ -102,5 +102,36 @@ namespace OzelDers.Web.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+        public async Task<IActionResult> Manage(string id)
+        {
+            var name = id;
+            if (String.IsNullOrEmpty(name))
+            {
+                return NotFound();
+            }
+            var user = await _userManager.FindByNameAsync(name);
+            if (user == null) { return NotFound();}
+            UserManageDto userManageDto = new UserManageDto();
+            if (User.IsInRole("Teacher"))
+            {
+                userManageDto.Id = user.Id;
+                userManageDto.FirstName = user.Teachers.FirstName;
+                userManageDto.LastName = user.Teachers.LastName;
+                userManageDto.UserName = user.UserName;
+                userManageDto.PricePerHour = user.Teachers.PricePerHour;
+                userManageDto.Email = user.Email;
+            }
+            else if(User.IsInRole("Student"))
+            {
+                userManageDto.Id = user.Id;
+                userManageDto.FirstName=user.Students.FirstName;
+                userManageDto.LastName=user.Students.LastName;
+                userManageDto.UserName = user.UserName;
+               
+            }
+            return View(userManageDto);
+        }
+
     }
 }

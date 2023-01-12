@@ -7,7 +7,7 @@
     <div class="card-body">
         <h5 class="card-title text-center">@Model.FirstName @Model.LastName</h5>
         <div class="text-muted text-center">@Model.Location</div>
-        <div class="text-muted text-center">@Model.PricePerHour</div>
+        <div class="text-muted text-center">@($"{Model.PricePerHour:C0}")</div>
      
     </div>
 

@@ -11,7 +11,7 @@ using OzelDers.Data.Concrete.EfCore.Context;
 namespace OzelDers.Data.Migrations
 {
     [DbContext(typeof(OzelDersContext))]
-    [Migration("20230111114035_InitialDb")]
+    [Migration("20230111155734_InitialDb")]
     partial class InitialDb
     {
         /// <inheritdoc />
@@ -106,12 +106,12 @@ namespace OzelDers.Data.Migrations
                         new
                         {
                             UserId = "student",
-                            RoleId = "a7da5ab8-12e0-4d6f-957f-cade47507937"
+                            RoleId = "0bb67308-1aa8-475e-9df8-21950a9313d1"
                         },
                         new
                         {
                             UserId = "teacher1",
-                            RoleId = "472c381f-53b4-4f70-824d-fe6b97a3e0ac"
+                            RoleId = "f1e2aa5a-d987-4c2b-a43b-218897c45ed6"
                         });
                 });
 
@@ -248,21 +248,21 @@ namespace OzelDers.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a43d96ff-3ea2-42d6-8e88-977edd3e47db",
+                            Id = "cf8d07b6-40ff-40c4-bd85-fe8b59860ef4",
                             Description = "Admin rolü",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "a7da5ab8-12e0-4d6f-957f-cade47507937",
+                            Id = "0bb67308-1aa8-475e-9df8-21950a9313d1",
                             Description = "Student rolü",
                             Name = "Student",
                             NormalizedName = "STUDENT"
                         },
                         new
                         {
-                            Id = "472c381f-53b4-4f70-824d-fe6b97a3e0ac",
+                            Id = "f1e2aa5a-d987-4c2b-a43b-218897c45ed6",
                             Description = "Teacher rolü",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
@@ -337,48 +337,48 @@ namespace OzelDers.Data.Migrations
                         {
                             Id = "student",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5ce478af-3447-494c-bc41-1121c4e04222",
+                            ConcurrencyStamp = "527ee357-2dd4-4111-aab6-ba3af0a5bb0b",
                             Email = "student@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6f0089ea-0656-4c5c-af41-af6af3b2b4cb",
+                            SecurityStamp = "66f50b2c-8395-4b55-b581-ceac7340ffa2",
                             TwoFactorEnabled = false
                         },
                         new
                         {
                             Id = "teacher1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6c6f4e54-db12-4124-b3d2-3b3f4e09ccab",
+                            ConcurrencyStamp = "1e0d63c9-e34c-492b-b0b8-3769c7c61450",
                             Email = "teacher@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d1213e44-a8e6-4601-b29c-9c9125788f3c",
+                            SecurityStamp = "d74862c5-ef1b-4fbf-b932-b14e25cb777f",
                             TwoFactorEnabled = false
                         },
                         new
                         {
                             Id = "teacher2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6e7003a7-1e1f-4f79-9a3d-2f4a737e54f5",
+                            ConcurrencyStamp = "071bb2d1-353d-44fb-b433-63829c208c20",
                             Email = "teacher1@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "56a26ada-5ab2-4bf1-bd94-2c975580bf34",
+                            SecurityStamp = "23808c52-9d44-4a0d-ad21-053d69ced712",
                             TwoFactorEnabled = false
                         },
                         new
                         {
                             Id = "teacher3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7464ff4c-af17-4ef5-9392-ee249955201e",
+                            ConcurrencyStamp = "bd3d3dca-8696-4d2d-a4e2-a37683cf0a95",
                             Email = "teacher2@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d991693c-96fb-491b-bccf-ce869edcdf7d",
+                            SecurityStamp = "f9da910a-e7de-4f5a-ac71-d359e7b35922",
                             TwoFactorEnabled = false
                         });
                 });

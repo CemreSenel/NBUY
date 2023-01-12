@@ -259,9 +259,9 @@ namespace OzelDers.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "472c381f-53b4-4f70-824d-fe6b97a3e0ac", null, "Teacher rolü", "Teacher", "TEACHER" },
-                    { "a43d96ff-3ea2-42d6-8e88-977edd3e47db", null, "Admin rolü", "Admin", "ADMIN" },
-                    { "a7da5ab8-12e0-4d6f-957f-cade47507937", null, "Student rolü", "Student", "STUDENT" }
+                    { "0bb67308-1aa8-475e-9df8-21950a9313d1", null, "Student rolü", "Student", "STUDENT" },
+                    { "cf8d07b6-40ff-40c4-bd85-fe8b59860ef4", null, "Admin rolü", "Admin", "ADMIN" },
+                    { "f1e2aa5a-d987-4c2b-a43b-218897c45ed6", null, "Teacher rolü", "Teacher", "TEACHER" }
                 });
 
             migrationBuilder.InsertData(
@@ -269,10 +269,10 @@ namespace OzelDers.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "student", 0, "5ce478af-3447-494c-bc41-1121c4e04222", "student@gmail.com", false, false, null, null, null, null, null, false, "6f0089ea-0656-4c5c-af41-af6af3b2b4cb", false, null },
-                    { "teacher1", 0, "6c6f4e54-db12-4124-b3d2-3b3f4e09ccab", "teacher@gmail.com", false, false, null, null, null, null, null, false, "d1213e44-a8e6-4601-b29c-9c9125788f3c", false, null },
-                    { "teacher2", 0, "6e7003a7-1e1f-4f79-9a3d-2f4a737e54f5", "teacher1@gmail.com", false, false, null, null, null, null, null, false, "56a26ada-5ab2-4bf1-bd94-2c975580bf34", false, null },
-                    { "teacher3", 0, "7464ff4c-af17-4ef5-9392-ee249955201e", "teacher2@gmail.com", false, false, null, null, null, null, null, false, "d991693c-96fb-491b-bccf-ce869edcdf7d", false, null }
+                    { "student", 0, "527ee357-2dd4-4111-aab6-ba3af0a5bb0b", "student@gmail.com", false, false, null, null, null, null, null, false, "66f50b2c-8395-4b55-b581-ceac7340ffa2", false, null },
+                    { "teacher1", 0, "1e0d63c9-e34c-492b-b0b8-3769c7c61450", "teacher@gmail.com", false, false, null, null, null, null, null, false, "d74862c5-ef1b-4fbf-b932-b14e25cb777f", false, null },
+                    { "teacher2", 0, "071bb2d1-353d-44fb-b433-63829c208c20", "teacher1@gmail.com", false, false, null, null, null, null, null, false, "23808c52-9d44-4a0d-ad21-053d69ced712", false, null },
+                    { "teacher3", 0, "bd3d3dca-8696-4d2d-a4e2-a37683cf0a95", "teacher2@gmail.com", false, false, null, null, null, null, null, false, "f9da910a-e7de-4f5a-ac71-d359e7b35922", false, null }
                 });
 
             migrationBuilder.InsertData(
@@ -297,8 +297,8 @@ namespace OzelDers.Data.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "a7da5ab8-12e0-4d6f-957f-cade47507937", "student" },
-                    { "472c381f-53b4-4f70-824d-fe6b97a3e0ac", "teacher1" }
+                    { "0bb67308-1aa8-475e-9df8-21950a9313d1", "student" },
+                    { "f1e2aa5a-d987-4c2b-a43b-218897c45ed6", "teacher1" }
                 });
 
             migrationBuilder.InsertData(
