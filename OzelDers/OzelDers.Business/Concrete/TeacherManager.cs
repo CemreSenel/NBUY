@@ -1,6 +1,7 @@
 ﻿using OzelDers.Business.Abstract;
 using OzelDers.Data.Abstract;
 using OzelDers.Entity.Concrete;
+using OzelDers.Entity.Concrete.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,11 @@ namespace OzelDers.Business.Concrete
         public async Task<List<Teacher>> GetTeachersByBranchAsync(string branch)
         {
             return await _unitOfWork.Teachers.GetTeachersByBranchAsync(branch);
+        }
+
+        public  User GetTeachersByUser(string userName)
+        {
+            return _unitOfWork.Teachers.GetTeachersByUser(userName);
         }
 
         public void Update(Teacher teacher)

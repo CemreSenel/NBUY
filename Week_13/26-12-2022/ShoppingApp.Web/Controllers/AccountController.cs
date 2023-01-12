@@ -199,7 +199,7 @@ namespace ShoppingApp.Web.Controllers
             {
                 Id=user.Id,
                 FirstName = user.FirstName,
-                LastName = user.LastName,
+                LastName = user.LastName,   
                 Gender = user.Gender,
                 DateOfBirth = user.DateOfBirth,
                 UserName = user.UserName,

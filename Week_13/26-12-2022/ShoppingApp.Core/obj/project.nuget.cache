@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ROkIiz9J0a7dHJkTnut8az41Ikps05rbIM9GnSWjYE9y4HnsVP7civrSuwYZOX0iWJryySHoM30VVM1/MilcYA==",
+  "dgSpecHash": "MPpQj2QWaI636UaFHC1iq5+bzxVK+u62XYNZQLDMNRknzS8qPM3/+Zgu+eRQ7oaNfEtWMiFmPWjvdA32lqMKXQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\casper\\OneDrive\\Belgeler\\GitHub\\NBUY\\Week_13\\26-12-2022\\ShoppingApp.Core\\ShoppingApp.Core.csproj",
+  "projectFilePath": "c:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\Week_13\\26-12-2022\\ShoppingApp.Core\\ShoppingApp.Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\casper\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
-    "C:\\Users\\casper\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
-    "C:\\Users\\casper\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
-    "C:\\Users\\casper\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+    "C:\\Users\\SABAH\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\SABAH\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\SABAH\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\SABAH\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }

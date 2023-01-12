@@ -3,6 +3,7 @@ using OzelDers.Data.Abstract;
 using OzelDers.Data.Concrete.EfCore.Context;
 using OzelDers.Data.Config;
 using OzelDers.Entity.Concrete;
+using OzelDers.Entity.Concrete.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,16 @@ namespace OzelDers.Data.Concrete.EfCore.Repositories
             }
             return await teachers.ToListAsync();    
           
+        }
+
+        public User GetTeachersByUser(string userName)
+        {
+            var users = OzelDersContext
+                .Users
+                .Include(t => t.Teachers)
+                .FirstOrDefault(ut => ut.UserName == userName);
+                return users;
+
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using OzelDers.Entity.Concrete;
+using OzelDers.Entity.Concrete.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace OzelDers.Data.Abstract
     {
         Task<List<Teacher>> GetHomePageTeachersAsync();
         Task<List<Teacher>> GetTeachersByBranchAsync(string branch);
+        public User GetTeachersByUser(string userName);
     }
 }

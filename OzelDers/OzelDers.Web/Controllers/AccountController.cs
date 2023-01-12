@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using OzelDers.Business.Abstract;
 using OzelDers.Entity.Concrete;
 using OzelDers.Entity.Concrete.Identity;
 using OzelDers.Web.Models.Dtos;
+using System.Data;
 
 namespace OzelDers.Web.Controllers
 {
@@ -10,12 +12,15 @@ namespace OzelDers.Web.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly ITeacherService _teacherService;
 
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, ITeacherService teacherService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _teacherService = teacherService;
         }
+
 
         public IActionResult Register()
         {
@@ -65,7 +70,7 @@ namespace OzelDers.Web.Controllers
                     }
                 }
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
 
         }
 
@@ -103,33 +108,24 @@ namespace OzelDers.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public async Task<IActionResult> Manage(string id)
+        public IActionResult Manage(string id)
         {
             var name = id;
             if (String.IsNullOrEmpty(name))
             {
                 return NotFound();
             }
-            var user = await _userManager.FindByNameAsync(name);
+            var user = _teacherService.GetTeachersByUser(name);
             if (user == null) { return NotFound();}
-            UserManageDto userManageDto = new UserManageDto();
-            if (User.IsInRole("Teacher"))
+  
+            UserManageDto userManageDto = new UserManageDto
             {
-                userManageDto.Id = user.Id;
-                userManageDto.FirstName = user.Teachers.FirstName;
-                userManageDto.LastName = user.Teachers.LastName;
-                userManageDto.UserName = user.UserName;
-                userManageDto.PricePerHour = user.Teachers.PricePerHour;
-                userManageDto.Email = user.Email;
-            }
-            else if(User.IsInRole("Student"))
-            {
-                userManageDto.Id = user.Id;
-                userManageDto.FirstName=user.Students.FirstName;
-                userManageDto.LastName=user.Students.LastName;
-                userManageDto.UserName = user.UserName;
-               
-            }
+                FirstName=user.Teachers.FirstName,
+                LastName=user.Teachers.LastName,
+                Email=user.Email,
+                UserName=user.UserName
+            };
+            
             return View(userManageDto);
         }
 
