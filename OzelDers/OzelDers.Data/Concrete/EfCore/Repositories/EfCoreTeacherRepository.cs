@@ -52,14 +52,6 @@ namespace OzelDers.Data.Concrete.EfCore.Repositories
           
         }
 
-        public User GetTeachersByUser(string userName)
-        {
-            var users = OzelDersContext
-                .Users
-                .Include(t => t.Teachers)
-                .FirstOrDefault(ut => ut.UserName == userName);
-                return users;
 
-        }
     }
 }

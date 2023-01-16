@@ -10,7 +10,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.1",
           "Microsoft.EntityFrameworkCore.Design": "7.0.1",
-          "OzelDers.Business": "1.0.0"
+          "OzelDers.Business": "1.0.0",
+          "OzelDers.Core": "1.0.0"
         },
         "runtime": {
           "OzelDers.Web.dll": {}
@@ -851,6 +852,11 @@
           "OzelDers.Business.dll": {}
         }
       },
+      "OzelDers.Core/1.0.0": {
+        "runtime": {
+          "OzelDers.Core.dll": {}
+        }
+      },
       "OzelDers.Data/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.1",
@@ -1425,6 +1431,11 @@
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     },
     "OzelDers.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OzelDers.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

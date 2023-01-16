@@ -108,26 +108,8 @@ namespace OzelDers.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public IActionResult Manage(string id)
-        {
-            var name = id;
-            if (String.IsNullOrEmpty(name))
-            {
-                return NotFound();
-            }
-            var user = _teacherService.GetTeachersByUser(name);
-            if (user == null) { return NotFound();}
-  
-            UserManageDto userManageDto = new UserManageDto
-            {
-                FirstName=user.Teachers.FirstName,
-                LastName=user.Teachers.LastName,
-                Email=user.Email,
-                UserName=user.UserName
-            };
-            
-            return View(userManageDto);
-        }
+
+       
 
     }
 }

@@ -47,6 +47,11 @@ app.MapControllerRoute(
     defaults: new { controller = "Branch", action = "BranchList" }
     );
 
+app.MapAreaControllerRoute(
+    name: "Admin",
+    areaName: "Admin",
+    pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

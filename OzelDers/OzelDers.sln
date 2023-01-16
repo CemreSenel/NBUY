@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OzelDers.Entity", "OzelDers
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OzelDers.Web", "OzelDers.Web\OzelDers.Web.csproj", "{4E65F961-D656-4A9B-992F-2B0F36CE182D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzelDers.Core", "OzelDers.Core\OzelDers.Core.csproj", "{7B66FABD-8F3F-49EA-A98B-3A7863C0781D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4E65F961-D656-4A9B-992F-2B0F36CE182D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E65F961-D656-4A9B-992F-2B0F36CE182D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E65F961-D656-4A9B-992F-2B0F36CE182D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B66FABD-8F3F-49EA-A98B-3A7863C0781D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B66FABD-8F3F-49EA-A98B-3A7863C0781D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B66FABD-8F3F-49EA-A98B-3A7863C0781D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B66FABD-8F3F-49EA-A98B-3A7863C0781D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

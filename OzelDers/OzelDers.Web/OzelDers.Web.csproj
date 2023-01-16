@@ -16,10 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OzelDers.Business\OzelDers.Business.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Admin\" />
+    <ProjectReference Include="..\OzelDers.Core\OzelDers.Core.csproj" />
   </ItemGroup>
 
 </Project>

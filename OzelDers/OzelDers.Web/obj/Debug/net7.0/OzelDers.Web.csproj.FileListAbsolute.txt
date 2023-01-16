@@ -224,3 +224,5 @@ C:\Users\casper\OneDrive\Belgeler\GitHub\NBUY\OzelDers\OzelDers.Web\obj\Debug\ne
 C:\Users\casper\OneDrive\Belgeler\GitHub\NBUY\OzelDers\OzelDers.Web\obj\Debug\net7.0\OzelDers.Web.pdb
 C:\Users\casper\OneDrive\Belgeler\GitHub\NBUY\OzelDers\OzelDers.Web\obj\Debug\net7.0\OzelDers.Web.genruntimeconfig.cache
 C:\Users\casper\OneDrive\Belgeler\GitHub\NBUY\OzelDers\OzelDers.Web\obj\Debug\net7.0\ref\OzelDers.Web.dll
+C:\Users\casper\OneDrive\Belgeler\GitHub\NBUY\OzelDers\OzelDers.Web\bin\Debug\net7.0\OzelDers.Core.dll
+C:\Users\casper\OneDrive\Belgeler\GitHub\NBUY\OzelDers\OzelDers.Web\bin\Debug\net7.0\OzelDers.Core.pdb

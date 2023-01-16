@@ -52,10 +52,7 @@ namespace OzelDers.Business.Concrete
             return await _unitOfWork.Teachers.GetTeachersByBranchAsync(branch);
         }
 
-        public  User GetTeachersByUser(string userName)
-        {
-            return _unitOfWork.Teachers.GetTeachersByUser(userName);
-        }
+  
 
         public void Update(Teacher teacher)
         {

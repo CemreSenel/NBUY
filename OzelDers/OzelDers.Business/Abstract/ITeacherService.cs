@@ -19,6 +19,6 @@ namespace OzelDers.Business.Abstract
         Task<List<Teacher>> GetHomePageTeachersAsync();
         Task<List<Teacher>> GetTeachersByBranchAsync(string branch);
 
-        public User GetTeachersByUser(string userName);
+       
     }
 }

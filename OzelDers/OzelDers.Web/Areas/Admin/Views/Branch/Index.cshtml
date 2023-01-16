@@ -1,0 +1,36 @@
+﻿
+@model BranchListDto
+<h1 class="text-center display-4">Dersler</h1>
+<hr />
+<div class="text-center">
+
+        <a type="button" asp-area="Admin" asp-controller="Branch" asp-action="Create"
+        class="btn btn-outline-dark"
+        > BRANŞ EKLE</a>
+
+</div>
+<hr />
+<table class="table table-responsive table-bordered ">
+    <thead>
+        <tr  class="bg-warning">
+            <th >Id</th>
+            <th >Adı</th>
+            <th >Url</th>
+            <th style="width:130px">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var branch in Model.Branches)
+        {
+            <tr>
+                <td>@branch.Id</td>
+                <td>@branch.Name</td>
+                <td>@branch.Url</td>
+                <td>
+                    <a asp-area="Admin" asp-controller="Branch" asp-action="Edit" asp-route-id=@branch.Id class="btn btn-dark btn-sm ">Düzenle</a>
+                    <a  class="btn btn-dark btn-sm">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

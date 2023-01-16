@@ -1,0 +1,18 @@
+﻿@model BranchAddDto
+
+<h1>Branş Ekleme</h1>
+<hr />
+<form asp-area="Admin" asp-controller="Branch" asp-action="Create" method="post">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div>
+                <label asp-for="Name" class="form-label"></label>
+                <input class="form-control" asp-for="Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-warning mt-3">Kaydet</button>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</form>
