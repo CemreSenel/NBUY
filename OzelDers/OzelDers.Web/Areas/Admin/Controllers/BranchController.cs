@@ -78,4 +78,6 @@ namespace OzelDers.Web.Areas.Admin.Controllers
             return View(branchUpdateDto);
         }
     }
+    
 }
+    

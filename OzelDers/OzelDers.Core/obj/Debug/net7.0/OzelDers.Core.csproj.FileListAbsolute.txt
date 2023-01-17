@@ -10,3 +10,15 @@ C:\Users\casper\OneDrive\Belgeler\GitHub\NBUY\OzelDers\OzelDers.Core\obj\Debug\n
 C:\Users\casper\OneDrive\Belgeler\GitHub\NBUY\OzelDers\OzelDers.Core\obj\Debug\net7.0\refint\OzelDers.Core.dll
 C:\Users\casper\OneDrive\Belgeler\GitHub\NBUY\OzelDers\OzelDers.Core\obj\Debug\net7.0\OzelDers.Core.pdb
 C:\Users\casper\OneDrive\Belgeler\GitHub\NBUY\OzelDers\OzelDers.Core\obj\Debug\net7.0\ref\OzelDers.Core.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Core\bin\Debug\net7.0\OzelDers.Core.deps.json
+C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Core\bin\Debug\net7.0\OzelDers.Core.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Core\bin\Debug\net7.0\OzelDers.Core.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Core\obj\Debug\net7.0\OzelDers.Core.csproj.AssemblyReference.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Core\obj\Debug\net7.0\OzelDers.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Core\obj\Debug\net7.0\OzelDers.Core.AssemblyInfoInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Core\obj\Debug\net7.0\OzelDers.Core.AssemblyInfo.cs
+C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Core\obj\Debug\net7.0\OzelDers.Core.csproj.CoreCompileInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Core\obj\Debug\net7.0\OzelDers.Core.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Core\obj\Debug\net7.0\refint\OzelDers.Core.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Core\obj\Debug\net7.0\OzelDers.Core.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Core\obj\Debug\net7.0\ref\OzelDers.Core.dll
