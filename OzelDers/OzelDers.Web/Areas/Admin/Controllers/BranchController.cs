@@ -69,15 +69,28 @@ namespace OzelDers.Web.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var branch = await _branchService.GetByIdAsync(branchUpdateDto.Id);
-                if (branch == null) { return NotFound();}
-                branch.Name= branchUpdateDto.Name;
+                if (branch == null) { return NotFound(); }
+                branch.Name = branchUpdateDto.Name;
                 branch.Url = Jobs.InitUrl(branchUpdateDto.Url);
                 _branchService.Update(branch);
                 return RedirectToAction("Index");
             }
             return View(branchUpdateDto);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var branch = await _branchService.GetByIdAsync(id);
+            if (branch == null)
+            {
+                return NotFound();
+            }
+            _branchService.Delete(branch);
+            return RedirectToAction("Index");
+
+        }
     }
-    
+
 }
-    
+

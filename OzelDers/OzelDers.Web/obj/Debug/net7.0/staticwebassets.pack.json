@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\images\\3.png"
     },
     {
+      "Id": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OzelDers\\OzelDers.Web\\wwwroot\\images\\Lessons-Learned.jpg",
+      "PackagePath": "staticwebassets\\images\\Lessons-Learned.jpg"
+    },
+    {
       "Id": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OzelDers\\OzelDers.Web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

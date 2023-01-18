@@ -1,12 +1,14 @@
 ﻿@using OzelDers.Web.Models.Dtos
 @model RegisterDto
 
-<h1 class="text-center">KAYIT OL</h1>
-    <form  asp-controller="Account" asp-action="Register" method="post">
-        <div  class="row ">
+<body style="background-image:url(https://lh4.googleusercontent.com/Tz7UMpQNa-fnZsPdYwBxpGOY1tBrbHLzwsxH9Pdpog3jyF7QOJ3LrlQhGLcOpvSUlMq1ra8jLvn9SNkpFys5DepMkCSbw5LLx36zAMTr87GHm0oqzF4ZVmdbFu3sAMaf2Oc59njK);background-repeat:no-repeat;background-position:center;background-size:contain ">
+    <h1 class="text-center">KAYIT OL</h1>
+    <form asp-controller="Account" asp-action="Register" method="post">
+        <div class="row ">
+            <div class="col-4"></div>
             <div class="col-4">
                 <div asp-validation-summary="All" class="text-danger"></div>
-         
+
                 <div class="mb-3">
                     <label class="form-label">Üyelik Tipi Seçiniz:</label>
                     <select class="form-select" name="membershipType">
@@ -16,7 +18,7 @@
                 </div>
                 <div class="mb-3">
                     <label asp-for="FirstName" class="form-label"></label>
-                    <input class="form-control" asp-for="FirstName">
+                    <input class="form-control"  asp-for="FirstName">
                     <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
@@ -49,6 +51,9 @@
                    asp-controller="Home"
                    asp-action="Index">Vazgeç</a>
             </div>
+            <div class="col-4"></div>
+
         </div>
     </form>
+</body>
 

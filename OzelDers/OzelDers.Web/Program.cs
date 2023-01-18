@@ -47,6 +47,7 @@ app.MapControllerRoute(
     defaults: new { controller = "Branch", action = "BranchList" }
     );
 
+
 app.MapAreaControllerRoute(
     name: "Admin",
     areaName: "Admin",

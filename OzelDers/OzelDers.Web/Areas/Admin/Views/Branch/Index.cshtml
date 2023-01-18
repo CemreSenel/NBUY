@@ -27,8 +27,8 @@
                 <td>@branch.Name</td>
                 <td>@branch.Url</td>
                 <td>
-                    <a asp-area="Admin" asp-controller="Branch" asp-action="Edit" asp-route-id=@branch.Id class="btn btn-dark btn-sm ">Düzenle</a>
-                    <a  class="btn btn-dark btn-sm">Sil</a>
+                    <a type="button" asp-area="Admin" asp-controller="Branch" asp-action="Edit" asp-route-id=@branch.Id class="btn btn-dark btn-sm ">Düzenle</a>
+                    <a type="button" asp-area="Admin" asp-controller="Branch" asp-action="Delete" asp-route-id=@branch.Id class="btn btn-dark btn-sm">Sil</a>
                 </td>
             </tr>
         }
