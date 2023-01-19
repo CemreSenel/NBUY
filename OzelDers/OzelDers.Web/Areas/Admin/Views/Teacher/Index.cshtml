@@ -3,7 +3,7 @@
 <hr />
 <div class="text-center">
 
-    <a type="button" asp-area="Admin" asp-controller="Teacher" asp-action="Index"
+    <a type="button" asp-area="Admin" asp-controller="Teacher" asp-action="Create"
        class="btn btn-outline-dark"> ÖĞRETMEN EKLE</a>
 
 </div>
@@ -29,7 +29,7 @@
                 <td>@teacher.LastName</td>
                 <td>@teacher.PricePerHour</td>
                 <td>@teacher.UserName</td>
-                <td>@teacher.Eamil</td>
+                <td>@teacher.Email</td>
                 <td>
                     <a type="button" asp-area="Admin" asp-controller="Teacher" asp-action="Edit" asp-route-id=@teacher.Id class="btn btn-dark btn-sm ">Düzenle</a>
                     <a type="button" asp-area="Admin" asp-controller="Teacher" asp-action="Delete" asp-route-id=@teacher.Id class="btn btn-dark btn-sm">Sil</a>

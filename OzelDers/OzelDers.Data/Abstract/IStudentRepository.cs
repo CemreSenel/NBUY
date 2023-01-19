@@ -9,6 +9,7 @@ namespace OzelDers.Data.Abstract
 {
     public interface IStudentRepository : IRepository<Student>
     {
-
+        Task<List<Student>> GetAllStudentsAsync();
+        Task CreateStudentAsync(Student student);
     }
 }

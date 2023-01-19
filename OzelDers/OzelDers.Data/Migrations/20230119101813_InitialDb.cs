@@ -259,9 +259,9 @@ namespace OzelDers.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "0bb67308-1aa8-475e-9df8-21950a9313d1", null, "Student rolü", "Student", "STUDENT" },
-                    { "cf8d07b6-40ff-40c4-bd85-fe8b59860ef4", null, "Admin rolü", "Admin", "ADMIN" },
-                    { "f1e2aa5a-d987-4c2b-a43b-218897c45ed6", null, "Teacher rolü", "Teacher", "TEACHER" }
+                    { "170609dd-b266-4714-9f0f-5c4e7fc95749", null, "Teacher rolü", "Teacher", "TEACHER" },
+                    { "2f3319e6-1534-4f74-b19c-11738a496718", null, "Admin rolü", "Admin", "ADMIN" },
+                    { "dd8b96e4-5d86-40bf-a5f0-d993c2e07af6", null, "Student rolü", "Student", "STUDENT" }
                 });
 
             migrationBuilder.InsertData(
@@ -269,10 +269,11 @@ namespace OzelDers.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "student", 0, "527ee357-2dd4-4111-aab6-ba3af0a5bb0b", "student@gmail.com", false, false, null, null, null, null, null, false, "66f50b2c-8395-4b55-b581-ceac7340ffa2", false, null },
-                    { "teacher1", 0, "1e0d63c9-e34c-492b-b0b8-3769c7c61450", "teacher@gmail.com", false, false, null, null, null, null, null, false, "d74862c5-ef1b-4fbf-b932-b14e25cb777f", false, null },
-                    { "teacher2", 0, "071bb2d1-353d-44fb-b433-63829c208c20", "teacher1@gmail.com", false, false, null, null, null, null, null, false, "23808c52-9d44-4a0d-ad21-053d69ced712", false, null },
-                    { "teacher3", 0, "bd3d3dca-8696-4d2d-a4e2-a37683cf0a95", "teacher2@gmail.com", false, false, null, null, null, null, null, false, "f9da910a-e7de-4f5a-ac71-d359e7b35922", false, null }
+                    { "admin", 0, "2b2c389f-ac3b-4603-9bdc-78c1c1693667", "admin@gmail.com", false, false, null, "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEIkSiEhIwXjB15rTfZHqPpeNtreyFfLbwuT5sz/Dn+NDDf4oq2tU2DytU3BZSM95dQ==", null, false, "354f74ef-feb8-4445-852a-f9fab2bca4ac", false, "admin" },
+                    { "student", 0, "61165799-9e21-4443-bc06-8987d9f6a70c", "student@gmail.com", false, false, null, "STUDENT@GMAIL.COM", "STUDENT", "AQAAAAIAAYagAAAAEIubB2gFhy8zFWw4gaMxkeUjY/kcWgo5RqT8mj+XVy1qc7KuteF7NWXMH587lumIGg==", null, false, "d0c1c8d1-caf3-4d7d-bf14-fbe45b08e16c", false, "student" },
+                    { "teacher1", 0, "1f152258-a1b5-4ef6-b70c-92d02627b7cd", "teacher1@gmail.com", false, false, null, "TEACHER1@GMAIL.COM", "TEACHER1", "AQAAAAIAAYagAAAAEBASzHY/29/io+IPqj77m0nQ/UvmPkMiIfUXUEMsQKf+qPhWkOMwGMvcsJ7+bv0vNw==", null, false, "f8878a17-53e0-4355-8798-ddbba8bf1573", false, "teacher1" },
+                    { "teacher2", 0, "0c542ab3-a461-4e24-96d7-f4f4c32a09b1", "teacher2@gmail.com", false, false, null, "TEACHER2@GMAIL.COM", "TEACHER2", "AQAAAAIAAYagAAAAEKK1Lk+UqINIqGZOzGAIdJiKqFAB0tf6H0Vb8fEqnhBaR/nwzfylIM3H2UpbtDNH0A==", null, false, "7c34c8a2-7dba-471e-bf91-3792788c5fc9", false, "teacher2" },
+                    { "teacher3", 0, "f345e30d-e7f2-4c3e-8bfb-cfcfefc9b6b9", "teacher3@gmail.com", false, false, null, "TEACHER3@GMAIL.COM", "TEACHER3", "AQAAAAIAAYagAAAAEPO7mQuRKjEUf2K9+KITHf+JJl3g/a0RKVE1xHWKJGRHKx0O2/1RYSKLIfRkWTR0xw==", null, false, "32cf6116-f2a9-4fc4-b1bf-c88d29ebb14c", false, "teacher3" }
                 });
 
             migrationBuilder.InsertData(
@@ -297,8 +298,11 @@ namespace OzelDers.Data.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "0bb67308-1aa8-475e-9df8-21950a9313d1", "student" },
-                    { "f1e2aa5a-d987-4c2b-a43b-218897c45ed6", "teacher1" }
+                    { "2f3319e6-1534-4f74-b19c-11738a496718", "admin" },
+                    { "dd8b96e4-5d86-40bf-a5f0-d993c2e07af6", "student" },
+                    { "170609dd-b266-4714-9f0f-5c4e7fc95749", "teacher1" },
+                    { "170609dd-b266-4714-9f0f-5c4e7fc95749", "teacher2" },
+                    { "170609dd-b266-4714-9f0f-5c4e7fc95749", "teacher3" }
                 });
 
             migrationBuilder.InsertData(

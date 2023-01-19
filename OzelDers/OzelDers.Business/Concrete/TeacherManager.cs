@@ -24,6 +24,12 @@ namespace OzelDers.Business.Concrete
             await _unitOfWork.SaveAsync();
         }
 
+        public async Task CreateTeacherAsync(Teacher teacher, int[] selectedBranchIds)
+        {
+            await _unitOfWork.Teachers.CreateTeacherAsync(teacher, selectedBranchIds);
+
+        }
+
         public void Delete(Teacher teacher)
         {
             _unitOfWork.Teachers.Delete(teacher);
@@ -34,6 +40,11 @@ namespace OzelDers.Business.Concrete
         {
             return await _unitOfWork.Teachers.GetAllAsync();
 
+        }
+
+        public async Task<List<Teacher>> GetAllTeachersAsync()
+        {
+            return await _unitOfWork.Teachers.GetAllTeachersAsync();
         }
 
         public async Task<Teacher> GetByIdAsync(int id)
@@ -52,7 +63,10 @@ namespace OzelDers.Business.Concrete
             return await _unitOfWork.Teachers.GetTeachersByBranchAsync(branch);
         }
 
-  
+        public async Task<Teacher> GetTeacherWithBranches(int id)
+        {
+            return await _unitOfWork.Teachers.GetTeacherWithBranches(id);
+        }
 
         public void Update(Teacher teacher)
         {

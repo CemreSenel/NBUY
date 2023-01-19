@@ -11,7 +11,7 @@ using OzelDers.Data.Concrete.EfCore.Context;
 namespace OzelDers.Data.Migrations
 {
     [DbContext(typeof(OzelDersContext))]
-    [Migration("20230111155734_InitialDb")]
+    [Migration("20230119101813_InitialDb")]
     partial class InitialDb
     {
         /// <inheritdoc />
@@ -106,12 +106,27 @@ namespace OzelDers.Data.Migrations
                         new
                         {
                             UserId = "student",
-                            RoleId = "0bb67308-1aa8-475e-9df8-21950a9313d1"
+                            RoleId = "dd8b96e4-5d86-40bf-a5f0-d993c2e07af6"
                         },
                         new
                         {
                             UserId = "teacher1",
-                            RoleId = "f1e2aa5a-d987-4c2b-a43b-218897c45ed6"
+                            RoleId = "170609dd-b266-4714-9f0f-5c4e7fc95749"
+                        },
+                        new
+                        {
+                            UserId = "teacher2",
+                            RoleId = "170609dd-b266-4714-9f0f-5c4e7fc95749"
+                        },
+                        new
+                        {
+                            UserId = "teacher3",
+                            RoleId = "170609dd-b266-4714-9f0f-5c4e7fc95749"
+                        },
+                        new
+                        {
+                            UserId = "admin",
+                            RoleId = "2f3319e6-1534-4f74-b19c-11738a496718"
                         });
                 });
 
@@ -248,21 +263,21 @@ namespace OzelDers.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "cf8d07b6-40ff-40c4-bd85-fe8b59860ef4",
+                            Id = "2f3319e6-1534-4f74-b19c-11738a496718",
                             Description = "Admin rolü",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "0bb67308-1aa8-475e-9df8-21950a9313d1",
+                            Id = "dd8b96e4-5d86-40bf-a5f0-d993c2e07af6",
                             Description = "Student rolü",
                             Name = "Student",
                             NormalizedName = "STUDENT"
                         },
                         new
                         {
-                            Id = "f1e2aa5a-d987-4c2b-a43b-218897c45ed6",
+                            Id = "170609dd-b266-4714-9f0f-5c4e7fc95749",
                             Description = "Teacher rolü",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
@@ -337,49 +352,81 @@ namespace OzelDers.Data.Migrations
                         {
                             Id = "student",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "527ee357-2dd4-4111-aab6-ba3af0a5bb0b",
+                            ConcurrencyStamp = "61165799-9e21-4443-bc06-8987d9f6a70c",
                             Email = "student@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
+                            NormalizedEmail = "STUDENT@GMAIL.COM",
+                            NormalizedUserName = "STUDENT",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIubB2gFhy8zFWw4gaMxkeUjY/kcWgo5RqT8mj+XVy1qc7KuteF7NWXMH587lumIGg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "66f50b2c-8395-4b55-b581-ceac7340ffa2",
-                            TwoFactorEnabled = false
+                            SecurityStamp = "d0c1c8d1-caf3-4d7d-bf14-fbe45b08e16c",
+                            TwoFactorEnabled = false,
+                            UserName = "student"
                         },
                         new
                         {
                             Id = "teacher1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1e0d63c9-e34c-492b-b0b8-3769c7c61450",
-                            Email = "teacher@gmail.com",
+                            ConcurrencyStamp = "1f152258-a1b5-4ef6-b70c-92d02627b7cd",
+                            Email = "teacher1@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
+                            NormalizedEmail = "TEACHER1@GMAIL.COM",
+                            NormalizedUserName = "TEACHER1",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBASzHY/29/io+IPqj77m0nQ/UvmPkMiIfUXUEMsQKf+qPhWkOMwGMvcsJ7+bv0vNw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d74862c5-ef1b-4fbf-b932-b14e25cb777f",
-                            TwoFactorEnabled = false
+                            SecurityStamp = "f8878a17-53e0-4355-8798-ddbba8bf1573",
+                            TwoFactorEnabled = false,
+                            UserName = "teacher1"
                         },
                         new
                         {
                             Id = "teacher2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "071bb2d1-353d-44fb-b433-63829c208c20",
-                            Email = "teacher1@gmail.com",
+                            ConcurrencyStamp = "0c542ab3-a461-4e24-96d7-f4f4c32a09b1",
+                            Email = "teacher2@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
+                            NormalizedEmail = "TEACHER2@GMAIL.COM",
+                            NormalizedUserName = "TEACHER2",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKK1Lk+UqINIqGZOzGAIdJiKqFAB0tf6H0Vb8fEqnhBaR/nwzfylIM3H2UpbtDNH0A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "23808c52-9d44-4a0d-ad21-053d69ced712",
-                            TwoFactorEnabled = false
+                            SecurityStamp = "7c34c8a2-7dba-471e-bf91-3792788c5fc9",
+                            TwoFactorEnabled = false,
+                            UserName = "teacher2"
                         },
                         new
                         {
                             Id = "teacher3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bd3d3dca-8696-4d2d-a4e2-a37683cf0a95",
-                            Email = "teacher2@gmail.com",
+                            ConcurrencyStamp = "f345e30d-e7f2-4c3e-8bfb-cfcfefc9b6b9",
+                            Email = "teacher3@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
+                            NormalizedEmail = "TEACHER3@GMAIL.COM",
+                            NormalizedUserName = "TEACHER3",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPO7mQuRKjEUf2K9+KITHf+JJl3g/a0RKVE1xHWKJGRHKx0O2/1RYSKLIfRkWTR0xw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f9da910a-e7de-4f5a-ac71-d359e7b35922",
-                            TwoFactorEnabled = false
+                            SecurityStamp = "32cf6116-f2a9-4fc4-b1bf-c88d29ebb14c",
+                            TwoFactorEnabled = false,
+                            UserName = "teacher3"
+                        },
+                        new
+                        {
+                            Id = "admin",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "2b2c389f-ac3b-4603-9bdc-78c1c1693667",
+                            Email = "admin@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@GMAIL.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIkSiEhIwXjB15rTfZHqPpeNtreyFfLbwuT5sz/Dn+NDDf4oq2tU2DytU3BZSM95dQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "354f74ef-feb8-4445-852a-f9fab2bca4ac",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
                         });
                 });
 

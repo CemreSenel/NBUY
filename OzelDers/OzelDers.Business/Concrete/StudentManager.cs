@@ -23,6 +23,11 @@ namespace OzelDers.Business.Concrete
             await _unitOfWork.SaveAsync();
         }
 
+        public async Task CreateStudentAsync(Student student)
+        {
+            await _unitOfWork.Students.CreateStudentAsync(student);
+        }
+
         public void Delete(Student student)
         {
             _unitOfWork.Students.Delete(student);
@@ -33,6 +38,11 @@ namespace OzelDers.Business.Concrete
         {
             return await _unitOfWork.Students.GetAllAsync();
 
+        }
+
+        public async Task<List<Student>> GetAllStudentsAsync()
+        {
+            return await _unitOfWork.Students.GetAllStudentsAsync();
         }
 
         public async Task<Student> GetByIdAsync(int id)

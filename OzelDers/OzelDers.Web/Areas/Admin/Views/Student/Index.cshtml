@@ -1,0 +1,38 @@
+﻿@model List<StudentListDto>
+<h1 class="text-center display-4">Öğrenciler</h1>
+<hr />
+<div class="text-center">
+
+    <a type="button" asp-area="Admin" asp-controller="Student" asp-action="Create"
+       class="btn btn-outline-dark"> ÖĞRENCİ EKLE</a>
+
+</div>
+<hr />
+<table class="table table-responsive table-bordered ">
+    <thead>
+        <tr class="bg-warning">
+            <th>Id</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Kullanıcı Adı</th>
+            <th>Email</th>
+            <th style="width:130px">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.UserName</td>
+                <td>@student.Email</td>
+                <td>
+                    <a type="button" asp-area="Admin" asp-controller="Student" asp-action="Edit" asp-route-id=@student.Id class="btn btn-dark btn-sm ">Düzenle</a>
+                    <a type="button" asp-area="Admin" asp-controller="Student" asp-action="Delete" asp-route-id=@student.Id class="btn btn-dark btn-sm">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
