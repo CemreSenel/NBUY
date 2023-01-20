@@ -11,5 +11,6 @@ namespace OzelDers.Data.Abstract
     {
         Task<List<Student>> GetAllStudentsAsync();
         Task CreateStudentAsync(Student student);
+        Task<Student> GetStudentWithUser(int id);
     }
 }

@@ -15,6 +15,5 @@ namespace OzelDers.Web.Areas.Admin.Models.Dtos
         public List<Branch> Branches { get; set; }
         [Required(ErrorMessage = "En az bir branş seçilmelidir.")]
         public int[] SelectedBranchIds { get; set; }
-        public User User { get; set; }
     }
 }

@@ -14,6 +14,5 @@ namespace OzelDers.Web.Areas.Admin.Models.Dtos
         public string Email { get; set; }
         public List<Branch> Branches { get; set; }
         public int[] SelectedBranchIds { get; set; }
-        public User User { get; set; }
     }
 }

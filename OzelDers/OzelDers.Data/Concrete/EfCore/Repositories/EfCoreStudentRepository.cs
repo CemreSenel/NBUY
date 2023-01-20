@@ -33,5 +33,14 @@ namespace OzelDers.Data.Concrete.EfCore.Repositories
                 .Include(s => s.User)
                 .ToListAsync();
         }
+
+        public async Task<Student> GetStudentWithUser(int id)
+        {
+            return await OzelDersContext
+                .Students
+                .Where(s => s.Id == id)
+                .Include(s => s.User)
+                .FirstOrDefaultAsync();
+        }
     }
 }

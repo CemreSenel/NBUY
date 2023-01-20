@@ -73,5 +73,10 @@ namespace OzelDers.Business.Concrete
             _unitOfWork.Teachers.Update(teacher);
             _unitOfWork.Save();
         }
+
+        public async Task UpdateTeacherAsync(Teacher teacher, int[] selectedBranchIds)
+        {
+            await _unitOfWork.Teachers.UpdateTeacherAsync(teacher, selectedBranchIds);
+        }
     }
 }

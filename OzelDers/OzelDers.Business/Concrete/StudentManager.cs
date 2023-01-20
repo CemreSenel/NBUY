@@ -28,6 +28,9 @@ namespace OzelDers.Business.Concrete
             await _unitOfWork.Students.CreateStudentAsync(student);
         }
 
+
+
+      
         public void Delete(Student student)
         {
             _unitOfWork.Students.Delete(student);
@@ -51,9 +54,14 @@ namespace OzelDers.Business.Concrete
 
         }
 
+        public async Task<Student> GetStudentWithUser(int id)
+        {
+            return await _unitOfWork.Students.GetStudentWithUser(id);
+        }
+
         public void Update(Student student)
         {
-            _unitOfWork.Students.Delete(student);
+            _unitOfWork.Students.Update(student);
             _unitOfWork.Save();
         }
     }

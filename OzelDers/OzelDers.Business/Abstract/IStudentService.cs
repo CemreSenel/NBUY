@@ -16,5 +16,6 @@ namespace OzelDers.Business.Abstract
         void Update(Student student);
         Task<List<Student>> GetAllStudentsAsync();
         Task CreateStudentAsync(Student student);
+        Task<Student> GetStudentWithUser(int id);
     }
 }

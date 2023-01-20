@@ -1,10 +1,6 @@
-﻿using OzelDers.Entity.Concrete.Identity;
-using OzelDers.Entity.Concrete;
-using System.ComponentModel.DataAnnotations;
-
-namespace OzelDers.Web.Areas.Admin.Models.Dtos
+﻿namespace OzelDers.Web.Areas.Admin.Models.Dtos
 {
-    public class StudentAddDto
+    public class StudentUpdateDto
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

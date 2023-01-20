@@ -66,11 +66,11 @@ namespace OzelDers.Data.Concrete.EfCore.Repositories
                 teachers = teachers
                     .Include(t => t.TeacherBranches)
                     .ThenInclude(tb => tb.Branch)
-                    .Where(t => t.TeacherBranches.Any(tb=>tb.Branch.Url == branch));
+                    .Where(t => t.TeacherBranches.Any(tb => tb.Branch.Url == branch));
 
             }
-            return await teachers.ToListAsync();    
-          
+            return await teachers.ToListAsync();
+
         }
 
         public async Task<Teacher> GetTeacherWithBranches(int id)
@@ -80,7 +80,25 @@ namespace OzelDers.Data.Concrete.EfCore.Repositories
                 .Where(t => t.Id == id)
                 .Include(t => t.TeacherBranches)
                 .ThenInclude(tb => tb.Branch)
+                .Include(t => t.User)
                 .FirstOrDefaultAsync();
+        }
+
+        public async Task UpdateTeacherAsync(Teacher teacher, int[] selectedBranchIds)
+        {
+            Teacher newTeacher = await OzelDersContext
+                .Teachers
+                .Include(t => t.TeacherBranches)
+                .Include(t => t.User)
+                .FirstOrDefaultAsync(t => t.Id == teacher.Id);
+            newTeacher.TeacherBranches = selectedBranchIds
+                .Select(brId => new TeacherBranch
+                {
+                    TeacherId = newTeacher.Id,
+                    BranchId = brId
+                }).ToList();
+            OzelDersContext.Update(newTeacher);
+            await OzelDersContext.SaveChangesAsync();
         }
     }
 }
