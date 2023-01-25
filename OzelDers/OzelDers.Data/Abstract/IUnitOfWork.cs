@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OzelDers.Entity.Concrete.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace OzelDers.Data.Abstract
         ITeacherRepository Teachers { get; }
         IStudentRepository Students { get; }
         IBranchRepository Branches { get; }
+        ICourseRepository Courses { get; }
         Task SaveAsync();
         void Save();
     }

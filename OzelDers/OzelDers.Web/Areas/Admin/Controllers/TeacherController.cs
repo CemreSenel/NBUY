@@ -5,6 +5,7 @@ using OzelDers.Core;
 using OzelDers.Entity.Concrete;
 using OzelDers.Entity.Concrete.Identity;
 using OzelDers.Web.Areas.Admin.Models.Dtos;
+using OzelDers.Web.Models.Dtos;
 
 namespace OzelDers.Web.Areas.Admin.Controllers
 {
@@ -124,7 +125,7 @@ namespace OzelDers.Web.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var teacher = await _teacherService.GetTeacherWithBranches(id);
-            if (teacher==null)
+            if (teacher == null)
             {
                 return NotFound();
             }
@@ -132,5 +133,8 @@ namespace OzelDers.Web.Areas.Admin.Controllers
             await _userManager.DeleteAsync(teacher.User);
             return RedirectToAction("Index");
         }
+
+       
     }
+
 }

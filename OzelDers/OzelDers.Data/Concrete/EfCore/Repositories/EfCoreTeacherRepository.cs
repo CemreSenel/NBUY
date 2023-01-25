@@ -84,6 +84,16 @@ namespace OzelDers.Data.Concrete.EfCore.Repositories
                 .FirstOrDefaultAsync();
         }
 
+         public User GetUser(string userName, string id)
+        {
+            var user = OzelDersContext
+                .Users
+                .Include(t => t.Teachers)
+                .Include(s => s.Students)
+                .FirstOrDefault(u => u.UserName == userName || u.Id == id);
+            return user;
+        }
+
         public async Task UpdateTeacherAsync(Teacher teacher, int[] selectedBranchIds)
         {
             Teacher newTeacher = await OzelDersContext

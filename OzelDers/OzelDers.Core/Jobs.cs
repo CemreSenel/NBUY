@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,16 @@ namespace OzelDers.Core
             url = url.Replace("{", "");
             url = url.Replace("}", "");
             return url;
+        }
+        public static string CreateMessage(string title, string message, string alertType)
+        {
+            var msg = new AlertMessage
+            {
+                Title = title,
+                Message = message,
+                AlertType = alertType
+            };
+            return JsonConvert.SerializeObject(msg);
         }
     }
 }

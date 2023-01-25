@@ -1,4 +1,5 @@
-﻿using OzelDers.Entity.Concrete;
+﻿using OzelDers.Data.Concrete.EfCore.Context;
+using OzelDers.Entity.Concrete;
 using OzelDers.Entity.Concrete.Identity;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,9 @@ namespace OzelDers.Business.Abstract
         Task CreateTeacherAsync(Teacher teacher, int[] selectedBranchIds);
         Task<Teacher> GetTeacherWithBranches(int id);
         Task UpdateTeacherAsync(Teacher teacher , int[] selectedBranchIds);
+        User GetUser(string userName,string id);
+        
+
        
     }
 }

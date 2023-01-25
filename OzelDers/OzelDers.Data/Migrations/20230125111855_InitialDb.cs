@@ -198,6 +198,29 @@ namespace OzelDers.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Courses",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    Description = table.Column<string>(type: "TEXT", nullable: true),
+                    Url = table.Column<string>(type: "TEXT", nullable: true),
+                    PricePerHour = table.Column<decimal>(type: "TEXT", nullable: true),
+                    BranchId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Courses", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Courses_Branches_BranchId",
+                        column: x => x.BranchId,
+                        principalTable: "Branches",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Teachers",
                 columns: table => new
                 {
@@ -231,6 +254,30 @@ namespace OzelDers.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "StudentCourses",
+                columns: table => new
+                {
+                    StudentId = table.Column<int>(type: "INTEGER", nullable: false),
+                    CourseId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_StudentCourses", x => new { x.StudentId, x.CourseId });
+                    table.ForeignKey(
+                        name: "FK_StudentCourses_Courses_CourseId",
+                        column: x => x.CourseId,
+                        principalTable: "Courses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_StudentCourses_Students_StudentId",
+                        column: x => x.StudentId,
+                        principalTable: "Students",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TeacherBranches",
                 columns: table => new
                 {
@@ -254,14 +301,38 @@ namespace OzelDers.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "TeacherCourses",
+                columns: table => new
+                {
+                    TeacherId = table.Column<int>(type: "INTEGER", nullable: false),
+                    CourseId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TeacherCourses", x => new { x.TeacherId, x.CourseId });
+                    table.ForeignKey(
+                        name: "FK_TeacherCourses_Courses_CourseId",
+                        column: x => x.CourseId,
+                        principalTable: "Courses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_TeacherCourses_Teachers_TeacherId",
+                        column: x => x.TeacherId,
+                        principalTable: "Teachers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "170609dd-b266-4714-9f0f-5c4e7fc95749", null, "Teacher rolü", "Teacher", "TEACHER" },
-                    { "2f3319e6-1534-4f74-b19c-11738a496718", null, "Admin rolü", "Admin", "ADMIN" },
-                    { "dd8b96e4-5d86-40bf-a5f0-d993c2e07af6", null, "Student rolü", "Student", "STUDENT" }
+                    { "0bc1d5f9-85f0-48fe-8f52-8c0aa60f5125", null, "Teacher rolü", "Teacher", "TEACHER" },
+                    { "4f619682-7119-4e1e-a625-ffc2238f514e", null, "Student rolü", "Student", "STUDENT" },
+                    { "d5c0cf6f-577c-499f-a8ba-31601618aec0", null, "Admin rolü", "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
@@ -269,11 +340,13 @@ namespace OzelDers.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "admin", 0, "2b2c389f-ac3b-4603-9bdc-78c1c1693667", "admin@gmail.com", false, false, null, "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEIkSiEhIwXjB15rTfZHqPpeNtreyFfLbwuT5sz/Dn+NDDf4oq2tU2DytU3BZSM95dQ==", null, false, "354f74ef-feb8-4445-852a-f9fab2bca4ac", false, "admin" },
-                    { "student", 0, "61165799-9e21-4443-bc06-8987d9f6a70c", "student@gmail.com", false, false, null, "STUDENT@GMAIL.COM", "STUDENT", "AQAAAAIAAYagAAAAEIubB2gFhy8zFWw4gaMxkeUjY/kcWgo5RqT8mj+XVy1qc7KuteF7NWXMH587lumIGg==", null, false, "d0c1c8d1-caf3-4d7d-bf14-fbe45b08e16c", false, "student" },
-                    { "teacher1", 0, "1f152258-a1b5-4ef6-b70c-92d02627b7cd", "teacher1@gmail.com", false, false, null, "TEACHER1@GMAIL.COM", "TEACHER1", "AQAAAAIAAYagAAAAEBASzHY/29/io+IPqj77m0nQ/UvmPkMiIfUXUEMsQKf+qPhWkOMwGMvcsJ7+bv0vNw==", null, false, "f8878a17-53e0-4355-8798-ddbba8bf1573", false, "teacher1" },
-                    { "teacher2", 0, "0c542ab3-a461-4e24-96d7-f4f4c32a09b1", "teacher2@gmail.com", false, false, null, "TEACHER2@GMAIL.COM", "TEACHER2", "AQAAAAIAAYagAAAAEKK1Lk+UqINIqGZOzGAIdJiKqFAB0tf6H0Vb8fEqnhBaR/nwzfylIM3H2UpbtDNH0A==", null, false, "7c34c8a2-7dba-471e-bf91-3792788c5fc9", false, "teacher2" },
-                    { "teacher3", 0, "f345e30d-e7f2-4c3e-8bfb-cfcfefc9b6b9", "teacher3@gmail.com", false, false, null, "TEACHER3@GMAIL.COM", "TEACHER3", "AQAAAAIAAYagAAAAEPO7mQuRKjEUf2K9+KITHf+JJl3g/a0RKVE1xHWKJGRHKx0O2/1RYSKLIfRkWTR0xw==", null, false, "32cf6116-f2a9-4fc4-b1bf-c88d29ebb14c", false, "teacher3" }
+                    { "admin", 0, "75000495-953f-4823-8627-bf0ebe833ad1", "admin@gmail.com", false, false, null, "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEJWDAJGxFW2UPjBhgZh0kvPgd0nwrfApkG5X0FWv+I5L8Zoo2dLorudzrzQq0aMOSQ==", null, false, "7480a0ea-c0e8-41e5-8d72-c67168dc3e74", false, "admin" },
+                    { "student", 0, "320a879b-a235-4e1f-97f6-d2a2c5908208", "student@gmail.com", false, false, null, "STUDENT@GMAIL.COM", "STUDENT", "AQAAAAIAAYagAAAAEDaX++etMJpQjf53wrRM/vHZRXNxdBjXLAyGypmOOsDT1VhAW9OCCZZK1b4fR5CbZw==", null, false, "3bee14f1-7e63-4ced-983b-da779ecf20e3", false, "student" },
+                    { "student2", 0, "ddcd9355-7ce3-446c-99c5-50e7353c0553", "veli@gmail.com", false, false, null, "VELI@GMAIL.COM", "VELI", "AQAAAAIAAYagAAAAEFp0zfuQsPQ+x06AxKdW5uwA9tIi8dLTuBzshaR3M4pDqFjCD/G/nvCecWjSyJwtcw==", null, false, "ebf49fb8-3bd6-4e93-a15e-ab1040fbb57f", false, "veli" },
+                    { "student3", 0, "b64927aa-8e22-4131-a0c2-dcbea3bb1839", "mehmet@gmail.com", false, false, null, "MEHMET@GMAIL.COM", "MEHMET", "AQAAAAIAAYagAAAAEBNkTrZziDLArIj9VWXHdTxvToWztJ1KNaKjf/b7H79wuJdm6qv4FT43DER0bcNXPg==", null, false, "18384d5a-757c-493c-829d-e135fe8d016a", false, "mehmet" },
+                    { "teacher1", 0, "b8ab68fc-3d05-49ef-bb5c-ad64018633e0", "teacher1@gmail.com", false, false, null, "TEACHER1@GMAIL.COM", "TEACHER1", "AQAAAAIAAYagAAAAEOm/JTr7HemhpeBcQltnQ3XiUyRToZo5KeIaXsW4KrzJ/k+IynwhtLT8jLFD7w5zyQ==", null, false, "f418feb7-912e-4d0b-ac07-d3e8727aa157", false, "teacher1" },
+                    { "teacher2", 0, "23f64abd-4211-49ed-96d4-1b821ead9e13", "teacher2@gmail.com", false, false, null, "TEACHER2@GMAIL.COM", "TEACHER2", "AQAAAAIAAYagAAAAEGFh3fBuF++sd3mBrWhZD6ZFKUN6NFoY1iMNn1cuoL6c/0N+5uWJ5L+EAD1t6ftzpA==", null, false, "67dbd034-1f42-4526-8612-7e385fa4e437", false, "teacher2" },
+                    { "teacher3", 0, "d7efb153-171f-46cc-a0ea-ddd39e7416fc", "teacher3@gmail.com", false, false, null, "TEACHER3@GMAIL.COM", "TEACHER3", "AQAAAAIAAYagAAAAEFdyPnc/MSnlg+yyRklHENCTSkQeEB4NTtkYW3twHNR/0ofJkgVxsRsUD2YX30hA7g==", null, false, "e9ffd1c8-0aed-47b4-9a34-0f7eb51297f8", false, "teacher3" }
                 });
 
             migrationBuilder.InsertData(
@@ -298,17 +371,34 @@ namespace OzelDers.Data.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "2f3319e6-1534-4f74-b19c-11738a496718", "admin" },
-                    { "dd8b96e4-5d86-40bf-a5f0-d993c2e07af6", "student" },
-                    { "170609dd-b266-4714-9f0f-5c4e7fc95749", "teacher1" },
-                    { "170609dd-b266-4714-9f0f-5c4e7fc95749", "teacher2" },
-                    { "170609dd-b266-4714-9f0f-5c4e7fc95749", "teacher3" }
+                    { "d5c0cf6f-577c-499f-a8ba-31601618aec0", "admin" },
+                    { "4f619682-7119-4e1e-a625-ffc2238f514e", "student" },
+                    { "4f619682-7119-4e1e-a625-ffc2238f514e", "student2" },
+                    { "4f619682-7119-4e1e-a625-ffc2238f514e", "student3" },
+                    { "0bc1d5f9-85f0-48fe-8f52-8c0aa60f5125", "teacher1" },
+                    { "0bc1d5f9-85f0-48fe-8f52-8c0aa60f5125", "teacher2" },
+                    { "0bc1d5f9-85f0-48fe-8f52-8c0aa60f5125", "teacher3" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Courses",
+                columns: new[] { "Id", "BranchId", "Description", "Name", "PricePerHour", "Url" },
+                values: new object[,]
+                {
+                    { 1, 1, "Matematik dersi", "Matematik", 500m, "matematik" },
+                    { 2, 2, "Kimya dersi", "Kimya", 400m, "kimya" },
+                    { 3, 3, "Fizik dersi", "Fizik", 300m, "fizik" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Students",
                 columns: new[] { "Id", "FirstName", "Gender", "ImageUrl", "LastName", "Location", "Url", "UserId" },
-                values: new object[] { 1, "Ali", "Erkek", "1.png", "Kazancı", "İstanbul", "ali-kazanci", "student" });
+                values: new object[,]
+                {
+                    { 1, "Ali", "Erkek", "1.png", "Kazancı", "İstanbul", "ali-kazanci", "student" },
+                    { 2, "Veli", "Erkek", "2.png", "Kazancı", "İstanbul", "veli-kazanci", "student2" },
+                    { 3, "Mehmet", "Erkek", "3.png", "Kazancı", "İstanbul", "mehmet-kazanci", "student3" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Teachers",
@@ -318,6 +408,16 @@ namespace OzelDers.Data.Migrations
                     { 1, "Matematik Öğretmeni", null, "Mert", "Erkek", "1.png", true, "Muslu", "İstanbul", 400m, "mert-muslu", "teacher1" },
                     { 2, "Edebiyat Öğretmeni", null, "Hande", "Kadın", "2.png", true, "Karakaya", "İstanbul", 300m, "hande-karakaya", "teacher2" },
                     { 3, "Almanca Öğretmeni", null, "Harun", "Erkek", "3.png", true, "Kara", "İstanbul", 300m, "harun-kara", "teacher3" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "StudentCourses",
+                columns: new[] { "CourseId", "StudentId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 2, 2 },
+                    { 3, 3 }
                 });
 
             migrationBuilder.InsertData(
@@ -334,6 +434,16 @@ namespace OzelDers.Data.Migrations
                     { 7, 3 },
                     { 8, 3 },
                     { 9, 3 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "TeacherCourses",
+                columns: new[] { "CourseId", "TeacherId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 2, 2 },
+                    { 3, 3 }
                 });
 
             migrationBuilder.CreateIndex(
@@ -374,6 +484,16 @@ namespace OzelDers.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Courses_BranchId",
+                table: "Courses",
+                column: "BranchId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StudentCourses_CourseId",
+                table: "StudentCourses",
+                column: "CourseId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Students_UserId",
                 table: "Students",
                 column: "UserId",
@@ -383,6 +503,11 @@ namespace OzelDers.Data.Migrations
                 name: "IX_TeacherBranches_BranchId",
                 table: "TeacherBranches",
                 column: "BranchId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TeacherCourses_CourseId",
+                table: "TeacherCourses",
+                column: "CourseId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Teachers_BranchId",
@@ -415,13 +540,22 @@ namespace OzelDers.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Students");
+                name: "StudentCourses");
 
             migrationBuilder.DropTable(
                 name: "TeacherBranches");
 
             migrationBuilder.DropTable(
+                name: "TeacherCourses");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Students");
+
+            migrationBuilder.DropTable(
+                name: "Courses");
 
             migrationBuilder.DropTable(
                 name: "Teachers");

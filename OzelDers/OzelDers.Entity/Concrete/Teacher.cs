@@ -26,5 +26,6 @@ namespace OzelDers.Entity.Concrete
 
         public bool IsHome { get; set; }
         public List<TeacherBranch> TeacherBranches { get; set; }
+        public List<TeacherCourse> TeacherCourses { get; set; }
     }
 }

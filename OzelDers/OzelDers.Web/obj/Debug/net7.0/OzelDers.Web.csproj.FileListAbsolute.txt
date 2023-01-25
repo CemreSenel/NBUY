@@ -228,3 +228,4 @@ C:\Users\casper\OneDrive\Belgeler\GitHub\NBUY\OzelDers\OzelDers.Web\bin\Debug\ne
 C:\Users\casper\OneDrive\Belgeler\GitHub\NBUY\OzelDers\OzelDers.Web\bin\Debug\net7.0\OzelDers.Core.pdb
 C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Web\bin\Debug\net7.0\OzelDers.Core.dll
 C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Web\bin\Debug\net7.0\OzelDers.Core.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\OzelDers\OzelDers.Web\bin\Debug\net7.0\Newtonsoft.Json.dll

@@ -48,8 +48,30 @@ namespace OzelDers.Data.Config
                     Url = "ali-kazanci",
                     ImageUrl = "1.png",
                     UserId="student"
-                }
-                
+                },
+                   new Student
+                   {
+                       Id = 2,
+                       FirstName = "Veli",
+                       LastName = "Kazancı",
+                       Location = "İstanbul",
+                       Gender = "Erkek",
+                       Url = "veli-kazanci",
+                       ImageUrl = "2.png",
+                       UserId = "student2"
+                   },
+                      new Student
+                      {
+                          Id = 3,
+                          FirstName = "Mehmet",
+                          LastName = "Kazancı",
+                          Location = "İstanbul",
+                          Gender = "Erkek",
+                          Url = "mehmet-kazanci",
+                          ImageUrl = "3.png",
+                          UserId = "student3"
+                      }
+
 
 
                 );

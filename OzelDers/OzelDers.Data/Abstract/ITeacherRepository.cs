@@ -16,6 +16,7 @@ namespace OzelDers.Data.Abstract
         Task CreateTeacherAsync(Teacher teacher, int[] selectedBranchIds);
         Task<Teacher> GetTeacherWithBranches(int id);
         Task UpdateTeacherAsync(Teacher teacher, int[] selectedBranchIds);
+        User GetUser(string userName,string id);
        
     }
 }

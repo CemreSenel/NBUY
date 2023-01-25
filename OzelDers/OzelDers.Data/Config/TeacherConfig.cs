@@ -52,7 +52,8 @@ namespace OzelDers.Data.Config
                     ImageUrl = "1.png",
                     PricePerHour = 400,
                     UserId = "teacher1",
-                    IsHome = true
+                    IsHome = true,
+                    
 
                 },
                      new Teacher

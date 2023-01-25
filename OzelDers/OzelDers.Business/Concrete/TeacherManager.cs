@@ -68,6 +68,11 @@ namespace OzelDers.Business.Concrete
             return await _unitOfWork.Teachers.GetTeacherWithBranches(id);
         }
 
+        public  User GetUser(string userName, string id)
+        {
+             return _unitOfWork.Teachers.GetUser(userName,id);
+        }
+
         public void Update(Teacher teacher)
         {
             _unitOfWork.Teachers.Update(teacher);

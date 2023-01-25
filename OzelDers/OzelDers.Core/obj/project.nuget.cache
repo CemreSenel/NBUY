@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "tHbufgd6DXEoveItldd+N40cStP4P+Z+xYdGxnQYZu24nhPBMg+wfNCJnQgWsakXNKVhOt0mOoevHZdrNWXGpQ==",
+  "dgSpecHash": "jNfH01YGjsrev8k7O4pW+4wemhkO9a1z4tFS3DLvsgMRKthvJ/+qls6lV0a4jsNza2N/aLHK3k+2Hg+3lcqyow==",
   "success": true,
   "projectFilePath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OzelDers\\OzelDers.Core\\OzelDers.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\SABAH\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

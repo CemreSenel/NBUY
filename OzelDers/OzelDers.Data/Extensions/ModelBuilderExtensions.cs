@@ -88,7 +88,27 @@ namespace OzelDers.Data.Extensions
                           NormalizedEmail="ADMIN@GMAIL.COM",
                           UserName="admin",
                           NormalizedUserName="ADMIN",
-                      }
+                      },
+                        new User
+
+                {
+                     Id="student2",
+                     Email="veli@gmail.com",
+                     UserName="veli",
+                     NormalizedUserName="VELI",
+                     NormalizedEmail="VELI@GMAIL.COM",
+
+                },
+                          new User
+
+                {
+                     Id="student3",
+                     Email="mehmet@gmail.com",
+                     UserName="mehmet",
+                     NormalizedUserName="MEHMET",
+                     NormalizedEmail="MEHMET@GMAIL.COM",
+
+                },
 
 
 
@@ -102,6 +122,8 @@ namespace OzelDers.Data.Extensions
             users[2].PasswordHash = password.HashPassword(users[2], "Qwe123.");
             users[3].PasswordHash = password.HashPassword(users[3], "Qwe123.");
             users[4].PasswordHash = password.HashPassword(users[4], "Admin123.");
+            users[5].PasswordHash = password.HashPassword(users[5], "Qwe123.");
+            users[6].PasswordHash = password.HashPassword(users[6], "Qwe123.");
 
             #region KullanıcıRolAtamaİşlemleri
             List<IdentityUserRole<string>> userRoles = new List<IdentityUserRole<string>>
@@ -130,6 +152,16 @@ namespace OzelDers.Data.Extensions
                    {
                     UserId=users[4].Id,
                     RoleId=roles.First(r=>r.Name=="Admin").Id
+                },
+                   new IdentityUserRole<string>
+                   {
+                    UserId=users[5].Id,
+                    RoleId=roles.First(r=>r.Name=="Student").Id
+                },
+                     new IdentityUserRole<string>
+                   {
+                    UserId=users[6].Id,
+                    RoleId=roles.First(r=>r.Name=="Student").Id
                 },
 
 

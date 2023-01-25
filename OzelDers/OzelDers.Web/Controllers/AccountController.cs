@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OzelDers.Business.Abstract;
+using OzelDers.Core;
 using OzelDers.Entity.Concrete;
 using OzelDers.Entity.Concrete.Identity;
 using OzelDers.Web.Models.Dtos;
@@ -108,8 +109,79 @@ namespace OzelDers.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public IActionResult Manage(string id)
+        {
+            var name = id;
+            if (String.IsNullOrEmpty(name))
+            {
+                return NotFound();
+            }
+            var user = _teacherService.GetUser(name, "");
+            if (user == null) { return NotFound(); }
+            UserManageDto userManageDto = new UserManageDto();
+            if (User.IsInRole("Teacher"))
+            {
+                userManageDto.Id = user.Id;
+                userManageDto.FirstName = user.Teachers.FirstName;
+                userManageDto.LastName = user.Teachers.LastName;
+                userManageDto.Email = user.Email;
+                userManageDto.UserName = user.UserName;
+            }
+            else if (User.IsInRole("Student"))
+            {
+                userManageDto.Id = user.Id;
+                userManageDto.FirstName = user.Students.FirstName;
+                userManageDto.LastName = user.Students.LastName;
+                userManageDto.Email = user.Email;
+                userManageDto.UserName = user.UserName;
+            }
+            userManageDto.Id = user.Id;
+            userManageDto.UserName = user.UserName;
+            userManageDto.Email = user.Email;
+            return View(userManageDto);
+        }
 
-       
+        [HttpPost]
+        public async Task<ActionResult> Manage(UserManageDto userManageDto)
+        {
+            if (userManageDto == null)
+            {
+                return NotFound();
+            }
+            var user = _teacherService.GetUser("", userManageDto.Id);
+            if (User.IsInRole("Teacher"))
+            {
+                if (user == null)
+                {
+                    return NotFound();
+                }
+                user.Teachers.FirstName = userManageDto.FirstName;
+                user.Teachers.LastName = userManageDto.LastName;
+                user.UserName = userManageDto.UserName;
+                user.Email = userManageDto.Email;
+            }
+            else if (User.IsInRole("Student"))
+            {
+                if (userManageDto == null)
+                {
+                    return NotFound();
+                }
+                user.Students.FirstName = userManageDto.FirstName;
+                user.Students.LastName = userManageDto.LastName;
+                user.Email = userManageDto.Email;
+                user.UserName = userManageDto.UserName;
+            }
+            user.UserName = userManageDto.UserName;
+            user.Email = userManageDto.Email;
+            await _userManager.UpdateAsync(user);
+            return RedirectToAction("Index", "Home");
+        }
 
+      
+        public Task<IActionResult> AddCourse(int id)
+        {
+
+        }
+        
     }
 }

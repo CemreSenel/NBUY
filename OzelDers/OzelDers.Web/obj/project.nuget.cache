@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "29+fGOe+i3to1BdjpObiFERK7/Fcyz9kelTpYt5+2blvdBwQlaP2QHEaKktE/zO/qUyoirugi4rvN5SzRkVlAg==",
+  "dgSpecHash": "0W9zlGlAjSR6uRd/wqz5q0KNz622eckIyQzPisxPyh4EacEDgM6Z8FXRfmldyKzW0Ks0AHcp0Y4dZuADIGFDJw==",
   "success": true,
   "projectFilePath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OzelDers\\OzelDers.Web\\OzelDers.Web.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,7 @@
     "C:\\Users\\SABAH\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\SABAH\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\SABAH\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\SABAH\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\SABAH\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.2\\sqlitepclraw.bundle_e_sqlite3.2.1.2.nupkg.sha512",
     "C:\\Users\\SABAH\\.nuget\\packages\\sqlitepclraw.core\\2.1.2\\sqlitepclraw.core.2.1.2.nupkg.sha512",
     "C:\\Users\\SABAH\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.2\\sqlitepclraw.lib.e_sqlite3.2.1.2.nupkg.sha512",

@@ -18,6 +18,9 @@ namespace OzelDers.Data.Concrete.EfCore.Context
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<TeacherBranch> TeacherBranches { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<TeacherCourse> TeacherCourses { get; set; }
+        public DbSet<StudentCourse> StudentCourses { get; set; }
 
         public OzelDersContext(DbContextOptions<OzelDersContext> options) : base(options)
         {
@@ -31,6 +34,9 @@ namespace OzelDers.Data.Concrete.EfCore.Context
             modelBuilder.ApplyConfiguration(new StudentConfig());
             modelBuilder.ApplyConfiguration(new TeacherConfig());
             modelBuilder.ApplyConfiguration(new TeacherBranchConfig());
+            modelBuilder.ApplyConfiguration(new CourseConfig());
+            modelBuilder.ApplyConfiguration(new TeacherCourseConfig());
+            modelBuilder.ApplyConfiguration(new StudentCourseConfig());
             base.OnModelCreating(modelBuilder);
 
         }
