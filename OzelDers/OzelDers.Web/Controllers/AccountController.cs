@@ -14,12 +14,16 @@ namespace OzelDers.Web.Controllers
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly ITeacherService _teacherService;
+        private readonly ICourseService _courseService;
+        private readonly IBranchService _branchService;
 
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, ITeacherService teacherService)
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, ITeacherService teacherService, ICourseService courseService, IBranchService branchService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _teacherService = teacherService;
+            _courseService = courseService;
+            _branchService = branchService;
         }
 
 
@@ -177,11 +181,45 @@ namespace OzelDers.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-      
-        public Task<IActionResult> AddCourse(int id)
+
+        public async Task<IActionResult> AddCourse(string id)
         {
+            var name = id;
+            var branches = await _branchService.GetAllAsync();
+            var courseAddDto = new CourseAddDto
+            {
+                Branches = branches,
+                UserName = name,
+            };
+            return View(courseAddDto);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddCourse(CourseAddDto courseAddDto)
+        {
+            var user = await _teacherService.GetUser(courseAddDto.UserName);
+            var teacherId = user.Teachers.Id;
+            var teacher = await _courseService.GetTeachersByCourses(teacherId);
+            var teacherCourse = new TeacherCourse
+            {
+                Course = new Course
+                {
+                    Name = courseAddDto.Name,
+                    Description = courseAddDto.Description,
+                    PricePerHour = courseAddDto.PricePerHour,
+                    Url = Jobs.InitUrl(courseAddDto.Name),
+                    BranchId = courseAddDto.SelectedBranchId
+                },
+                TeacherId = teacher.Id,
+
+            };
+            teacher.TeacherLessons.Add(teacherCourse);
+            _teacherService.Update(teacher);
+            var branches = await _branchService.GetAllAsync();
+            courseAddDto.Branches = branches;
+            return RedirectToAction("Index", "Home");
 
         }
-        
+
     }
 }

@@ -21,11 +21,15 @@ namespace OzelDers.Data.Concrete
         private EfCoreTeacherRepository _teacherRepository;
         private EfCoreStudentRepository _studentRepository;
         private EfCoreBranchRepository _branchRepository;
+        private EfCoreCourseRepository _courseRepository;
+
         public ITeacherRepository Teachers => _teacherRepository = _teacherRepository ?? new EfCoreTeacherRepository(_context);
 
         public IStudentRepository Students => _studentRepository = _studentRepository?? new EfCoreStudentRepository(_context);
 
         public IBranchRepository Branches => _branchRepository = _branchRepository?? new EfCoreBranchRepository(_context);
+
+        public ICourseRepository Courses => _courseRepository = _courseRepository ?? new EfCoreCourseRepository(_context);
 
         public void Dispose()
         {

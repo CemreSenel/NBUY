@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OzelDers.Business.Abstract;
 using OzelDers.Core;
 using OzelDers.Entity.Concrete;
@@ -6,6 +7,7 @@ using OzelDers.Web.Areas.Admin.Models.Dtos;
 
 namespace OzelDers.Web.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class BranchController : Controller
     {

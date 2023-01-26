@@ -1,13 +1,16 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OzelDers.Business.Abstract;
 using OzelDers.Core;
 using OzelDers.Entity.Concrete;
 using OzelDers.Entity.Concrete.Identity;
 using OzelDers.Web.Areas.Admin.Models.Dtos;
+using System.Data;
 
 namespace OzelDers.Web.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class StudentController : Controller
     {
